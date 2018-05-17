@@ -3,9 +3,13 @@ let webpack = require('webpack')
 
 const config = {
     entry: {
-        app:'./src/index.js'
+        bundle: [
+            'webpack-dev-server/client?http://localhost:8080',
+            "webpack/hot/only-dev-server",
+            './src/route.js'
+        ]
     },
-    outpust: {
+    output: {
         path: path.resolve(__dirname, 'dev'),
         filename: 'bundle.js'
     },
@@ -14,6 +18,8 @@ const config = {
             test:'/\.(js|jsx)$/',
             exclude: /node_modules/,
             use:[{
+                loader:'react-hot-loader'
+            },{
                 loader: "babel-loader",
                 options:{ presets: ['es2015','stage-0','react'] }
             }],
@@ -44,6 +50,7 @@ const config = {
     devServer:{
         hot: true,
     },
+    mode: "development",
     plugins: [
         new webpack.HotModuleReplacementPlugin()
     ],

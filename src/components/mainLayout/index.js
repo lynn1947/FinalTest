@@ -1,7 +1,10 @@
 import React from 'react'
-import ReactDOM from 'react-dom'
+import {Layout, Menu} from 'antd'
 
-export default class MailLayout extends React.Component{
+const {Header, Content} = Layout
+const MenuItem = Menu.Item
+
+export default class MainLayout extends React.Component{
     constructor(props){
         super(props)
         this.state = {}
@@ -9,9 +12,15 @@ export default class MailLayout extends React.Component{
 
     render() {
         return (
-            <div>
-                <div className></div>
-            </div>
+            <Layout>
+                <Header>
+                    <h3>基于区块链的物联网数据管理平台</h3>
+                    <Menu >
+                        <MenuItem>数据检索</MenuItem>
+                    </Menu>
+                </Header>
+                {this.props.children }
+            </Layout>
         )
     }
 }
