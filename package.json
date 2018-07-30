@@ -18,7 +18,7 @@
   },
   "homepage": "https://github.com/lynn1947/FinalTest#readme",
   "devDependencies": {
-    "antd": "^3.6.6",
+    "antd": "^3.7.2",
     "babel-core": "^6.26.3",
     "babel-loader": "^7.1.5",
     "babel-plugin-import": "^1.8.0",
