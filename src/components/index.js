@@ -5,7 +5,7 @@ import History from './history/index'
 import NewFile from './newFile/index'
 import SaveInfo from './saveInfo/index'
 
-const com ={
+const components ={
     ChannelDetail,
     NewChannel,
     HomeInfo,
@@ -14,4 +14,4 @@ const com ={
     SaveInfo
 }
 
-export default com
+export default components

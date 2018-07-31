@@ -1,26 +1,29 @@
 import React from 'react'
-import { Switch, Route } from 'react-router-dom'
+import { Link, Route } from 'react-router-dom'
 import { Layout,Icon, Modal } from 'antd'
-import com from './../../components/index'
+import components from './../../components/index'
+import LeftBody from './../leftBody/index'
 import './index.less'
 
-const {ChannelDetail, NewChannel, HomeInfo, NewFile, History, SaveInfo} = com
+const {ChannelDetail, NewChannel, HomeInfo, NewFile, History, SaveInfo} = components
 const { Header,Content, Footer, Sider } = Layout
 
 export default class MainLayout extends React.Component {
     constructor(props){
         super(props)
         this.state = {
-            showMore: false,
-            showPlus: false,
-            showHome: false,
-            showNewFile: false,
-            showSaveInfo: false,
-            showHistory: false,
+            showMore: false, // 展示channel信息
+            showPlus: false, // 添加channel
+            showHome: false, // 展示个人信息
+            showOperationBar: false, // 展示操作行，该行只在点击channel名之后展现
+            showNewFile: false, // 新建文档
+            showSaveInfo: false, // 保存
+            showHistory: false, // 展示历史记录
+           
         }
     }
 
-    handleDelte =()=> {
+    handleDelete =()=> {
         console.log("this channel will be deleted")
     }
 
@@ -47,7 +50,7 @@ export default class MainLayout extends React.Component {
                     {   
                         channelList.map(((item, index)=>{
                             return <div className="sider-body-channelList" key={index}>
-                                <span className="name">{item.channelName}</span>
+                                <Link className="name" to={item.channelName}>{item.channelName}</Link> {/*路由，在此处进入到对应channelName所对应的页面*/}
                                 <div className="operation">
                                     <a className="more" onClick={()=>{this.setState({showMore: true})}}>more</a>{/*点击展示channel的详细信息*/}
                                     <a className="close" onClick={this.handleDelte}>delete</a> {/*删除符号，点击后在列表中删除该channel*/}
@@ -83,7 +86,11 @@ export default class MainLayout extends React.Component {
                         <Modal visible={showHistory} footer={null} title="Edit History" onCancel={()=>{this.setState({showHistory: false})}}><History /></Modal>
                     </Header>
                     <Content className="layout-main-body">
-                        
+                        {
+                            channelList.map((item,index)=>{
+                                return <Route exact path={`/${item.channelName}`} key={index} component={LeftBody}/>
+                            })
+                        }
                     </Content>
                     <Footer className="layout-main-footer">
                         <span>copyright@2018 By北京邮电大学1017</span>
