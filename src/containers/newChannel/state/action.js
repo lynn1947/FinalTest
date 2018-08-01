@@ -1,0 +1,1 @@
+// 有添加channelList的动作

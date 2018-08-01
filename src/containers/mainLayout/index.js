@@ -1,11 +1,12 @@
 import React from 'react'
 import { Link, Route } from 'react-router-dom'
-import { Layout,Icon, Modal } from 'antd'
+import { Layout,Icon, Modal, Popconfirm } from 'antd'
 import components from './../../components/index'
 import LeftBody from './../leftBody/index'
+import NewChannel from './../newChannel/index'
 import './index.less'
 
-const {ChannelDetail, NewChannel, HomeInfo, NewFile, History, SaveInfo} = components
+const {ChannelDetail, HomeInfo, Welcome} = components
 const { Header,Content, Footer, Sider } = Layout
 
 export default class MainLayout extends React.Component {
@@ -16,19 +17,17 @@ export default class MainLayout extends React.Component {
             showPlus: false, // 添加channel
             showHome: false, // 展示个人信息
             showOperationBar: false, // 展示操作行，该行只在点击channel名之后展现
-            showNewFile: false, // 新建文档
-            showSaveInfo: false, // 保存
-            showHistory: false, // 展示历史记录
-           
         }
     }
 
-    handleDelete =()=> {
+    handleDeleteConfirm =()=> {
+        // 删除channel的回调，删除channel意味着同时要删除channel当中的文档，删除聊天信息
+        // 同时要删除channel中参与协同的节点当中的数据
         console.log("this channel will be deleted")
     }
 
     render() {
-        const { showMore,showPlus,showHome,showNewFile,showHistory,showSaveInfo } = this.state
+        const { showMore,showPlus,showHome } = this.state
         const channelList = [{
             channelName: 'channel1',
             channelId: 'id is also a long string',
@@ -53,7 +52,15 @@ export default class MainLayout extends React.Component {
                                 <Link className="name" to={item.channelName}>{item.channelName}</Link> {/*路由，在此处进入到对应channelName所对应的页面*/}
                                 <div className="operation">
                                     <a className="more" onClick={()=>{this.setState({showMore: true})}}>more</a>{/*点击展示channel的详细信息*/}
-                                    <a className="close" onClick={this.handleDelte}>delete</a> {/*删除符号，点击后在列表中删除该channel*/}
+                                    <Popconfirm 
+                                        title="删除该channel将同时删除该channel下的文档，聊天信息，仍旧要删除吗？"
+                                        okText="删除" cancelText="取消"
+                                        onConfirm={this.handleDeleteConfirm}
+                                        placement="bottomRight"
+                                        overlayStyle={{width:'200px'}}
+                                    >
+                                        <a className="close">delete</a> {/*删除符号，点击后在列表中删除该channel*/}
+                                    </Popconfirm>
                                 </div>
                                 <Modal visible={showMore}
                                     footer={null}
@@ -75,17 +82,8 @@ export default class MainLayout extends React.Component {
                     </div>
                 </Sider>
                 <Layout className="layout-main"> {/*主体网页：包含头部的操作栏和主体部分的文本编辑和聊天对话框*/}
-                    <Header className="layout-main-header">{/*顶部操作栏，新建文件和保存文件以及提供文件的历史记录列表*/}
-                        <div className="operation">
-                            <a onClick={()=>{this.setState({showNewFile: true})}}>新建文档</a>
-                            <a onClick={()=>{this.setState({showSaveInfo: true})}}>保存</a>
-                            <a onClick={()=>{this.setState({showHistory: true})}}>历史记录</a>
-                        </div>
-                        <Modal visible={showNewFile} footer={null} title="New File" onCancel={()=>{this.setState({showNewFile: false})}}><NewFile /></Modal>
-                        <Modal visible={showSaveInfo} footer={null} title="Save Your File" onCancel={()=>{this.setState({showSaveInfo: false})}}><SaveInfo /></Modal>
-                        <Modal visible={showHistory} footer={null} title="Edit History" onCancel={()=>{this.setState({showHistory: false})}}><History /></Modal>
-                    </Header>
                     <Content className="layout-main-body">
+                        <Route exact path="/" component={Welcome} />
                         {
                             channelList.map((item,index)=>{
                                 return <Route exact path={`/${item.channelName}`} key={index} component={LeftBody}/>
