@@ -7,10 +7,27 @@ const { TextArea } = Input
 class ChatPane extends React.Component {
     constructor(props) {
         super(props)
-        this.state = {}
+        this.state = {
+            inputMessage: ''
+        }
+    }
+
+    handleMessageChange =(e)=> {
+        this.setState({
+            inputMessage:e.target.value
+        })
+    }
+
+    handlePressEnter =(e)=> {
+        console.log(e.target.value)
+        this.setState({
+            inputMessage: ''
+        })
+        e.preventDefault()
     }
 
     render() {
+        const {inputMessage} = this.state
         return (<div className="chatpane">
             <div className="upper">
                 <div className="upper-head">
@@ -25,6 +42,9 @@ class ChatPane extends React.Component {
                 <TextArea  
                     className="bottom-input"
                     placeholder="此处输入你的消息。。" 
+                    value={inputMessage}
+                    onChange={this.handleMessageChange}
+                    onPressEnter={this.handlePressEnter}
                 />
             </div>
         </div>)

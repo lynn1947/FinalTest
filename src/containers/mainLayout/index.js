@@ -1,13 +1,13 @@
 import React from 'react'
-import { Link, Route } from 'react-router-dom'
+import { Link, Route, Switch } from 'react-router-dom'
 import { Layout,Icon, Modal, Popconfirm } from 'antd'
 import components from './../../components/index'
 import LeftBody from './../leftBody/index'
 import NewChannel from './../newChannel/index'
 import './index.less'
 
-const {ChannelDetail, HomeInfo, Welcome} = components
-const { Header,Content, Footer, Sider } = Layout
+const {ChannelDetail, Welcome} = components
+const { Content, Footer, Sider } = Layout
 
 export default class MainLayout extends React.Component {
     constructor(props){
@@ -15,7 +15,6 @@ export default class MainLayout extends React.Component {
         this.state = {
             showMore: false, // 展示channel信息
             showPlus: false, // 添加channel
-            showHome: false, // 展示个人信息
             showOperationBar: false, // 展示操作行，该行只在点击channel名之后展现
         }
     }
@@ -27,7 +26,7 @@ export default class MainLayout extends React.Component {
     }
 
     render() {
-        const { showMore,showPlus,showHome } = this.state
+        const { showMore,showPlus} = this.state
         const channelList = [{
             channelName: 'channel1',
             channelId: 'id is also a long string',
@@ -49,7 +48,7 @@ export default class MainLayout extends React.Component {
                     {   
                         channelList.map(((item, index)=>{
                             return <div className="sider-body-channelList" key={index}>
-                                <Link className="name" to={item.channelName}>{item.channelName}</Link> {/*路由，在此处进入到对应channelName所对应的页面*/}
+                                <Link className="name" to={`/mainPage/${item.channelName}`}>{item.channelName}</Link> {/*路由，在此处进入到对应channelName所对应的页面*/}
                                 <div className="operation">
                                     <a className="more" onClick={()=>{this.setState({showMore: true})}}>more</a>{/*点击展示channel的详细信息*/}
                                     <Popconfirm 
@@ -74,21 +73,22 @@ export default class MainLayout extends React.Component {
                     }
                     </div>
                     <div className="sider-footer">
-                        <Icon type="plus" onClick={()=>{this.setState({showPlus: true})}}/> {/*添加新channel*/}
-                        <Icon type="home" onClick={()=>{this.setState({showHome:true})}}/> {/*个人信息展示*/}
-                        <Icon type="logout" /> {/*退出*/}
+                        <Icon type="plus" onClick={()=>{this.setState({showPlus: true})}} style={{cursor:'pointer'}}/> {/*添加新channel*/}
+                        <Link to="/personalPage"><Icon type="home" style={{color:'#FFF'}}/></Link> {/*个人信息展示*/}
+                        <Link to="/"><Icon type="logout" style={{color:'#FFF'}} /></Link> {/*退出*/}
                         <Modal visible={showPlus} footer={null} title="New Channel" onCancel={()=>{this.setState({showPlus: false})}}><NewChannel /></Modal>
-                        <Modal visible={showHome} footer={null} title="Personal Page" onCancel={()=>{this.setState({showHome: false})}}><HomeInfo /></Modal>
                     </div>
                 </Sider>
                 <Layout className="layout-main"> {/*主体网页：包含头部的操作栏和主体部分的文本编辑和聊天对话框*/}
                     <Content className="layout-main-body">
-                        <Route exact path="/" component={Welcome} />
-                        {
-                            channelList.map((item,index)=>{
-                                return <Route exact path={`/${item.channelName}`} key={index} component={LeftBody}/>
-                            })
-                        }
+                        <Switch>
+                            <Route exact path="/mainPage/" component={Welcome} />
+                            {
+                                channelList.map((item,index)=>{
+                                    return <Route path={`/mainPage/${item.channelName}`} key={index} component={LeftBody}/>
+                                })
+                            }
+                        </Switch>
                     </Content>
                     <Footer className="layout-main-footer">
                         <span>copyright@2018 By北京邮电大学1017</span>
