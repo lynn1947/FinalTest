@@ -3,7 +3,7 @@ import {Modal} from 'antd'
 import components from './../../components/index'
 import './index.less'
 
-const {ChatPane, SaveInfo, History} = components
+const {ChatPane, SaveInfo, History, QuillEditor} = components
 
 export default class LeftBody extends React.Component {
     constructor(props) {
@@ -30,7 +30,9 @@ export default class LeftBody extends React.Component {
                         ><History /></Modal> {/*文件名写入到modal的title中*/}
                 </div>
                 <div className="main-body">
-                    <div className="main-body-left">文本编辑面板</div>
+                    <div className="main-body-left">
+                        <QuillEditor />
+                    </div>
                     <div className="main-body-right">
                         <ChatPane />
                     </div>

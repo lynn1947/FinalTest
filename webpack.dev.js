@@ -41,6 +41,7 @@ const config ={
                     reserved: ['$super', '$', 'exports', 'require', 'module', '_']
                 },
                 compress: {
+                    unused: false,
                     warnings: true
                 },
                 output: {
