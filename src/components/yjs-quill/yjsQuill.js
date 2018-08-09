@@ -13,7 +13,7 @@ const ipfs = new IPFS({
     EXPERIMENTAL: {
         pubsub: true
     }
-}) 
+}) // 在后续被替换，用提前生成好的以username命名的repo来代替
 
 class YjsQuill extends React.Component {
     constructor(props) {
@@ -26,11 +26,7 @@ class YjsQuill extends React.Component {
             if(error) console.log(error)
             console.log(info.id)
         }))
-    }
-  
-    render() {
-        console.log('yjs has been rendered')
-        console.log(ipfs)
+
         Y({
             db: {
                 name: 'memory'
@@ -66,7 +62,9 @@ class YjsQuill extends React.Component {
             });
             y.share.richtext.bindQuill(window.quill)
         })
-
+    }
+  
+    render() {
         return (
             <div className="null"/>
         )

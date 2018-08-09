@@ -10,8 +10,8 @@ class QuillEditor extends React.Component {
     render() {
         return (
             <div className="editor">
-                <YjsQuill />
                 <div className="quillEditor-wrapper">
+                    <YjsQuill />
                     <div id="quillEditor" className="quillEditor">
                         <p>Hello World!</p>
                         <p>Some initial <strong>bold</strong> text</p>
