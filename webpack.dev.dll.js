@@ -24,6 +24,7 @@ const vendor = [
 ]
 
 const config = {
+    mode:'development',
     entry: {
         vendor: vendor,
     },

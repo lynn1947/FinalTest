@@ -24,7 +24,6 @@ class LoginPage extends React.Component {
     }
 
     componentDidMount() {
-        
     }
 
     handleLogin =()=>{

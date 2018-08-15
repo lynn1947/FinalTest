@@ -1,10 +1,9 @@
 let webpack = require('webpack')
-let merge = require('webpack-merge')
 let path = require('path')
 let htmlWebpackPlugin = require('html-webpack-plugin')
-let configDll = require('./webpack.dev.dll')
+let AddAssetHtmlPlugin = require('add-asset-html-webpack-plugin')
 
-const config = merge(configDll,{
+const config ={
     mode: 'development',
     entry: {
         bundle: ['babel-polyfill','./src/index.js'],
@@ -34,14 +33,18 @@ const config = merge(configDll,{
         new webpack.HotModuleReplacementPlugin(),
         new htmlWebpackPlugin({
             template:'./dev/index.html',
-            filename: './index.html'
+            filename: './index.html',
+        }),
+        new AddAssetHtmlPlugin({ 
+            filepath: path.resolve(__dirname,'./dist/vendor.js'), 
+            includeSourcemap: false 
         }),
         new webpack.DefinePlugin({
             'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV || 'development')
         }),
         new webpack.DllReferencePlugin({
             context: __dirname,
-            manifest: require('./dist/vendor-manifest.json  ')
+            manifest: require('./dist/vendor-manifest.json')
         })
     ],
     devServer: {
@@ -52,6 +55,6 @@ const config = merge(configDll,{
     node:{
         fs: 'empty'
     }
-})
+}
   
 module.exports = config
