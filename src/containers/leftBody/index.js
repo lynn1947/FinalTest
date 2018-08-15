@@ -1,17 +1,24 @@
 import React from 'react'
 import {Modal} from 'antd'
 import components from './../../components/index'
+import {connect} from './../../common/util/index'
+import * as actions from './state/action'
 import './index.less'
 
 const {ChatPane, SaveInfo, History, QuillEditor} = components
 
-export default class LeftBody extends React.Component {
+class LeftBody extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
             showSaveInfo: false,
             showHistory: false,
         }
+    }
+
+    componentDidMount() {
+        // joinChannel
+        // 
     }
 
     render() {
@@ -40,6 +47,12 @@ export default class LeftBody extends React.Component {
         </div>)
     }
 }
+
+export default connect((state)=>{
+    return {
+        ...state.channelList
+    }
+},actions)(LeftBody)
 
 
 // 右侧页面主题，包含文本编辑面板和聊天面板

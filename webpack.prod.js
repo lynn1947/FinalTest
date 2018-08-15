@@ -2,6 +2,7 @@ let webpack = require('webpack')
 let merge = require('webpack-merge')
 let path = require('path')
 let htmlWebpackPlugin = require('html-webpack-plugin')
+let UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 let configDll = require('./webpack.dev.dll')
 
 const config = merge(configDll,{
@@ -39,15 +40,22 @@ const config = merge(configDll,{
         new webpack.DefinePlugin({
             'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV || 'development')
         }),
-        new webpack.DllReferencePlugin({
-            context: __dirname,
-            manifest: require('./dist/vendor-manifest.json  ')
+        
+        new UglifyJsPlugin({
+            uglifyOptions:{
+                mangle: {
+                    reserved: ['$super', '$', 'exports', 'require', 'module', '_']
+                },
+                compress: {
+                    unused: true, //未使用的压缩
+                    warnings: true
+                },
+                output: {
+                    comments: false,
+                }
+            },
         })
     ],
-    devServer: {
-        compress: true,
-        hot: true,
-    },
     devtool: '#source-map',
     node:{
         fs: 'empty'

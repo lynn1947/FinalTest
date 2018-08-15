@@ -6,9 +6,9 @@ const initialState = {
 export default function reducer(state=initialState, action) {
     let newState
     switch (action.type) {
-        case LOADING_PATTERNLIST:
+        case 'LOADING_PATTERNLIST':
             return getPatternList(state,action)
-        case LOADING_ARTICALLIST:
+        case 'LOADING_ARTICALLIST':
             return getArticalList(state,action)
         default:
             return state;

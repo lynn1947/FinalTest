@@ -1,5 +1,5 @@
-// Ipfs daemon's default settings
-export function defaultIpfsDaemonSettings(ipfsDataDir) {
+// defaultIpfsDaemonSettings
+const genIpfsDaemonSettings= function(ipfsDataDir) {
     return {
       IpfsDataDir: ipfsDataDir,
       Addresses: {
@@ -29,10 +29,13 @@ export function defaultIpfsDaemonSettings(ipfsDataDir) {
         webRTCStar: {
           Enabled: true
         }
-      },    
+      }, 
+      EXPERIMENTAL: {
+        pubsub: true
+      }   
     }
   } 
 
+  export default genIpfsDaemonSettings 
 
-  // 暂时现这么定，还没搞清楚这个config文件在整个项目中的作用
   

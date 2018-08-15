@@ -1,16 +1,15 @@
 const initialState = {
-    channelnameList:[],
-    channelIndetail:{
+    channelnameList:[{
         channelName: '',
         channelId: '',
         channelCreater: {nickName:'',nodeId:''},
         channelJoiner:[{nickName:'',nodeId:''}],
         article: {filename: '',filehash:""},
         createDate:'',
-    }
+    }],
 }
 
-export function reducer(state=initialState, action) {
+export default function reducer(state=initialState, action) {
     let newState 
     switch(action.type) {
         case 'LOADING_CHANNEL':

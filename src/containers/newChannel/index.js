@@ -1,5 +1,7 @@
 import React from 'react'
 import {Form,Input, Button, Icon} from 'antd'
+import {connect} from './../../common/util/index'
+import * as actions from './state/action'
 import './index.less'
 
 
@@ -21,14 +23,17 @@ const tipLayout = {
     },
 }
 
-class NewChannel extends React.Component {
+class NewChannelPage extends React.Component {
     constructor(props){
         super(props)
     }
 
     handleSubmit =()=> {
         const {getFieldValue} = this.props.form
-        console.log(getFieldValue('channelname'))
+        const channelName = getFieldValue('channelname')
+        const articlename = getFieldValue('articlename')
+
+
     }
 
     render() {
@@ -45,17 +50,28 @@ class NewChannel extends React.Component {
                         })( <Input className="channelName-input"/>)
                     }
                 </FormItem>
-                <div className="channelName-tip">
-                    <Icon type="exclamation-circle-o" />
-                    <p >文件名即channel名，谨慎选取您的channel名</p>
-                </div>
+                <FormItem label="articlelName" {...inputLayout} style={{marginBottom:0}}>
+                    {
+                        getFieldDecorator('articlename',{
+                            rules:[{
+                                required: true,
+                                message: "article name is required",
+                            }],
+                        })( <Input className="articleName-input"/>)
+                    }
+                </FormItem>
                 <div className="channelName-submit"><Button className="channelName-submit-button" type="primary" onClick={this.handleSubmit}>提交</Button></div>
            </Form>
         </div>
     }
 }
 
-export default Form.create({})(NewChannel)
+const NewChannel = Form.create({})(NewChannelPage)
+export default connect((state)=>{
+    return {
+        ...state.channelList
+    }
+},actions)(NewChannel)
 
 
- // 页面需要和redux进行联系，新增的
+ // 页面需要和redux进行联系，新增的 

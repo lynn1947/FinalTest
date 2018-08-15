@@ -4,19 +4,27 @@ import { Layout,Icon, Modal, Popconfirm } from 'antd'
 import components from './../../components/index'
 import LeftBody from './../leftBody/index'
 import NewChannel from './../newChannel/index'
+import {connect} from './../../common/util/index'
+import * as actions from './state/action'
 import './index.less'
 
 const {ChannelDetail, Welcome} = components
 const { Content, Footer, Sider } = Layout
 
-export default class MainLayout extends React.Component {
+class MainLayout extends React.Component {
     constructor(props){
         super(props)
         this.state = {
             showMore: false, // 展示channel信息
             showPlus: false, // 添加channel
-            showOperationBar: false, // 展示操作行，该行只在点击channel名之后展现
         }
+    }
+    componentDidMount() {
+        
+    }
+
+    getChannelList =()=>{
+
     }
 
     handleDeleteConfirm =()=> {
@@ -98,3 +106,9 @@ export default class MainLayout extends React.Component {
         </div>
     }
 }
+
+export default connect((state)=>{
+    return {
+        ...state.channelNameList,
+    }//觉得这样的设计是有问题的
+},actions)(MainLayout)
