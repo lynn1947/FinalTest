@@ -12,7 +12,7 @@ const ipfs = new IPFS({
     repo: 'yjs-demo-ipfs',
     EXPERIMENTAL: {
         pubsub: true
-    }
+    }    
 }) // 在后续被替换，用提前生成好的以username命名的repo来代替
 
 class YjsQuill extends React.Component {
@@ -22,10 +22,16 @@ class YjsQuill extends React.Component {
     }
 
     componentDidMount() {
-        ipfs.once('ready',()=>ipfs.id((error,info)=>{
-            if(error) console.log(error)
-            console.log(info.id)
-        }))
+        ipfs.once('ready',()=>{
+            ipfs.id(((err, info)=>{
+                if(err) throw err
+                console.log(info.id)
+            }))
+            ipfs.swarm.addrs(((err,addrs)=>{
+                if(err) throw err
+                console.log(addrs)
+            }))
+        })
 
         Y({
             db: {

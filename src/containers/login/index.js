@@ -29,13 +29,12 @@ class LoginPage extends React.Component {
     handleLogin =()=>{
         // 需要检测是否已经存在database
         // 登录以后生成以username命名的database，数据保存在本地硬盘上
-        // 保存现有的ipfs setting？？还是一次生成，只保存ipfs实例？？
-        const {form, publicInfo,startLogin} = this.props
+        // 保存现有的ipfs setting？？还是一次生成，只保存ipfs实例？？都是要保存的呀
+        const {form,startLogin} = this.props
         const username = form.getFieldValue('username')
-        console.log(publicInfo)
-        startLogin(username)
-        console.log(this.props.publicInfo)
-        window.location.href = "./#/mainPage"
+        console.log('dispatch before:'+this.props.publicInfo.username)
+        startLogin(username) // 跳转到了saga
+        console.log('dispatch after: '+this.props.publicInfo.username)
     }
  
     render() {
