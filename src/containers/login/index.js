@@ -1,11 +1,15 @@
 import React from 'react'
-import Orbit from 'orbit_' // orbit_core,用于实现通信
-import OrbitDB from 'orbit-db'
-import IPFS from 'ipfs'
 import {Form, Input, Icon} from 'antd'
+import {mergeWith, isArray} from 'lodash'
+import path from 'path'
+import IPFS from 'ipfs'
+import OrbitDB from 'orbit-db'
 import {connect} from './../../common/util/index'
+import configFunc from './../../common/config/index'
 import * as actions from './state/action'
 import './index.less'
+
+const { genIpfsDaemonSettings, genOrbitSettings} = configFunc
 
 const FormItem = Form.Item
 const inputLayout = {
@@ -20,21 +24,50 @@ const inputLayout = {
 class LoginPage extends React.Component {
     constructor(props){
         super(props)
-        this.orbit = this.props.orbit
+        this.state ={
+            dataDir: {
+                IpfsDataDir : '/orbit/ipfs',
+                OrbitDataDir : '/orbit'
+            }
+        }
+        this.ipfsDaemonSettings = {}
+        this.settings = {}
     }
 
-    componentDidMount() {
+    componentWillMount() {
+        let ipfsDataDir = localStorage.getItem('dataDir') || this.state.dataDir.IpfsDataDir
+        let orbitDataDir = localStorage.getItem('dataDir') || this.state.dataDir.IpfsDataDir
+        let settings = [genIpfsDaemonSettings(ipfsDataDir), genOrbitSettings(orbitDataDir)]
+
+        settings.forEach(item => {
+            mergeWith(this.ipfsDaemonSettings, item, (obj, src) => {
+              return isArray(src) ? src : undefined
+            })
+        })
     }
 
     handleLogin =()=>{
-        // 需要检测是否已经存在database
-        // 登录以后生成以username命名的database，数据保存在本地硬盘上
-        // 保存现有的ipfs setting？？还是一次生成，只保存ipfs实例？？都是要保存的呀
-        const {form,startLogin} = this.props
-        const username = form.getFieldValue('username')
-        console.log('dispatch before:'+this.props.publicInfo.username)
-        startLogin(username) // 跳转到了saga
-        console.log('dispatch after: '+this.props.publicInfo.username)
+        const {form, startLogin} = this.props
+        const username =form.getFieldValue('username')
+
+        let settings = Object.assign({}, this.ipfsDaemonSettings)
+
+        if (settings.IpfsDataDir.includes(settings.OrbitDataDir + '/ipfs')) {
+            settings.IpfsDataDir = settings.IpfsDataDir.replace(settings.OrbitDataDir + '/ipfs', settings.OrbitDataDir)
+            settings.IpfsDataDir = path.join(settings.IpfsDataDir, '/' + username, '/ipfs')
+        }
+        settings.OrbitDataDir = path.join(settings.OrbitDataDir, '/' + username)
+        this.settings = Object.assign({}, settings)
+
+        // 实例化orbit过程中应该是还有一个keystore来存储过程中产生的orbit的key
+        const ipfsNode = new IPFS(this.settings)
+        ipfsNode.on('ready',()=>{
+            const orbitNode = new OrbitDB(ipfsNode)
+            startLogin({ipfsNode,orbitNode})
+            window.location.href = './#/mainPage'
+        })
+        
+        
     }
  
     render() {

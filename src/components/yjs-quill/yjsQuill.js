@@ -1,5 +1,4 @@
 import React from 'react';
-import IPFS from 'ipfs'
 import Quill from 'quill'
 const Y = require('yjs')
 
@@ -8,30 +7,15 @@ require('y-array')(Y)
 require('y-richtext')(Y)
 require('y-ipfs-connector')(Y)
 
-const ipfs = new IPFS({
-    repo: 'yjs-demo-ipfs',
-    EXPERIMENTAL: {
-        pubsub: true
-    }    
-}) // 在后续被替换，用提前生成好的以username命名的repo来代替
-
 class YjsQuill extends React.Component {
     constructor(props) {
         super(props)
         this.state = {}
+        this.ipfs = this.props.ipfs
     }
 
     componentDidMount() {
-        ipfs.once('ready',()=>{
-            ipfs.id(((err, info)=>{
-                if(err) throw err
-                console.log(info.id)
-            }))
-            ipfs.swarm.addrs(((err,addrs)=>{
-                if(err) throw err
-                console.log(addrs)
-            }))
-        })
+        const ipfs = this.ipfs
 
         Y({
             db: {

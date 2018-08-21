@@ -38,7 +38,7 @@ class LeftBody extends React.Component {
                 </div>
                 <div className="main-body">
                     <div className="main-body-left">
-                        <QuillEditor />
+                        <QuillEditor ipfs={this.props.pubInstance.ipfsNode}/>
                     </div>
                     <div className="main-body-right">
                         <ChatPane />
@@ -50,7 +50,9 @@ class LeftBody extends React.Component {
 
 export default connect((state)=>{
     return {
-        ...state.channelList
+        ...state.LeftBody,
+        ...state.login
+
     }
 },actions)(LeftBody)
 
