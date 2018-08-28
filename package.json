@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "set NODE_ENV=devolopment& webpack-dev-server --hot --port 5001 --config webpack.dev.js",
+    "dev": "set NODE_ENV=devolopment& webpack-dev-server --hot --port 3001 --config webpack.dev.js",
     "build": "webpack --config webpack.dev.dll.js && webpack --config webpack.dev.js"
   },
   "repository": {

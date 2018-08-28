@@ -1,5 +1,6 @@
 import React from 'react';
 import Quill from 'quill'
+import IPFS from 'ipfs'
 const Y = require('yjs')
 
 require('y-memory')(Y)
@@ -16,6 +17,9 @@ class YjsQuill extends React.Component {
 
     componentDidMount() {
         const ipfs = this.ipfs
+        ipfs.on('ready',()=>{
+            console.log('ready')
+        })
 
         Y({
             db: {

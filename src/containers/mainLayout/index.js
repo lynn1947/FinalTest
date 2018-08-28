@@ -7,6 +7,7 @@ import NewChannel from './../newChannel/index'
 import {connect} from './../../common/util/index'
 import * as actions from './state/action'
 import './index.less'
+import 'babel-polyfill'
 
 const {ChannelDetail, Welcome} = components
 const { Content, Footer, Sider } = Layout
@@ -18,13 +19,25 @@ class MainLayout extends React.Component {
             showMore: false, // 展示channel信息
             showPlus: false, // 添加channel
         }
+        this.username = JSON.parse(localStorage.getItem('username')).pop()
+        this.orbitdb = null
     }
-    componentDidMount() {
-        
+    async componentDidMount() {
+        const {isFirst, pubInstance} = this.props
+        const orbit = pubInstance.orbitNode
+        const username = this.username
+        if(isFirst){
+            const db1 = await orbit.create(username,'keyvalue',{})
+            localStorage.setItem(username,JSON.stringify(db1.address))
+        }else{
+            const address = JSON.parse(localStorage.getItem(username))
+            this.orbitdb = orbit.open(`/orbitdb/${address.root}/${address.path}`)
+            console.log(orbit)
+        }
     }
 
     getChannelList =()=>{
-
+        
     }
 
     handleDeleteConfirm =()=> {
@@ -34,6 +47,7 @@ class MainLayout extends React.Component {
     }
 
     render() {
+        const ipfs = this.ipfsNode
         const { showMore,showPlus} = this.state
         const channelList = [{
             channelName: 'channel1',
@@ -109,6 +123,7 @@ class MainLayout extends React.Component {
 
 export default connect((state)=>{
     return {
-        ...state.channelNameList,
+        ...state.login,
+        ...state.mainLayout
     }//觉得这样的设计是有问题的
 },actions)(MainLayout)
