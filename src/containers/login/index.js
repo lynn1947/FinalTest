@@ -29,6 +29,7 @@ class Login extends React.Component {
         })
     }
 
+    // here可以加个debunce---未解决的问题
     handleInputChange =(e)=> {
         const name = e.target.value
         const {userArray} = this.state
@@ -53,7 +54,6 @@ class Login extends React.Component {
             }else{
                 newUserArray = newUserArray.concat(userArray.slice(0,userIndex),userArray.slice(userIndex+1),[username])
             }
-            console.log(newUserArray)
             localStorage.setItem('username',JSON.stringify(newUserArray))
         }else{ // userArray为空或者不包含username
             userArray.push(username)
@@ -78,7 +78,6 @@ class Login extends React.Component {
         const ipfsSetting = this.genIpfsSetting(username, isFirst)
         const orbitSetting = this.genOrbitSetting(username)
         this.resetUserArray(username) // 存储usename，或者重新排布userArray
-        console.log(this.state.isFirst)
 
         const orbitCoreOption = {
             // path where to keep generates keys
@@ -88,7 +87,6 @@ class Login extends React.Component {
             // how many messages to retrieve from history on joining a channel
             maxHistory: 2,
         } 
-
         const ipfsNode = new IPFS(ipfsSetting)
         ipfsNode.on('ready',()=>{
             const orbitNode = new OrbitDB(ipfsNode, orbitSetting.OrbitDataDir)

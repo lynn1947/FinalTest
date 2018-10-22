@@ -64,7 +64,7 @@
 /******/
 /******/ 	var hotApplyOnUpdate = true;
 /******/ 	// eslint-disable-next-line no-unused-vars
-/******/ 	var hotCurrentHash = "7aa19f9612f1bbbf7ef4";
+/******/ 	var hotCurrentHash = "c7d9a615d4f94b4b90a8";
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule;
@@ -27928,7 +27928,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".layout {\n  height: 100%;\n}\n.layout .layout-sider {\n  position: relative;\n}\n.layout .layout-sider .sider-header {\n  margin: 0 16px;\n  height: 64px;\n  display: flex;\n  align-items: center;\n}\n.layout .layout-sider .sider-header-logo {\n  height: 20px;\n  width: 30px;\n  background: rgba(255, 255, 255, 0.5);\n}\n.layout .layout-sider .sider-header-title {\n  color: #FFFFFF;\n  font-size: 14px;\n  margin-left: 10px;\n}\n.layout .layout-sider .sider-body {\n  margin: 10px;\n}\n.layout .layout-sider .sider-body-channelList {\n  display: flex;\n  justify-content: space-between;\n}\n.layout .layout-sider .sider-body-channelList .name {\n  color: #FFF;\n}\n.layout .layout-sider .sider-body-channelList .operation .more {\n  margin-right: 10px;\n}\n.layout .layout-sider .sider-footer {\n  position: absolute;\n  bottom: 20px;\n  width: 100%;\n  display: flex;\n  justify-content: space-around;\n  color: #FFF;\n}\n.layout .layout-main-header {\n  background: #FFF;\n  display: flex;\n  justify-content: flex-end;\n}\n.layout .layout-main-header .operation a {\n  margin-left: 10px;\n}\n.layout .layout-main-body {\n  margin: 10px;\n  background: #FFF;\n  height: 100%;\n}\n.layout .layout-main-footer {\n  height: 48px;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n", ""]);
+exports.push([module.i, ".layout {\n  height: 100%;\n}\n.layout .layout-sider {\n  position: relative;\n}\n.layout .layout-sider .sider-header {\n  margin: 0 16px;\n  height: 64px;\n  display: flex;\n  align-items: center;\n}\n.layout .layout-sider .sider-header-logo {\n  height: 20px;\n  width: 30px;\n  background: rgba(255, 255, 255, 0.5);\n}\n.layout .layout-sider .sider-header-title {\n  color: #FFFFFF;\n  font-size: 14px;\n  margin-left: 10px;\n}\n.layout .layout-sider .sider-body {\n  margin: 10px;\n}\n.layout .layout-sider .sider-body-channelList {\n  display: flex;\n  justify-content: space-between;\n}\n.layout .layout-sider .sider-body-channelList .name {\n  color: #FFF;\n}\n.layout .layout-sider .sider-body-channelList .operation .more {\n  margin-right: 10px;\n}\n.layout .layout-sider .sider-body-tip {\n  text-align: center;\n  color: #FFF;\n  font-size: 14px;\n}\n.layout .layout-sider .sider-footer {\n  position: absolute;\n  bottom: 20px;\n  width: 100%;\n  display: flex;\n  justify-content: space-around;\n  color: #FFF;\n}\n.layout .layout-main-header {\n  background: #FFF;\n  display: flex;\n  justify-content: flex-end;\n}\n.layout .layout-main-header .operation a {\n  margin-left: 10px;\n}\n.layout .layout-main-body {\n  margin: 10px;\n  background: #FFF;\n  height: 100%;\n}\n.layout .layout-main-footer {\n  height: 48px;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n", ""]);
 
 // exports
 
@@ -27947,7 +27947,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".channelName-submit {\n  width: 100%;\n  text-align: center;\n}\n", ""]);
+exports.push([module.i, ".newChannel {\n  text-align: center;\n}\n.newChannel-radiogroup {\n  width: 100%;\n  display: flex;\n  justify-content: flex-start;\n}\n.newChannel-newInfo-infoItem {\n  margin-top: 20px;\n  display: flex;\n  justify-content: space-between;\n}\n.newChannel-newInfo-infoItem .label {\n  margin: 0px;\n  padding: 0px;\n}\n.newChannel-newInfo-infoItem .input {\n  width: 350px;\n}\n.newChannel-newInfo .joiners-tip {\n  padding: 0px;\n  margin: 0px;\n  margin-top: 20px;\n}\n.newChannel-newInfo-button {\n  margin-top: 20px;\n}\n", ""]);
 
 // exports
 
@@ -31530,6 +31530,49 @@ module.exports = Uint8Array;
 
 /***/ }),
 
+/***/ "./node_modules/lodash/_apply.js":
+/*!***************************************!*\
+  !*** ./node_modules/lodash/_apply.js ***!
+  \***************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+/**
+ * A faster alternative to `Function#apply`, this function invokes `func`
+ * with the `this` binding of `thisArg` and the arguments of `args`.
+ *
+ * @private
+ * @param {Function} func The function to invoke.
+ * @param {*} thisArg The `this` binding of `func`.
+ * @param {Array} args The arguments to invoke `func` with.
+ * @returns {*} Returns the result of `func`.
+ */
+function apply(func, thisArg, args) {
+  switch (args.length) {
+    case 0: return func.call(thisArg);
+    case 1: return func.call(thisArg, args[0]);
+    case 2: return func.call(thisArg, args[0], args[1]);
+    case 3: return func.call(thisArg, args[0], args[1], args[2]);
+  }
+  return func.apply(thisArg, args);
+}
+
+module.exports = apply;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/_arrayLikeKeys.js":
+/*!***********************************************************************************!*\
+  !*** delegated ./node_modules/lodash/_arrayLikeKeys.js from dll-reference vendor ***!
+  \***********************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = (__webpack_require__(/*! dll-reference vendor */ "dll-reference vendor"))("./node_modules/lodash/_arrayLikeKeys.js");
+
+/***/ }),
+
 /***/ "./node_modules/lodash/_assignMergeValue.js":
 /*!**************************************************!*\
   !*** ./node_modules/lodash/_assignMergeValue.js ***!
@@ -31562,24 +31605,77 @@ module.exports = assignMergeValue;
 /***/ }),
 
 /***/ "./node_modules/lodash/_assignValue.js":
-/*!*********************************************************************************!*\
-  !*** delegated ./node_modules/lodash/_assignValue.js from dll-reference vendor ***!
-  \*********************************************************************************/
+/*!*********************************************!*\
+  !*** ./node_modules/lodash/_assignValue.js ***!
+  \*********************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = (__webpack_require__(/*! dll-reference vendor */ "dll-reference vendor"))("./node_modules/lodash/_assignValue.js");
+var baseAssignValue = __webpack_require__(/*! ./_baseAssignValue */ "./node_modules/lodash/_baseAssignValue.js"),
+    eq = __webpack_require__(/*! ./eq */ "./node_modules/lodash/eq.js");
+
+/** Used for built-in method references. */
+var objectProto = Object.prototype;
+
+/** Used to check objects for own properties. */
+var hasOwnProperty = objectProto.hasOwnProperty;
+
+/**
+ * Assigns `value` to `key` of `object` if the existing value is not equivalent
+ * using [`SameValueZero`](http://ecma-international.org/ecma-262/7.0/#sec-samevaluezero)
+ * for equality comparisons.
+ *
+ * @private
+ * @param {Object} object The object to modify.
+ * @param {string} key The key of the property to assign.
+ * @param {*} value The value to assign.
+ */
+function assignValue(object, key, value) {
+  var objValue = object[key];
+  if (!(hasOwnProperty.call(object, key) && eq(objValue, value)) ||
+      (value === undefined && !(key in object))) {
+    baseAssignValue(object, key, value);
+  }
+}
+
+module.exports = assignValue;
+
 
 /***/ }),
 
 /***/ "./node_modules/lodash/_baseAssignValue.js":
-/*!*************************************************************************************!*\
-  !*** delegated ./node_modules/lodash/_baseAssignValue.js from dll-reference vendor ***!
-  \*************************************************************************************/
+/*!*************************************************!*\
+  !*** ./node_modules/lodash/_baseAssignValue.js ***!
+  \*************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = (__webpack_require__(/*! dll-reference vendor */ "dll-reference vendor"))("./node_modules/lodash/_baseAssignValue.js");
+var defineProperty = __webpack_require__(/*! ./_defineProperty */ "./node_modules/lodash/_defineProperty.js");
+
+/**
+ * The base implementation of `assignValue` and `assignMergeValue` without
+ * value checks.
+ *
+ * @private
+ * @param {Object} object The object to modify.
+ * @param {string} key The key of the property to assign.
+ * @param {*} value The value to assign.
+ */
+function baseAssignValue(object, key, value) {
+  if (key == '__proto__' && defineProperty) {
+    defineProperty(object, key, {
+      'configurable': true,
+      'enumerable': true,
+      'value': value,
+      'writable': true
+    });
+  } else {
+    object[key] = value;
+  }
+}
+
+module.exports = baseAssignValue;
+
 
 /***/ }),
 
@@ -31688,6 +31784,50 @@ function baseHas(object, key) {
 }
 
 module.exports = baseHas;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/_baseKeysIn.js":
+/*!********************************************!*\
+  !*** ./node_modules/lodash/_baseKeysIn.js ***!
+  \********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var isObject = __webpack_require__(/*! ./isObject */ "./node_modules/lodash/isObject.js"),
+    isPrototype = __webpack_require__(/*! ./_isPrototype */ "./node_modules/lodash/_isPrototype.js"),
+    nativeKeysIn = __webpack_require__(/*! ./_nativeKeysIn */ "./node_modules/lodash/_nativeKeysIn.js");
+
+/** Used for built-in method references. */
+var objectProto = Object.prototype;
+
+/** Used to check objects for own properties. */
+var hasOwnProperty = objectProto.hasOwnProperty;
+
+/**
+ * The base implementation of `_.keysIn` which doesn't treat sparse arrays as dense.
+ *
+ * @private
+ * @param {Object} object The object to query.
+ * @returns {Array} Returns the array of property names.
+ */
+function baseKeysIn(object) {
+  if (!isObject(object)) {
+    return nativeKeysIn(object);
+  }
+  var isProto = isPrototype(object),
+      result = [];
+
+  for (var key in object) {
+    if (!(key == 'constructor' && (isProto || !hasOwnProperty.call(object, key)))) {
+      result.push(key);
+    }
+  }
+  return result;
+}
+
+module.exports = baseKeysIn;
 
 
 /***/ }),
@@ -31850,6 +31990,34 @@ module.exports = baseMergeDeep;
 
 /***/ }),
 
+/***/ "./node_modules/lodash/_baseRest.js":
+/*!******************************************!*\
+  !*** ./node_modules/lodash/_baseRest.js ***!
+  \******************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var identity = __webpack_require__(/*! ./identity */ "./node_modules/lodash/identity.js"),
+    overRest = __webpack_require__(/*! ./_overRest */ "./node_modules/lodash/_overRest.js"),
+    setToString = __webpack_require__(/*! ./_setToString */ "./node_modules/lodash/_setToString.js");
+
+/**
+ * The base implementation of `_.rest` which doesn't validate or coerce arguments.
+ *
+ * @private
+ * @param {Function} func The function to apply a rest parameter to.
+ * @param {number} [start=func.length-1] The start position of the rest parameter.
+ * @returns {Function} Returns the new function.
+ */
+function baseRest(func, start) {
+  return setToString(overRest(func, start, identity), func + '');
+}
+
+module.exports = baseRest;
+
+
+/***/ }),
+
 /***/ "./node_modules/lodash/_baseSet.js":
 /*!*****************************************!*\
   !*** ./node_modules/lodash/_baseSet.js ***!
@@ -31904,6 +32072,39 @@ function baseSet(object, path, value, customizer) {
 }
 
 module.exports = baseSet;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/_baseSetToString.js":
+/*!*************************************************!*\
+  !*** ./node_modules/lodash/_baseSetToString.js ***!
+  \*************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var constant = __webpack_require__(/*! ./constant */ "./node_modules/lodash/constant.js"),
+    defineProperty = __webpack_require__(/*! ./_defineProperty */ "./node_modules/lodash/_defineProperty.js"),
+    identity = __webpack_require__(/*! ./identity */ "./node_modules/lodash/identity.js");
+
+/**
+ * The base implementation of `setToString` without support for hot loop shorting.
+ *
+ * @private
+ * @param {Function} func The function to modify.
+ * @param {Function} string The `toString` result.
+ * @returns {Function} Returns `func`.
+ */
+var baseSetToString = !defineProperty ? identity : function(func, string) {
+  return defineProperty(func, 'toString', {
+    'configurable': true,
+    'enumerable': false,
+    'value': constant(string),
+    'writable': true
+  });
+};
+
+module.exports = baseSetToString;
 
 
 /***/ }),
@@ -32052,24 +32253,101 @@ module.exports = copyArray;
 /***/ }),
 
 /***/ "./node_modules/lodash/_copyObject.js":
-/*!********************************************************************************!*\
-  !*** delegated ./node_modules/lodash/_copyObject.js from dll-reference vendor ***!
-  \********************************************************************************/
+/*!********************************************!*\
+  !*** ./node_modules/lodash/_copyObject.js ***!
+  \********************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = (__webpack_require__(/*! dll-reference vendor */ "dll-reference vendor"))("./node_modules/lodash/_copyObject.js");
+var assignValue = __webpack_require__(/*! ./_assignValue */ "./node_modules/lodash/_assignValue.js"),
+    baseAssignValue = __webpack_require__(/*! ./_baseAssignValue */ "./node_modules/lodash/_baseAssignValue.js");
+
+/**
+ * Copies properties of `source` to `object`.
+ *
+ * @private
+ * @param {Object} source The object to copy properties from.
+ * @param {Array} props The property identifiers to copy.
+ * @param {Object} [object={}] The object to copy properties to.
+ * @param {Function} [customizer] The function to customize copied values.
+ * @returns {Object} Returns `object`.
+ */
+function copyObject(source, props, object, customizer) {
+  var isNew = !object;
+  object || (object = {});
+
+  var index = -1,
+      length = props.length;
+
+  while (++index < length) {
+    var key = props[index];
+
+    var newValue = customizer
+      ? customizer(object[key], source[key], key, object, source)
+      : undefined;
+
+    if (newValue === undefined) {
+      newValue = source[key];
+    }
+    if (isNew) {
+      baseAssignValue(object, key, newValue);
+    } else {
+      assignValue(object, key, newValue);
+    }
+  }
+  return object;
+}
+
+module.exports = copyObject;
+
 
 /***/ }),
 
 /***/ "./node_modules/lodash/_createAssigner.js":
-/*!************************************************************************************!*\
-  !*** delegated ./node_modules/lodash/_createAssigner.js from dll-reference vendor ***!
-  \************************************************************************************/
+/*!************************************************!*\
+  !*** ./node_modules/lodash/_createAssigner.js ***!
+  \************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = (__webpack_require__(/*! dll-reference vendor */ "dll-reference vendor"))("./node_modules/lodash/_createAssigner.js");
+var baseRest = __webpack_require__(/*! ./_baseRest */ "./node_modules/lodash/_baseRest.js"),
+    isIterateeCall = __webpack_require__(/*! ./_isIterateeCall */ "./node_modules/lodash/_isIterateeCall.js");
+
+/**
+ * Creates a function like `_.assign`.
+ *
+ * @private
+ * @param {Function} assigner The function to assign values.
+ * @returns {Function} Returns the new assigner function.
+ */
+function createAssigner(assigner) {
+  return baseRest(function(object, sources) {
+    var index = -1,
+        length = sources.length,
+        customizer = length > 1 ? sources[length - 1] : undefined,
+        guard = length > 2 ? sources[2] : undefined;
+
+    customizer = (assigner.length > 3 && typeof customizer == 'function')
+      ? (length--, customizer)
+      : undefined;
+
+    if (guard && isIterateeCall(sources[0], sources[1], guard)) {
+      customizer = length < 3 ? undefined : customizer;
+      length = 1;
+    }
+    object = Object(object);
+    while (++index < length) {
+      var source = sources[index];
+      if (source) {
+        assigner(object, source, index, customizer);
+      }
+    }
+    return object;
+  });
+}
+
+module.exports = createAssigner;
+
 
 /***/ }),
 
@@ -32106,6 +32384,39 @@ function createBaseFor(fromRight) {
 
 module.exports = createBaseFor;
 
+
+/***/ }),
+
+/***/ "./node_modules/lodash/_defineProperty.js":
+/*!************************************************!*\
+  !*** ./node_modules/lodash/_defineProperty.js ***!
+  \************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var getNative = __webpack_require__(/*! ./_getNative */ "./node_modules/lodash/_getNative.js");
+
+var defineProperty = (function() {
+  try {
+    var func = getNative(Object, 'defineProperty');
+    func({}, '', {});
+    return func;
+  } catch (e) {}
+}());
+
+module.exports = defineProperty;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/_getNative.js":
+/*!*******************************************************************************!*\
+  !*** delegated ./node_modules/lodash/_getNative.js from dll-reference vendor ***!
+  \*******************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = (__webpack_require__(/*! dll-reference vendor */ "dll-reference vendor"))("./node_modules/lodash/_getNative.js");
 
 /***/ }),
 
@@ -32216,6 +32527,47 @@ module.exports = (__webpack_require__(/*! dll-reference vendor */ "dll-reference
 
 /***/ }),
 
+/***/ "./node_modules/lodash/_isIterateeCall.js":
+/*!************************************************!*\
+  !*** ./node_modules/lodash/_isIterateeCall.js ***!
+  \************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var eq = __webpack_require__(/*! ./eq */ "./node_modules/lodash/eq.js"),
+    isArrayLike = __webpack_require__(/*! ./isArrayLike */ "./node_modules/lodash/isArrayLike.js"),
+    isIndex = __webpack_require__(/*! ./_isIndex */ "./node_modules/lodash/_isIndex.js"),
+    isObject = __webpack_require__(/*! ./isObject */ "./node_modules/lodash/isObject.js");
+
+/**
+ * Checks if the given arguments are from an iteratee call.
+ *
+ * @private
+ * @param {*} value The potential iteratee value argument.
+ * @param {*} index The potential iteratee index or key argument.
+ * @param {*} object The potential iteratee object argument.
+ * @returns {boolean} Returns `true` if the arguments are from an iteratee call,
+ *  else `false`.
+ */
+function isIterateeCall(value, index, object) {
+  if (!isObject(object)) {
+    return false;
+  }
+  var type = typeof index;
+  if (type == 'number'
+        ? (isArrayLike(object) && isIndex(index, object.length))
+        : (type == 'string' && index in object)
+      ) {
+    return eq(object[index], value);
+  }
+  return false;
+}
+
+module.exports = isIterateeCall;
+
+
+/***/ }),
+
 /***/ "./node_modules/lodash/_isPrototype.js":
 /*!*********************************************************************************!*\
   !*** delegated ./node_modules/lodash/_isPrototype.js from dll-reference vendor ***!
@@ -32227,6 +32579,37 @@ module.exports = (__webpack_require__(/*! dll-reference vendor */ "dll-reference
 
 /***/ }),
 
+/***/ "./node_modules/lodash/_nativeKeysIn.js":
+/*!**********************************************!*\
+  !*** ./node_modules/lodash/_nativeKeysIn.js ***!
+  \**********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+/**
+ * This function is like
+ * [`Object.keys`](http://ecma-international.org/ecma-262/7.0/#sec-object.keys)
+ * except that it includes inherited enumerable properties.
+ *
+ * @private
+ * @param {Object} object The object to query.
+ * @returns {Array} Returns the array of property names.
+ */
+function nativeKeysIn(object) {
+  var result = [];
+  if (object != null) {
+    for (var key in Object(object)) {
+      result.push(key);
+    }
+  }
+  return result;
+}
+
+module.exports = nativeKeysIn;
+
+
+/***/ }),
+
 /***/ "./node_modules/lodash/_overArg.js":
 /*!*****************************************************************************!*\
   !*** delegated ./node_modules/lodash/_overArg.js from dll-reference vendor ***!
@@ -32235,6 +32618,53 @@ module.exports = (__webpack_require__(/*! dll-reference vendor */ "dll-reference
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = (__webpack_require__(/*! dll-reference vendor */ "dll-reference vendor"))("./node_modules/lodash/_overArg.js");
+
+/***/ }),
+
+/***/ "./node_modules/lodash/_overRest.js":
+/*!******************************************!*\
+  !*** ./node_modules/lodash/_overRest.js ***!
+  \******************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var apply = __webpack_require__(/*! ./_apply */ "./node_modules/lodash/_apply.js");
+
+/* Built-in method references for those with the same name as other `lodash` methods. */
+var nativeMax = Math.max;
+
+/**
+ * A specialized version of `baseRest` which transforms the rest array.
+ *
+ * @private
+ * @param {Function} func The function to apply a rest parameter to.
+ * @param {number} [start=func.length-1] The start position of the rest parameter.
+ * @param {Function} transform The rest array transform.
+ * @returns {Function} Returns the new function.
+ */
+function overRest(func, start, transform) {
+  start = nativeMax(start === undefined ? (func.length - 1) : start, 0);
+  return function() {
+    var args = arguments,
+        index = -1,
+        length = nativeMax(args.length - start, 0),
+        array = Array(length);
+
+    while (++index < length) {
+      array[index] = args[start + index];
+    }
+    index = -1;
+    var otherArgs = Array(start + 1);
+    while (++index < start) {
+      otherArgs[index] = args[index];
+    }
+    otherArgs[start] = transform(array);
+    return apply(func, this, otherArgs);
+  };
+}
+
+module.exports = overRest;
+
 
 /***/ }),
 
@@ -32271,6 +32701,79 @@ function safeGet(object, key) {
 }
 
 module.exports = safeGet;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/_setToString.js":
+/*!*********************************************!*\
+  !*** ./node_modules/lodash/_setToString.js ***!
+  \*********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var baseSetToString = __webpack_require__(/*! ./_baseSetToString */ "./node_modules/lodash/_baseSetToString.js"),
+    shortOut = __webpack_require__(/*! ./_shortOut */ "./node_modules/lodash/_shortOut.js");
+
+/**
+ * Sets the `toString` method of `func` to return `string`.
+ *
+ * @private
+ * @param {Function} func The function to modify.
+ * @param {Function} string The `toString` result.
+ * @returns {Function} Returns `func`.
+ */
+var setToString = shortOut(baseSetToString);
+
+module.exports = setToString;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/_shortOut.js":
+/*!******************************************!*\
+  !*** ./node_modules/lodash/_shortOut.js ***!
+  \******************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+/** Used to detect hot functions by number of calls within a span of milliseconds. */
+var HOT_COUNT = 800,
+    HOT_SPAN = 16;
+
+/* Built-in method references for those with the same name as other `lodash` methods. */
+var nativeNow = Date.now;
+
+/**
+ * Creates a function that'll short out and invoke `identity` instead
+ * of `func` when it's called `HOT_COUNT` or more times in `HOT_SPAN`
+ * milliseconds.
+ *
+ * @private
+ * @param {Function} func The function to restrict.
+ * @returns {Function} Returns the new shortable function.
+ */
+function shortOut(func) {
+  var count = 0,
+      lastCalled = 0;
+
+  return function() {
+    var stamp = nativeNow(),
+        remaining = HOT_SPAN - (stamp - lastCalled);
+
+    lastCalled = stamp;
+    if (remaining > 0) {
+      if (++count >= HOT_COUNT) {
+        return arguments[0];
+      }
+    } else {
+      count = 0;
+    }
+    return func.apply(undefined, arguments);
+  };
+}
+
+module.exports = shortOut;
 
 
 /***/ }),
@@ -32433,6 +32936,43 @@ module.exports = stackSet;
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = (__webpack_require__(/*! dll-reference vendor */ "dll-reference vendor"))("./node_modules/lodash/_toKey.js");
+
+/***/ }),
+
+/***/ "./node_modules/lodash/constant.js":
+/*!*****************************************!*\
+  !*** ./node_modules/lodash/constant.js ***!
+  \*****************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+/**
+ * Creates a function that returns `value`.
+ *
+ * @static
+ * @memberOf _
+ * @since 2.4.0
+ * @category Util
+ * @param {*} value The value to return from the new function.
+ * @returns {Function} Returns the new constant function.
+ * @example
+ *
+ * var objects = _.times(2, _.constant({ 'a': 1 }));
+ *
+ * console.log(objects);
+ * // => [{ 'a': 1 }, { 'a': 1 }]
+ *
+ * console.log(objects[0] === objects[1]);
+ * // => true
+ */
+function constant(value) {
+  return function() {
+    return value;
+  };
+}
+
+module.exports = constant;
+
 
 /***/ }),
 
@@ -32705,6 +33245,17 @@ module.exports = has;
 
 /***/ }),
 
+/***/ "./node_modules/lodash/identity.js":
+/*!*****************************************************************************!*\
+  !*** delegated ./node_modules/lodash/identity.js from dll-reference vendor ***!
+  \*****************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = (__webpack_require__(/*! dll-reference vendor */ "dll-reference vendor"))("./node_modules/lodash/identity.js");
+
+/***/ }),
+
 /***/ "./node_modules/lodash/isArguments.js":
 /*!********************************************************************************!*\
   !*** delegated ./node_modules/lodash/isArguments.js from dll-reference vendor ***!
@@ -32933,13 +33484,45 @@ module.exports = (__webpack_require__(/*! dll-reference vendor */ "dll-reference
 /***/ }),
 
 /***/ "./node_modules/lodash/keysIn.js":
-/*!***************************************************************************!*\
-  !*** delegated ./node_modules/lodash/keysIn.js from dll-reference vendor ***!
-  \***************************************************************************/
+/*!***************************************!*\
+  !*** ./node_modules/lodash/keysIn.js ***!
+  \***************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = (__webpack_require__(/*! dll-reference vendor */ "dll-reference vendor"))("./node_modules/lodash/keysIn.js");
+var arrayLikeKeys = __webpack_require__(/*! ./_arrayLikeKeys */ "./node_modules/lodash/_arrayLikeKeys.js"),
+    baseKeysIn = __webpack_require__(/*! ./_baseKeysIn */ "./node_modules/lodash/_baseKeysIn.js"),
+    isArrayLike = __webpack_require__(/*! ./isArrayLike */ "./node_modules/lodash/isArrayLike.js");
+
+/**
+ * Creates an array of the own and inherited enumerable property names of `object`.
+ *
+ * **Note:** Non-object values are coerced to objects.
+ *
+ * @static
+ * @memberOf _
+ * @since 3.0.0
+ * @category Object
+ * @param {Object} object The object to query.
+ * @returns {Array} Returns the array of property names.
+ * @example
+ *
+ * function Foo() {
+ *   this.a = 1;
+ *   this.b = 2;
+ * }
+ *
+ * Foo.prototype.c = 3;
+ *
+ * _.keysIn(new Foo);
+ * // => ['a', 'b', 'c'] (iteration order is not guaranteed)
+ */
+function keysIn(object) {
+  return isArrayLike(object) ? arrayLikeKeys(object, true) : baseKeysIn(object);
+}
+
+module.exports = keysIn;
+
 
 /***/ }),
 
@@ -53151,36 +53734,32 @@ Object.defineProperty(exports, "__esModule", {
 });
 // defaultIpfsDaemonSettings
 var genIpfsDaemonSettings = function genIpfsDaemonSettings(ipfsDataDir) {
+  var isFirst = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : true;
+
   return {
-    IpfsDataDir: ipfsDataDir,
-    Addresses: {
-      API: '/ip4/127.0.0.1/tcp/0',
-      Swarm: ['/ip4/0.0.0.0/tcp/0'],
-      Gateway: '/ip4/0.0.0.0/tcp/0'
-    },
-    // How to use a local webrtc-star server: 
-    // https://github.com/libp2p/js-libp2p-webrtc-star
-    // SignalServer: '0.0.0.0:9090', // localhost
-    // SignalServer: '178.62.241.75', // old dev server
-    SignalServer: 'star-signal.cloud.ipfs.team', // IPFS dev server
-    API: {
-      HTTPHeaders: {
-        "Access-Control-Allow-Origin": ['*'],
-        "Access-Control-Allow-Methods": ["PUT", "GET", "POST"],
-        "Access-Control-Allow-Credentials": ["true"]
-      }
-    },
-    Discovery: {
-      MDNS: {
-        Enabled: false,
-        Interval: 10
-      },
-      webRTCStar: {
-        Enabled: true
-      }
-    },
+    repo: ipfsDataDir,
+    init: isFirst, // 根据所输入的名称来决定是否初始化一个ipfs节点
     EXPERIMENTAL: {
       pubsub: true
+    },
+    config: {
+      Addresses: {
+        API: '/ip4/127.0.0.1/tcp/0',
+        Swarm: ['/ip4/0.0.0.0/tcp/0'],
+        Gateway: '/ip4/0.0.0.0/tcp/0'
+      },
+      Discovery: {
+        MDNS: {
+          Enabled: false,
+          Interval: 10
+        },
+        webRTCStar: {
+          Enabled: true
+        }
+      },
+      Bootstrap: [
+      // 这8个节点，单纯通过ipfs ping id 是能够ping的通的，也就是可以认为这几个节点是能够联通的，如果不能够还是报错的话，那就是通信协议的问题了
+      '/dns4/ams-1.bootstrap.libp2p.io/tcp/443/wss/ipfs/QmSoLer265NRgSp2LA3dPaeykiS1J6DifTC88f5uVQKNAd', '/dns4/lon-1.bootstrap.libp2p.io/tcp/443/wss/ipfs/QmSoLMeWqB7YGVLJN3pNLQpmmEk35v6wYtsMGLzSr5QBU3', '/dns4/sfo-3.bootstrap.libp2p.io/tcp/443/wss/ipfs/QmSoLPppuBtQSGwKDZT2M73ULpjvfd3aZ6ha4oFGL1KrGM', '/dns4/sgp-1.bootstrap.libp2p.io/tcp/443/wss/ipfs/QmSoLSafTMBsPKadTEgaXctDQVcqN88CNLHXMkTNwMKPnu', '/dns4/nyc-1.bootstrap.libp2p.io/tcp/443/wss/ipfs/QmSoLueR4xBeUbY9WZ9xGUUxunbKWcrNFTDAadQJmocnWm', '/dns4/nyc-2.bootstrap.libp2p.io/tcp/443/wss/ipfs/QmSoLV4Bbm51jM9C4gDYZQ9Cy3U6aXMJDAbzgu2fzaDs64', '/dns4/wss0.bootstrap.libp2p.io/tcp/443/wss/ipfs/QmZMxNdpMkewiVZLMRxaNxUeZpDUb34pWjZ1kZvsd16Zic', '/dns4/wss1.bootstrap.libp2p.io/tcp/443/wss/ipfs/Qmbut9Ywz9YEDrz8ySBSgWyJk41Uvm2QJPhwDJzJyGFsD6']
     }
   };
 };
@@ -53273,17 +53852,48 @@ function connectFactory(mapStateToProps, actions) {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
+exports.debunce = exports.connect = undefined;
 
 var _connect = __webpack_require__(/*! ./connect */ "./src/common/util/connect.js");
 
-Object.defineProperty(exports, 'connect', {
-  enumerable: true,
-  get: function get() {
-    return _interopRequireDefault(_connect).default;
-  }
-});
+var _connect2 = _interopRequireDefault(_connect);
+
+var _util = __webpack_require__(/*! ./util */ "./src/common/util/util.js");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+exports.connect = _connect2.default;
+exports.debunce = _util.debunce;
+
+/***/ }),
+
+/***/ "./src/common/util/util.js":
+/*!*********************************!*\
+  !*** ./src/common/util/util.js ***!
+  \*********************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var debunce = function debunce(func, interval) {
+    var timer = undefined;
+    return function () {
+        var _arguments = arguments;
+
+        clearTimeout(timer);
+        timer = setTimeout(function () {
+            func.apply(_arguments);
+        }, interval);
+    };
+};
+
+exports.default = { debunce: debunce };
 
 /***/ }),
 
@@ -54307,7 +54917,7 @@ var QuillEditor = function (_React$Component) {
                 _react2.default.createElement(
                     'div',
                     { className: 'quillEditor-wrapper' },
-                    _react2.default.createElement(_yjsQuill2.default, null),
+                    _react2.default.createElement(_yjsQuill2.default, { ipfs: this.props.ipfs }),
                     _react2.default.createElement(
                         'div',
                         { id: 'quillEditor', className: 'quillEditor' },
@@ -54415,13 +55025,13 @@ var _react = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 
 var _react2 = _interopRequireDefault(_react);
 
-var _ipfs = __webpack_require__(/*! ipfs */ "./node_modules/ipfs/src/core/index.js");
-
-var _ipfs2 = _interopRequireDefault(_ipfs);
-
 var _quill = __webpack_require__(/*! quill */ "./node_modules/quill/dist/quill.js");
 
 var _quill2 = _interopRequireDefault(_quill);
+
+var _ipfs = __webpack_require__(/*! ipfs */ "./node_modules/ipfs/src/core/index.js");
+
+var _ipfs2 = _interopRequireDefault(_ipfs);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -54438,13 +55048,6 @@ __webpack_require__(/*! y-array */ "./node_modules/y-array/src/Array.js")(Y);
 __webpack_require__(/*! y-richtext */ "./node_modules/y-richtext/src/Richtext.js")(Y);
 __webpack_require__(/*! y-ipfs-connector */ "./node_modules/y-ipfs-connector/src/index.js")(Y);
 
-var ipfs = new _ipfs2.default({
-    repo: 'yjs-demo-ipfs',
-    EXPERIMENTAL: {
-        pubsub: true
-    }
-}); // 在后续被替换，用提前生成好的以username命名的repo来代替
-
 var YjsQuill = function (_React$Component) {
     _inherits(YjsQuill, _React$Component);
 
@@ -54454,21 +55057,16 @@ var YjsQuill = function (_React$Component) {
         var _this = _possibleConstructorReturn(this, (YjsQuill.__proto__ || Object.getPrototypeOf(YjsQuill)).call(this, props));
 
         _this.state = {};
+        _this.ipfs = _this.props.ipfs;
         return _this;
     }
 
     _createClass(YjsQuill, [{
         key: 'componentDidMount',
         value: function componentDidMount() {
-            ipfs.once('ready', function () {
-                ipfs.id(function (err, info) {
-                    if (err) throw err;
-                    console.log(info.id);
-                });
-                ipfs.swarm.addrs(function (err, addrs) {
-                    if (err) throw err;
-                    console.log(addrs);
-                });
+            var ipfs = this.ipfs;
+            ipfs.on('ready', function () {
+                console.log('ready');
             });
 
             Y({
@@ -54648,7 +55246,7 @@ var LeftBody = function (_React$Component) {
                     _react2.default.createElement(
                         'div',
                         { className: 'main-body-left' },
-                        _react2.default.createElement(QuillEditor, null)
+                        _react2.default.createElement(QuillEditor, { ipfs: this.props.pubInstance.ipfsNode })
                     ),
                     _react2.default.createElement(
                         'div',
@@ -54664,7 +55262,7 @@ var LeftBody = function (_React$Component) {
 }(_react2.default.Component);
 
 exports.default = (0, _index3.connect)(function (state) {
-    return _extends({}, state.channelList);
+    return _extends({}, state.LeftBody, state.login);
 }, actions)(LeftBody);
 
 // 右侧页面主题，包含文本编辑面板和聊天面板
@@ -54798,10 +55396,6 @@ var _input = __webpack_require__(/*! antd/lib/input */ "./node_modules/antd/lib/
 
 var _input2 = _interopRequireDefault(_input);
 
-var _form = __webpack_require__(/*! antd/lib/form */ "./node_modules/antd/lib/form/index.js");
-
-var _form2 = _interopRequireDefault(_form);
-
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -54810,25 +55404,31 @@ __webpack_require__(/*! antd/lib/icon/style */ "./node_modules/antd/lib/icon/sty
 
 __webpack_require__(/*! antd/lib/input/style */ "./node_modules/antd/lib/input/style/index.js");
 
-__webpack_require__(/*! antd/lib/form/style */ "./node_modules/antd/lib/form/style/index.js");
-
 var _react = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 
 var _react2 = _interopRequireDefault(_react);
 
-var _orbit_ = __webpack_require__(/*! orbit_ */ "./node_modules/orbit_/src/Orbit.js");
+var _path = __webpack_require__(/*! path */ "./node_modules/path-browserify/index.js");
 
-var _orbit_2 = _interopRequireDefault(_orbit_);
-
-var _orbitDb = __webpack_require__(/*! orbit-db */ "./node_modules/orbit-db/src/OrbitDB.js");
-
-var _orbitDb2 = _interopRequireDefault(_orbitDb);
+var _path2 = _interopRequireDefault(_path);
 
 var _ipfs = __webpack_require__(/*! ipfs */ "./node_modules/ipfs/src/core/index.js");
 
 var _ipfs2 = _interopRequireDefault(_ipfs);
 
+var _orbitDb = __webpack_require__(/*! orbit-db */ "./node_modules/orbit-db/src/OrbitDB.js");
+
+var _orbitDb2 = _interopRequireDefault(_orbitDb);
+
+var _orbit_ = __webpack_require__(/*! orbit_ */ "./node_modules/orbit_/src/Orbit.js");
+
+var _orbit_2 = _interopRequireDefault(_orbit_);
+
 var _index = __webpack_require__(/*! ./../../common/util/index */ "./src/common/util/index.js");
+
+var _index2 = __webpack_require__(/*! ./../../common/config/index */ "./src/common/config/index.js");
+
+var _index3 = _interopRequireDefault(_index2);
 
 var _action = __webpack_require__(/*! ./state/action */ "./src/containers/login/state/action.js");
 
@@ -54844,51 +55444,127 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; } // orbit_core,用于实现通信
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
+var genIpfsDaemonSettings = _index3.default.genIpfsDaemonSettings,
+    genOrbitSettings = _index3.default.genOrbitSettings;
 
-var FormItem = _form2.default.Item;
-var inputLayout = {
-    labelCol: {
-        span: 6
-    },
-    wrapperCol: {
-        span: 18
-    }
-};
+var Login = function (_React$Component) {
+    _inherits(Login, _React$Component);
 
-var LoginPage = function (_React$Component) {
-    _inherits(LoginPage, _React$Component);
+    function Login(props) {
+        _classCallCheck(this, Login);
 
-    function LoginPage(props) {
-        _classCallCheck(this, LoginPage);
+        var _this = _possibleConstructorReturn(this, (Login.__proto__ || Object.getPrototypeOf(Login)).call(this, props));
 
-        var _this = _possibleConstructorReturn(this, (LoginPage.__proto__ || Object.getPrototypeOf(LoginPage)).call(this, props));
+        _this.inputChange = function (e) {
+            var name = e.target.value;
+            var userArray = _this.state.userArray;
 
-        _this.handleLogin = function () {
-            // 需要检测是否已经存在database
-            // 登录以后生成以username命名的database，数据保存在本地硬盘上
-            // 保存现有的ipfs setting？？还是一次生成，只保存ipfs实例？？
-            var _this$props = _this.props,
-                form = _this$props.form,
-                startLogin = _this$props.startLogin;
-
-            var username = form.getFieldValue('username');
-            startLogin(username);
-            window.location.href = "./#/mainPage";
+            _this.setState({
+                username: name
+            }); // 同时将根据设定的username判定是否是第一次访问,同时要更新localStorage中的username
+            if (userArray !== null && userArray.indexOf(name) > -1) {
+                _this.setState({
+                    isFirst: false
+                });
+            }
         };
 
-        _this.orbit = _this.props.orbit;
+        _this.handleInputChange = function (e) {
+            (0, _index.debunce)(_this.inputChange, 1000);
+        };
+
+        _this.resetUserArray = function (username) {
+            // 根据username的值重新排布localstorgae中的username
+            var userArray = _this.state.userArray ? _this.state.userArray : [];
+            var newUserArray = [];
+            if (userArray !== null && userArray.indexOf(username) > -1) {
+                // 确保userArray存在并且username存在于userArrays
+                var userIndex = userArray.indexOf(username);
+                if (userIndex == userArray.length - 1) {
+                    newUserArray = newUserArray.concat(userArray); // username正好是userArray的最后一位，则直接复制userArray
+                } else {
+                    newUserArray = newUserArray.concat(userArray.slice(0, userIndex), userArray.slice(userIndex + 1), [username]);
+                }
+                localStorage.setItem('username', JSON.stringify(newUserArray));
+            } else {
+                // userArray为空或者不包含username
+                userArray.push(username);
+                localStorage.setItem('username', JSON.stringify(userArray));
+            }
+        };
+
+        _this.genIpfsSetting = function (username, isFirst) {
+            var ipfsDatadir = _path2.default.join('orbit', '/' + username, '/ipfs'); // 生成形如/orbit/username/ipfs路径
+            return Object.assign({}, genIpfsDaemonSettings(ipfsDatadir, isFirst));
+        };
+
+        _this.genOrbitSetting = function (username) {
+            var orbitDatadir = _path2.default.join('/orbit/', '/' + username); // 生成形如/orbit/username路径
+            return Object.assign({}, genOrbitSettings(orbitDatadir));
+        };
+
+        _this.handleLogin = function () {
+            // 根据username去产生相应的setting
+            var _this$state = _this.state,
+                username = _this$state.username,
+                isFirst = _this$state.isFirst;
+            var _this$props = _this.props,
+                startLogin = _this$props.startLogin,
+                updateFirst = _this$props.updateFirst;
+
+            var ipfsSetting = _this.genIpfsSetting(username, isFirst);
+            var orbitSetting = _this.genOrbitSetting(username);
+            _this.resetUserArray(username); // 存储usename，或者重新排布userArray
+
+            var orbitCoreOption = {
+                // path where to keep generates keys
+                keystorePath: _path2.default.join(orbitSetting.OrbitDataDir, "/data/keys"),
+                // path to orbit-db cache file
+                cachePath: _path2.default.join(orbitSetting.OrbitDataDir, "/data/orbit-db"),
+                // how many messages to retrieve from history on joining a channel
+                maxHistory: 2
+            };
+            var ipfsNode = new _ipfs2.default(ipfsSetting);
+            ipfsNode.on('ready', function () {
+                var orbitNode = new _orbitDb2.default(ipfsNode, orbitSetting.OrbitDataDir);
+                var orbitCore = new _orbit_2.default(ipfsNode, orbitCoreOption);
+                console.log(orbitNode);
+                console.log(orbitCore)({ ipfsNode: ipfsNode, orbitNode: orbitNode, orbitCore: orbitCore });
+                updateFirst(isFirst);
+                window.location.href = './#/mainPage';
+            });
+        };
+
+        _this.state = {
+            username: '',
+            isFirst: true,
+            userArray: []
+        };
         return _this;
     }
 
-    _createClass(LoginPage, [{
-        key: 'componentDidMount',
-        value: function componentDidMount() {}
+    _createClass(Login, [{
+        key: 'componentWillMount',
+        value: function componentWillMount() {
+            // 获取本地存储username数组
+            var userArray = JSON.parse(localStorage.getItem('username'));
+            this.setState({
+                userArray: userArray
+            });
+        }
+
+        // here可以加个debunce
+
+        // debunce的inputChange
+
     }, {
         key: 'render',
         value: function render() {
-            var getFieldDecorator = this.props.form.getFieldDecorator;
+            var _this2 = this;
+
+            var username = this.state.username;
 
             return _react2.default.createElement(
                 'div',
@@ -54909,23 +55585,14 @@ var LoginPage = function (_React$Component) {
                     _react2.default.createElement(
                         'div',
                         { className: 'loginPage-form' },
-                        _react2.default.createElement(
-                            _form2.default,
-                            { style: { width: '100%' } },
-                            _react2.default.createElement(
-                                FormItem,
-                                _extends({ label: '\u7528\u6237\u540D' }, inputLayout, { style: { margin: 0, padding: 0 } }),
-                                getFieldDecorator('username', {
-                                    rules: [{
-                                        required: true,
-                                        message: 'Login needs your username firstly'
-                                    }]
-                                })(_react2.default.createElement(_input2.default, {
-                                    className: 'loginPage-form-username',
-                                    placeholder: 'input your username'
-                                }))
-                            )
-                        ),
+                        _react2.default.createElement(_input2.default, {
+                            className: 'loginPage-form-username',
+                            placeholder: 'input your username',
+                            value: username,
+                            onChange: function onChange(e) {
+                                return _this2.handleInputChange(e);
+                            }
+                        }),
                         _react2.default.createElement(
                             'div',
                             { className: 'loginPage-form-tip' },
@@ -54954,10 +55621,8 @@ var LoginPage = function (_React$Component) {
         }
     }]);
 
-    return LoginPage;
+    return Login;
 }(_react2.default.Component);
-
-var Login = _form2.default.create()(LoginPage);
 
 exports.default = (0, _index.connect)(function (state) {
     return _extends({}, state.login);
@@ -55038,13 +55703,20 @@ Object.defineProperty(exports, "__esModule", {
 var startLogin = exports.startLogin = function startLogin(data) {
     return function (dispatch, getState) {
         dispatch({
-            type: 'START_APP',
-            data: {
-                username: data
-            }
+            type: 'INIT_APP',
+            data: data
         });
     };
 }; // dispatch这个action的时候传入参数username
+
+var updateFirst = exports.updateFirst = function updateFirst(data) {
+    return function (dispatch, getState) {
+        dispatch({
+            type: 'UPDATE_FIRST',
+            data: data
+        });
+    };
+};
 
 /***/ }),
 
@@ -55067,31 +55739,15 @@ var _immutable = __webpack_require__(/*! immutable */ "./node_modules/immutable/
 
 var _immutable2 = _interopRequireDefault(_immutable);
 
-var _index = __webpack_require__(/*! ./../../../common/config/index */ "./src/common/config/index.js");
-
-var _index2 = _interopRequireDefault(_index);
-
-var _path = __webpack_require__(/*! path */ "./node_modules/path-browserify/index.js");
-
-var _path2 = _interopRequireDefault(_path);
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var genIpfsDaemonSettings = _index2.default.genIpfsDaemonSettings,
-    genOrbitSettings = _index2.default.genOrbitSettings;
-
-
-var initIpfsDataDir = window.ipfsDataDir || '/orbit/ipfs';
-var initOrbitDataDir = window.orbitDataDir || '/orbit';
-
 var initialState = {
-    publicInfo: {
-        username: 'hahahahaha',
-        settings: {
-            ipfsSettings: genIpfsDaemonSettings(initIpfsDataDir), //对象
-            orbitSettings: genOrbitSettings(initOrbitDataDir) // 对象
-        }
-    }
+    pubInstance: {
+        ipfsNode: null,
+        orbitNode: null,
+        orbitCore: null
+    },
+    isFirst: true
 };
 
 function reducer() {
@@ -55099,31 +55755,32 @@ function reducer() {
     var action = arguments[1];
 
     switch (action.type) {
-        case 'START_APP':
-            return startApp(state, action);
+        case 'INIT_APP':
+            return initInstance(state, action);
+        case 'UPDATE_FIRST':
+            return updateFirst(state, action);
         default:
             return state;
     }
 }
 
-function startApp(state, action) {
-    console.log('startApp');
-    var newState = _immutable2.default.fromJS(state); // 使用fromJS生成的新对象回从里到外都是map对象，应该是只能通过immutable提供的方法来进行更改的
+function initInstance(state, action) {
+    state = _immutable2.default.Map(state);
+    var ipfsNode = action.data.ipfsNode;
+    var orbitNode = action.data.orbitNode;
+    var orbitCore = action.data.orbitCore;
 
-
-    var username = action.data.username;
-    newState = newState.setIn(['publicInfo', 'username'], username);
-
-    var ipfsDataDir = newState.getIn(['publicInfo', 'settings', 'ipfsSettings', 'IpfsDataDir']); // 字符串
-    var orbitDataDir = newState.getIn(['publicInfo', 'settings', 'orbitSettings', 'OrbitDataDir']); // 字符串
-
-    if (ipfsDataDir.includes(orbitDataDir + '/ipfs')) {
-        var newIpfsDir = _path2.default.join(orbitDataDir, '/' + username, '/ipfs');
-        newState = newState.setIn(['publicInfo', 'settings', 'orbitSettings', 'IpfsDataDir'], newIpfsDir);
-    }
-    newState = newState.setIn(['publicInfo', 'settings', 'orbitSettings', 'OrbitDataDir'], _path2.default.join(orbitDataDir, '/' + username));
+    var newState = state.set('pubInstance', { ipfsNode: ipfsNode, orbitNode: orbitNode, orbitCore: orbitCore });
     return newState.toJS();
-} // 登陆时保存相关对象
+}
+
+function updateFirst(state, action) {
+    state = _immutable2.default.Map(state);
+    var newFirst = action.data;
+
+    var newState = state.set('isFirst', newFirst);
+    return newState.toJS();
+}
 
 /***/ }),
 
@@ -55195,9 +55852,15 @@ var actions = _interopRequireWildcard(_action);
 
 __webpack_require__(/*! ./index.less */ "./src/containers/mainLayout/index.less");
 
+__webpack_require__(/*! babel-polyfill */ "./node_modules/babel-polyfill/lib/index.js");
+
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, arguments); return new Promise(function (resolve, reject) { function step(key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { return Promise.resolve(value).then(function (value) { step("next", value); }, function (err) { step("throw", err); }); } } return step("next"); }); }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -55215,45 +55878,205 @@ var MainLayout = function (_React$Component) {
     _inherits(MainLayout, _React$Component);
 
     function MainLayout(props) {
+        var _this2 = this;
+
         _classCallCheck(this, MainLayout);
 
         var _this = _possibleConstructorReturn(this, (MainLayout.__proto__ || Object.getPrototypeOf(MainLayout)).call(this, props));
 
-        _this.getChannelList = function () {};
+        _this.getChannelList = function () {
+            var _ref = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee(username) {
+                var updateChannelList, channelList;
+                return regeneratorRuntime.wrap(function _callee$(_context) {
+                    while (1) {
+                        switch (_context.prev = _context.next) {
+                            case 0:
+                                // 获取username名下的所有channelList,同时将channelList保存在redux当中
+                                // channelList仅仅包含channel
+                                updateChannelList = _this.props.updateChannelList;
+                                channelList = _this.kvStore.get(username);
+
+                                if (channelList) {
+                                    updateChannelList(channelList); // 获取到的channel列表不为空，更新列表
+                                    _this.setState({
+                                        channelStatus: true
+                                    });
+                                } else {
+                                    _this.setState({
+                                        channelStatusText: 'no channnels found'
+                                    });
+                                }
+
+                            case 3:
+                            case 'end':
+                                return _context.stop();
+                        }
+                    }
+                }, _callee, _this2);
+            }));
+
+            return function (_x) {
+                return _ref.apply(this, arguments);
+            };
+        }();
 
         _this.handleDeleteConfirm = function () {
-            // 删除channel的回调，删除channel意味着同时要删除channel当中的文档，删除聊天信息
-            // 同时要删除channel中参与协同的节点当中的数据
+            // 删除数据库，仅更新各相关username的数据库
             console.log("this channel will be deleted");
         };
 
+        _this.changeVisible = function () {
+            var _ref2 = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee2(stateName, value) {
+                var close;
+                return regeneratorRuntime.wrap(function _callee2$(_context2) {
+                    while (1) {
+                        switch (_context2.prev = _context2.next) {
+                            case 0:
+                                _context2.next = 2;
+                                return _this.kvStore.close();
+
+                            case 2:
+                                close = _context2.sent;
+
+                                _this.setState(_defineProperty({}, stateName, value));
+
+                            case 4:
+                            case 'end':
+                                return _context2.stop();
+                        }
+                    }
+                }, _callee2, _this2);
+            }));
+
+            return function (_x2, _x3) {
+                return _ref2.apply(this, arguments);
+            };
+        }();
+
         _this.state = {
             showMore: false, // 展示channel信息
-            showPlus: false // 添加channel
+            showPlus: false, // 添加channel
+            channelStatus: false,
+            channelStatusText: '' // 提示channel为空或者获取channel失败
         };
+        _this.username = JSON.parse(localStorage.getItem('username')).pop();
+        _this.kvStore = null;
         return _this;
     }
 
+    // async DidMount is safe
+
+
     _createClass(MainLayout, [{
         key: 'componentDidMount',
-        value: function componentDidMount() {}
+        value: function () {
+            var _ref3 = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee3() {
+                var _this3 = this;
+
+                var _props, isFirst, pubInstance, orbit, username, address;
+
+                return regeneratorRuntime.wrap(function _callee3$(_context3) {
+                    while (1) {
+                        switch (_context3.prev = _context3.next) {
+                            case 0:
+                                _props = this.props, isFirst = _props.isFirst, pubInstance = _props.pubInstance;
+                                orbit = pubInstance.orbitNode;
+                                username = this.username;
+
+                                if (!isFirst) {
+                                    _context3.next = 11;
+                                    break;
+                                }
+
+                                console.log('create');
+                                _context3.next = 7;
+                                return orbit.create(username, 'keyvalue', {
+                                    overwrite: false // 不允许覆盖已经存在的database
+                                });
+
+                            case 7:
+                                this.kvStore = _context3.sent;
+
+                                localStorage.setItem(username, JSON.stringify(this.kvStore.address));
+                                _context3.next = 18;
+                                break;
+
+                            case 11:
+                                console.log('open');
+                                address = JSON.parse(localStorage.getItem(username));
+                                _context3.next = 15;
+                                return orbit.open('/orbitdb/' + address.root + '/' + address.path, {
+                                    localOnly: true
+                                });
+
+                            case 15:
+                                this.kvStore = _context3.sent;
+
+                                this.kvStore.events.on('ready', function () {
+                                    console.log('entered ready');
+                                    _this3.getChannelList();
+                                });
+                                this.kvStore.load();
+
+                            case 18:
+                            case 'end':
+                                return _context3.stop();
+                        }
+                    }
+                }, _callee3, this);
+            }));
+
+            function componentDidMount() {
+                return _ref3.apply(this, arguments);
+            }
+
+            return componentDidMount;
+        }()
+    }, {
+        key: 'componentWillUnmount',
+        value: function () {
+            var _ref4 = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee4() {
+                return regeneratorRuntime.wrap(function _callee4$(_context4) {
+                    while (1) {
+                        switch (_context4.prev = _context4.next) {
+                            case 0:
+                                _context4.next = 2;
+                                return this.kvStore.close();
+
+                            case 2:
+                            case 'end':
+                                return _context4.stop();
+                        }
+                    }
+                }, _callee4, this);
+            }));
+
+            function componentWillUnmount() {
+                return _ref4.apply(this, arguments);
+            }
+
+            return componentWillUnmount;
+        }()
     }, {
         key: 'render',
         value: function render() {
-            var _this2 = this;
+            var _this4 = this;
 
             var _state = this.state,
                 showMore = _state.showMore,
-                showPlus = _state.showPlus;
+                showPlus = _state.showPlus,
+                channelStatusText = _state.channelStatusText,
+                channelStatus = _state.channelStatus;
+            var channelNameList = this.props.channelNameList;
+            // const channelNameList = [{
+            //     channelName: 'channel1',
+            //     channelId: 'id is also a long string',
+            //     channelCreater: {nickName:'creater_name',nodeId:'creater_nodeid'},
+            //     channelJoiner:[{nickName:'joiner1_name',nodeId:'joiner1_nodeid'},{nickName:'joiner2_name',nodeId:'joiner2_nodeid'}],
+            //     article: {filename: 'filename',filehash:"filehash is a very long string"},
+            //     createDate:'2018-07-15 19:00',
+            // }]
 
-            var channelList = [{
-                channelName: 'channel1',
-                channelId: 'id is also a long string',
-                channelCreater: { nickName: 'creater_name', nodeId: 'creater_nodeid' },
-                channelJoiner: [{ nickName: 'joiner1_name', nodeId: 'joiner1_nodeid' }, { nickName: 'joiner2_name', nodeId: 'joiner2_nodeid' }],
-                article: { filename: 'filename', filehash: "filehash is a very long string" },
-                createDate: '2018-07-15 19:00'
-            }];
             return _react2.default.createElement(
                 'div',
                 { style: { height: "100%", width: "100%" } },
@@ -55279,7 +56102,7 @@ var MainLayout = function (_React$Component) {
                         _react2.default.createElement(
                             'div',
                             { className: 'sider-body' },
-                            channelList.map(function (item, index) {
+                            channelStatus ? channelNameList.map(function (item, index) {
                                 return _react2.default.createElement(
                                     'div',
                                     { className: 'sider-body-channelList', key: index },
@@ -55294,8 +56117,8 @@ var MainLayout = function (_React$Component) {
                                         { className: 'operation' },
                                         _react2.default.createElement(
                                             'a',
-                                            { className: 'more', onClick: function onClick() {
-                                                    _this2.setState({ showMore: true });
+                                            { className: 'more', onCancel: function onCancel() {
+                                                    _this4.changeVisible('showMore', true);
                                                 } },
                                             'more'
                                         ),
@@ -55304,7 +56127,7 @@ var MainLayout = function (_React$Component) {
                                             {
                                                 title: '\u5220\u9664\u8BE5channel\u5C06\u540C\u65F6\u5220\u9664\u8BE5channel\u4E0B\u7684\u6587\u6863\uFF0C\u804A\u5929\u4FE1\u606F\uFF0C\u4ECD\u65E7\u8981\u5220\u9664\u5417\uFF1F',
                                                 okText: '\u5220\u9664', cancelText: '\u53D6\u6D88',
-                                                onConfirm: _this2.handleDeleteConfirm,
+                                                onConfirm: _this4.handleDeleteConfirm,
                                                 placement: 'bottomRight',
                                                 overlayStyle: { width: '200px' }
                                             },
@@ -55322,19 +56145,23 @@ var MainLayout = function (_React$Component) {
                                             footer: null,
                                             title: item.channelName + ' \u57FA\u672C\u4FE1\u606F',
                                             onCancel: function onCancel() {
-                                                _this2.setState({ showMore: false });
+                                                _this4.changeVisible('showMore', false);
                                             }
                                         },
                                         _react2.default.createElement(ChannelDetail, { info: item })
                                     )
                                 );
-                            })
+                            }) : _react2.default.createElement(
+                                'div',
+                                { className: 'sider-body-tip' },
+                                channelStatusText
+                            )
                         ),
                         _react2.default.createElement(
                             'div',
                             { className: 'sider-footer' },
                             _react2.default.createElement(_icon2.default, { type: 'plus', onClick: function onClick() {
-                                    _this2.setState({ showPlus: true });
+                                    _this4.changeVisible('showPlus', true);
                                 }, style: { cursor: 'pointer' } }),
                             ' ',
                             _react2.default.createElement(
@@ -55351,10 +56178,15 @@ var MainLayout = function (_React$Component) {
                             ' ',
                             _react2.default.createElement(
                                 _modal2.default,
-                                { visible: showPlus, footer: null, title: 'New Channel', onCancel: function onCancel() {
-                                        _this2.setState({ showPlus: false });
-                                    } },
-                                _react2.default.createElement(_index6.default, null)
+                                {
+                                    visible: showPlus,
+                                    footer: null,
+                                    title: 'New Channel',
+                                    onCancel: function onCancel() {
+                                        _this4.changeVisible('showPlus', false);
+                                    }
+                                },
+                                _react2.default.createElement(_index6.default, { changeVisible: this.changeVisible })
                             )
                         )
                     ),
@@ -55369,7 +56201,7 @@ var MainLayout = function (_React$Component) {
                                 _reactRouterDom.Switch,
                                 null,
                                 _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/mainPage/', component: Welcome }),
-                                channelList.map(function (item, index) {
+                                channelNameList.map(function (item, index) {
                                     return _react2.default.createElement(_reactRouterDom.Route, { path: '/mainPage/' + item.channelName, key: index, component: _index4.default });
                                 })
                             )
@@ -55393,7 +56225,7 @@ var MainLayout = function (_React$Component) {
 }(_react2.default.Component);
 
 exports.default = (0, _index7.connect)(function (state) {
-    return _extends({}, state.channelNameList); //觉得这样的设计是有问题的
+    return _extends({}, state.login, state.mainLayout); //觉得这样的设计是有问题的
 }, actions)(MainLayout);
 
 /***/ }),
@@ -55466,11 +56298,11 @@ if(true) {
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
-var getChannelList = exports.getChannelList = function getChannelList(sucFun) {
+var updateChannelList = exports.updateChannelList = function updateChannelList(data) {
     return function (dispatch, getState) {
         dispatch({
-            type: 'LOADING_CHANNEL'
-
+            type: 'UPDATE_CHANNEL',
+            data: data
         });
     };
 }; // 进入页面时展示channelList
@@ -55515,25 +56347,30 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 exports.default = reducer;
+
+var _immutable = __webpack_require__(/*! immutable */ "./node_modules/immutable/dist/immutable.js");
+
+var _immutable2 = _interopRequireDefault(_immutable);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
 var initialState = {
-    channelnameList: [{
+    channelNameList: [{
         channelName: '',
-        channelId: '',
-        channelCreater: { nickName: '', nodeId: '' },
-        channelJoiner: [{ nickName: '', nodeId: '' }],
-        article: { filename: '', filehash: "" },
-        createDate: ''
-    }]
+        creater: '', // 创建者的名字
+        joiners: [],
+        databaseAddr: '' // channelHash
+    }],
+    parternList: []
 };
 
 function reducer() {
     var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : initialState;
     var action = arguments[1];
 
-    var newState = void 0;
     switch (action.type) {
-        case 'LOADING_CHANNEL':
-            return getChannelList(state, action);
+        case 'UPDATE_CHANNEL':
+            return updateChannelList(state, action);
         case 'ADD_CHANNEL':
             return addChannel(state, action);
         case 'DELETE_CHANNEL':
@@ -55547,7 +56384,14 @@ function reducer() {
 // 1. 数据加载，加载channelList的数据，这个channelList是保存在orbitdb当中的
 // 2. 根据username加载向对应的userlist
 
-function getChannelList(state, action) {} // 加载与username相对应的channelListName
+function updateChannelList(state, action) {
+    console.log(action.data);
+    state = _immutable2.default.Map(state);
+    var newChannelList = JSON.parse(JSON.stringify(action.data));
+    var newState = state.set('channelNameList', newChannelList);
+
+    return newState.toJS();
+}
 
 function addChannel(state, action) {} // 新增channel，需要更新channelName,redux当中不需要相应的操作，但是在调用这个reducer的同时应该需要将相应的信息保存在orbit当中
 
@@ -55579,11 +56423,17 @@ var _input = __webpack_require__(/*! antd/lib/input */ "./node_modules/antd/lib/
 
 var _input2 = _interopRequireDefault(_input);
 
-var _form = __webpack_require__(/*! antd/lib/form */ "./node_modules/antd/lib/form/index.js");
+var _select = __webpack_require__(/*! antd/lib/select */ "./node_modules/antd/lib/select/index.js");
 
-var _form2 = _interopRequireDefault(_form);
+var _select2 = _interopRequireDefault(_select);
+
+var _radio = __webpack_require__(/*! antd/lib/radio */ "./node_modules/antd/lib/radio/index.js");
+
+var _radio2 = _interopRequireDefault(_radio);
 
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -55591,11 +56441,17 @@ __webpack_require__(/*! antd/lib/button/style */ "./node_modules/antd/lib/button
 
 __webpack_require__(/*! antd/lib/input/style */ "./node_modules/antd/lib/input/style/index.js");
 
-__webpack_require__(/*! antd/lib/form/style */ "./node_modules/antd/lib/form/style/index.js");
+__webpack_require__(/*! antd/lib/select/style */ "./node_modules/antd/lib/select/style/index.js");
+
+__webpack_require__(/*! antd/lib/radio/style */ "./node_modules/antd/lib/radio/style/index.js");
 
 var _react = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 
 var _react2 = _interopRequireDefault(_react);
+
+var _orbitDb = __webpack_require__(/*! orbit-db */ "./node_modules/orbit-db/src/OrbitDB.js");
+
+var _orbitDb2 = _interopRequireDefault(_orbitDb);
 
 var _index = __webpack_require__(/*! ./../../common/util/index */ "./src/common/util/index.js");
 
@@ -55605,9 +56461,15 @@ var actions = _interopRequireWildcard(_action);
 
 __webpack_require__(/*! ./index.less */ "./src/containers/newChannel/index.less");
 
+__webpack_require__(/*! babel-polyfill */ "./node_modules/babel-polyfill/lib/index.js");
+
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, arguments); return new Promise(function (resolve, reject) { function step(key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { return Promise.resolve(value).then(function (value) { step("next", value); }, function (err) { step("throw", err); }); } } return step("next"); }); }; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -55615,93 +56477,271 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var FormItem = _form2.default.Item;
-var inputLayout = {
-    labelCol: {
-        span: 8
-    },
-    wrapperCol: {
-        span: 12
-    }
-};
-var tipLayout = {
-    labelCol: {
-        span: 8
-    },
-    wrapperCol: {
-        span: 12
-    }
-};
+var RadioGroup = _radio2.default.Group;
+var Option = _select2.default.Option;
 
-var NewChannelPage = function (_React$Component) {
-    _inherits(NewChannelPage, _React$Component);
+var NewChannel = function (_React$Component) {
+    _inherits(NewChannel, _React$Component);
 
-    function NewChannelPage(props) {
-        _classCallCheck(this, NewChannelPage);
+    function NewChannel(props) {
+        var _this2 = this;
 
-        var _this = _possibleConstructorReturn(this, (NewChannelPage.__proto__ || Object.getPrototypeOf(NewChannelPage)).call(this, props));
+        _classCallCheck(this, NewChannel);
 
-        _this.handleSubmit = function () {
-            var getFieldValue = _this.props.form.getFieldValue;
+        var _this = _possibleConstructorReturn(this, (NewChannel.__proto__ || Object.getPrototypeOf(NewChannel)).call(this, props));
 
-            var channelName = getFieldValue('channelname');
-            var articlename = getFieldValue('articlename');
+        _this.changeInput = function (inputName, e) {
+            var newValue = e.target.value;
+            if (typeof newValue === 'undefined' ? 'undefined' : _typeof(newValue)) {
+                _this.setState(_defineProperty({}, inputName, JSON.parse(JSON.stringify(newValue))));
+            } else {
+                _this.setState(_defineProperty({}, inputName, newValue));
+            }
         };
 
+        _this.genWriteArray = function () {
+            var joiners = _this.state.joiners;
+
+            var writeAccess = joiners.map(function (item) {
+                var pubKey = item.split(':')[1];
+                if (_this.parternList.find(item.pubKey === pubKey)) {
+                    // 此处应该是要做parternList空校验的，但是未做
+                    writeAccess.push(_this.parternList.find(item.pubKey === pubKey).pubKey);
+                }
+            });
+            return writeAccess;
+        };
+
+        _this.handleCraete = function () {
+            // 创建一个数据库，并将其默认打开？？？
+            // 刷新当前的channelList列表，并做存储
+            var channelName = _this.state.channelName;
+
+            var writeAccess = _this.genWriteArray();
+        };
+
+        _this.handleJoin = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee() {
+            var channelAddr, changeVisible;
+            return regeneratorRuntime.wrap(function _callee$(_context) {
+                while (1) {
+                    switch (_context.prev = _context.next) {
+                        case 0:
+                            channelAddr = _this.state.channelAddr;
+                            changeVisible = _this.props.changeVisible;
+
+                            if (!_orbitDb2.default.isValidAddress(channelAddr)) {
+                                _context.next = 18;
+                                break;
+                            }
+
+                            _context.prev = 3;
+
+                            console.log(_this.orbitNode);
+                            _context.next = 7;
+                            return _this.orbitNode.open(channelAddr, {
+                                directory: '/orbitdb/channelList',
+                                sync: true
+                            });
+
+                        case 7:
+                            _this.channeldb = _context.sent;
+
+                            _this.channeldb.events.on('ready', function () {
+                                console.log('ready');
+                            });
+                            _this.channeldb.events.on('replicate', function () {
+                                console.log('replicate');
+                            });
+                            _this.channeldb.events.on('replicated', function () {
+                                console.log('replicated');
+                            });
+                            _this.channeldb.events.on('replicate.progress', function () {
+                                console.log('replicating');
+                            });
+                            _this.channeldb.load();
+                            _context.next = 18;
+                            break;
+
+                        case 15:
+                            _context.prev = 15;
+                            _context.t0 = _context['catch'](3);
+
+                            if (_context.t0) console.log(_context.t0);
+
+                        case 18:
+                        case 'end':
+                            return _context.stop();
+                    }
+                }
+            }, _callee, _this2, [[3, 15]]);
+        }));
+
+        _this.state = {
+            joinManner: 'create',
+            channelName: '',
+            articleName: '',
+            joiners: [],
+            channelAddr: ''
+        };
+        _this.parternList = _this.props.parternList;
+        _this.orbitNode = _this.props.pubInstance.orbitNode;
+        _this.channeldb = null;
         return _this;
     }
 
-    _createClass(NewChannelPage, [{
+    _createClass(NewChannel, [{
+        key: 'componentWillUnMount',
+        value: function () {
+            var _ref2 = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee2() {
+                return regeneratorRuntime.wrap(function _callee2$(_context2) {
+                    while (1) {
+                        switch (_context2.prev = _context2.next) {
+                            case 0:
+                                _context2.next = 2;
+                                return this.channeldb.close();
+
+                            case 2:
+                            case 'end':
+                                return _context2.stop();
+                        }
+                    }
+                }, _callee2, this);
+            }));
+
+            function componentWillUnMount() {
+                return _ref2.apply(this, arguments);
+            }
+
+            return componentWillUnMount;
+        }()
+    }, {
         key: 'render',
         value: function render() {
-            var getFieldDecorator = this.props.form.getFieldDecorator;
+            var _this3 = this;
+
+            var _state = this.state,
+                joinManner = _state.joinManner,
+                channelName = _state.channelName,
+                articleName = _state.articleName,
+                channelAddr = _state.channelAddr;
 
             return _react2.default.createElement(
                 'div',
-                { className: 'channelName' },
+                { className: 'newChannel' },
                 _react2.default.createElement(
-                    _form2.default,
-                    null,
+                    RadioGroup,
+                    { className: 'newChannel-radiogroup', value: joinManner, onChange: function onChange(e) {
+                            _this3.changeInput('joinManner', e);
+                        } },
                     _react2.default.createElement(
-                        FormItem,
-                        _extends({ label: 'ChannelName' }, inputLayout, { style: { marginBottom: 0 } }),
-                        getFieldDecorator('channelname', {
-                            rules: [{
-                                required: true,
-                                message: "channelname is required"
-                            }]
-                        })(_react2.default.createElement(_input2.default, { className: 'channelName-input' }))
+                        _radio2.default,
+                        { value: 'create' },
+                        '\u521B\u5EFA\u534F\u540C'
                     ),
                     _react2.default.createElement(
-                        FormItem,
-                        _extends({ label: 'articlelName' }, inputLayout, { style: { marginBottom: 0 } }),
-                        getFieldDecorator('articlename', {
-                            rules: [{
-                                required: true,
-                                message: "article name is required"
-                            }]
-                        })(_react2.default.createElement(_input2.default, { className: 'articleName-input' }))
+                        _radio2.default,
+                        { value: 'join' },
+                        '\u52A0\u5165\u534F\u540C'
+                    )
+                ),
+                joinManner === 'create' ? _react2.default.createElement(
+                    'div',
+                    { className: 'newChannel-newInfo' },
+                    _react2.default.createElement(
+                        'div',
+                        { className: 'newChannel-newInfo-infoItem channelName' },
+                        _react2.default.createElement(
+                            'p',
+                            { className: 'label' },
+                            'channelName:'
+                        ),
+                        _react2.default.createElement(_input2.default, { className: 'input', value: channelName, onChange: function onChange(e) {
+                                _this3.changeInput('channelName', e);
+                            } })
                     ),
                     _react2.default.createElement(
                         'div',
-                        { className: 'channelName-submit' },
+                        { className: 'newChannel-newInfo-infoItem articleName' },
                         _react2.default.createElement(
-                            _button2.default,
-                            { className: 'channelName-submit-button', type: 'primary', onClick: this.handleSubmit },
-                            '\u63D0\u4EA4'
+                            'p',
+                            { className: 'label' },
+                            'articleName:'
+                        ),
+                        _react2.default.createElement(_input2.default, { className: 'input', value: articleName, onChange: function onChange(e) {
+                                _this3.changeInput('articleName', e);
+                            } })
+                    ),
+                    _react2.default.createElement(
+                        'div',
+                        { className: 'joiners' },
+                        _react2.default.createElement(
+                            'div',
+                            { className: 'newChannel-newInfo-infoItem' },
+                            _react2.default.createElement(
+                                'p',
+                                { className: 'label' },
+                                'joiners:'
+                            ),
+                            _react2.default.createElement(
+                                _select2.default,
+                                {
+                                    className: 'input',
+                                    mode: 'multiple',
+                                    placeholder: 'select your joiners',
+                                    onChange: function onChange(e) {
+                                        _this3.changeInput('joiners', e);
+                                    }
+                                },
+                                this.parternList.map(function (item) {
+                                    return _react2.default.createElement(
+                                        Option,
+                                        { key: item.nodeId },
+                                        item.nickname + ':' + item.nodeId
+                                    );
+                                })
+                            )
+                        ),
+                        _react2.default.createElement(
+                            'p',
+                            { className: 'joiners-tip' },
+                            'no wanted friends? go homePage, add your friends...'
                         )
+                    ),
+                    _react2.default.createElement(
+                        _button2.default,
+                        { type: 'primary', className: 'newChannel-newInfo-button', onClick: this.handleCraete },
+                        'create'
+                    )
+                ) : _react2.default.createElement(
+                    'div',
+                    { className: 'newChannel-newInfo' },
+                    _react2.default.createElement(
+                        'div',
+                        { className: 'newChannel-newInfo-infoItem' },
+                        _react2.default.createElement(
+                            'p',
+                            { className: 'label' },
+                            'channelAddr: '
+                        ),
+                        _react2.default.createElement(_input2.default, { className: 'input', value: channelAddr, onChange: function onChange(e) {
+                                _this3.changeInput('channelAddr', e);
+                            } })
+                    ),
+                    _react2.default.createElement(
+                        _button2.default,
+                        { type: 'primary', className: 'newChannel-newInfo-button', onClick: this.handleJoin },
+                        'join'
                     )
                 )
             );
         }
     }]);
 
-    return NewChannelPage;
+    return NewChannel;
 }(_react2.default.Component);
 
-var NewChannel = _form2.default.create({})(NewChannelPage);
 exports.default = (0, _index.connect)(function (state) {
-    return _extends({}, state.channelList);
+    return _extends({}, state.mainLayout, state.login);
 }, actions)(NewChannel);
 
 // 页面需要和redux进行联系，新增的
@@ -56095,6 +57135,8 @@ exports.default = {
 "use strict";
 
 
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
 var _react = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 
 var _react2 = _interopRequireDefault(_react);
@@ -56139,21 +57181,46 @@ var _index8 = _interopRequireDefault(_index7);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var App = function App() {
-    return _react2.default.createElement(
-        _reactRouterDom.Switch,
-        null,
-        _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/', component: _index6.default }),
-        _react2.default.createElement(_reactRouterDom.Route, { path: '/mainPage', component: _index2.default }),
-        _react2.default.createElement(_reactRouterDom.Route, { path: '/personalPage', component: _index4.default })
-    );
-};
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var App = function (_React$Component) {
+    _inherits(App, _React$Component);
+
+    function App(props) {
+        _classCallCheck(this, App);
+
+        return _possibleConstructorReturn(this, (App.__proto__ || Object.getPrototypeOf(App)).call(this, props));
+    }
+
+    _createClass(App, [{
+        key: 'render',
+        value: function render() {
+            return _react2.default.createElement(
+                _reactRouterDom.Switch,
+                null,
+                _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/', component: _index6.default }),
+                _react2.default.createElement(_reactRouterDom.Route, { path: '/mainPage', component: _index2.default }),
+                _react2.default.createElement(_reactRouterDom.Route, { path: '/personalPage', component: _index4.default })
+            );
+        }
+    }]);
+
+    return App;
+}(_react2.default.Component);
+
+var sagaMiddleware = (0, _reduxSaga2.default)();
 
 // 有个initialState没有传参
-var store = (0, _redux.createStore)(_rootReducer2.default, (0, _redux.compose)((0, _redux.applyMiddleware)(_reduxThunk2.default), (0, _redux.applyMiddleware)((0, _reduxSaga2.default)(_index8.default)), window.devToolsExtension ? window.devToolsExtension() : function (f) {
+var store = (0, _redux.createStore)(_rootReducer2.default, (0, _redux.compose)((0, _redux.applyMiddleware)(_reduxThunk2.default), (0, _redux.applyMiddleware)(sagaMiddleware), window.devToolsExtension ? window.devToolsExtension() : function (f) {
     return f;
 } //检测是否安装redux-devtool插件，安装则使用，不安装不使用
 ));
+
+sagaMiddleware.run((0, _index8.default)());
 
 _reactDom2.default.render(_react2.default.createElement(
     _reactRedux.Provider,
@@ -56204,11 +57271,59 @@ exports.default = (0, _redux.combineReducers)(Object.assign({}, _reducer2.defaul
 
 
 Object.defineProperty(exports, "__esModule", {
-  value: true
+    value: true
 });
-// saga,用于实现异步动作主要是想用它来实现一个动作监听的作用
 
-var rootSaga = {};
+var _effects = __webpack_require__(/*! redux-saga/effects */ "./node_modules/redux-saga/es/effects.js");
+
+var _marked = /*#__PURE__*/regeneratorRuntime.mark(fetchSaga),
+    _marked2 = /*#__PURE__*/regeneratorRuntime.mark(watchSaga);
+
+// saga,用于实现异步动作主要是想用它来实现一个动作监听的作用
+function fetchSaga() {
+    return regeneratorRuntime.wrap(function fetchSaga$(_context) {
+        while (1) {
+            switch (_context.prev = _context.next) {
+                case 0:
+                case 'end':
+                    return _context.stop();
+            }
+        }
+    }, _marked, this);
+} // 获取存在的saga并进行处理
+
+
+function watchSaga() {
+    return regeneratorRuntime.wrap(function watchSaga$(_context2) {
+        while (1) {
+            switch (_context2.prev = _context2.next) {
+                case 0:
+                case 'end':
+                    return _context2.stop();
+            }
+        }
+    }, _marked2, this);
+} // 监听saga，并将saga中对应的action dispatch出去
+
+var rootSaga = function rootSaga(otherSaga) {
+    return (/*#__PURE__*/regeneratorRuntime.mark(function _callee() {
+            return regeneratorRuntime.wrap(function _callee$(_context3) {
+                while (1) {
+                    switch (_context3.prev = _context3.next) {
+                        case 0:
+                            console.log('entered rootSaga');
+                            _context3.next = 3;
+                            return otherSaga ? [(0, _effects.call)(watchSaga), (0, _effects.call)(otherSaga)] : (0, _effects.call)(watchSaga);
+
+                        case 3:
+                        case 'end':
+                            return _context3.stop();
+                    }
+                }
+            }, _callee, this);
+        })
+    );
+}; // 立即执行函数，用于检测是否还存在其他的saga处理函数
 
 exports.default = rootSaga;
 

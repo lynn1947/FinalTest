@@ -1,19 +1,19 @@
+import IMU from 'immutable'
+
 const initialState = {
-    channelnameList:[{
+    channelNameList: [{
         channelName: '',
-        channelId: '',
-        channelCreater: {nickName:'',nodeId:''},
-        channelJoiner:[{nickName:'',nodeId:''}],
-        article: {filename: '',filehash:""},
-        createDate:'',
+        creater: '', // 创建者的名字
+        joiners: [],
+        databaseAddr: '', // channelHash
     }],
+    parternList: []
 }
 
 export default function reducer(state=initialState, action) {
-    let newState 
     switch(action.type) {
-        case 'LOADING_CHANNEL':
-            return getChannelList(state,action)
+        case 'UPDATE_CHANNEL':
+            return updateChannelList(state,action)
         case 'ADD_CHANNEL':
             return addChannel(state,action)
         case 'DELETE_CHANNEL':
@@ -27,9 +27,14 @@ export default function reducer(state=initialState, action) {
 // 1. 数据加载，加载channelList的数据，这个channelList是保存在orbitdb当中的
 // 2. 根据username加载向对应的userlist
 
-function getChannelList(state,action) {
+function updateChannelList(state,action) {
+    console.log(action.data)
+    state = IMU.Map(state)
+    let newChannelList = JSON.parse(JSON.stringify(action.data))
+    let newState = state.set('channelNameList', newChannelList)
 
-}// 加载与username相对应的channelListName
+    return newState.toJS()
+}
 
 function addChannel(state,action){
 

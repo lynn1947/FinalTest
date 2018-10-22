@@ -1,6 +1,29 @@
-.channelName {
-    &-submit {
+.newChannel{
+    text-align: center;
+    &-radiogroup {
         width: 100%;
-        text-align: center;
+        display: flex;
+        justify-content: flex-start;
+    }
+    &-newInfo {
+        &-infoItem{
+            margin-top: 20px;
+            display: flex;
+            justify-content: space-between;
+            .label {
+                margin: 0px;padding: 0px;
+            }
+            .input {
+                width: 350px;
+            }
+        }
+        .joiners-tip{
+            padding: 0px;margin: 0px;
+            margin-top: 20px;
+
+        }
+        &-button {
+            margin-top: 20px;
+        }
     }
 }

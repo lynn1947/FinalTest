@@ -1,9 +1,9 @@
 
 
-export const getChannelList =(sucFun)=>(dispatch,getState)=> {
+export const updateChannelList =(data)=>(dispatch,getState)=> {
     dispatch({
-        type: 'LOADING_CHANNEL',
-
+        type: 'UPDATE_CHANNEL',
+        data
     })
 } // 进入页面时展示channelList
 
