@@ -34,6 +34,9 @@ export default class PersonalPage extends React.Component {
                             <div>your partners</div>
                         </TabPane>
                     </Tabs>
+                    <div className="content-infocard">
+
+                    </div>
                 </Content>
                 <Footer className="footer">
                     <span>copyright@2018 By北京邮电大学1017</span>

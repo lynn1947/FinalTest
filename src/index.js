@@ -8,6 +8,7 @@ import createSagaMiddleware from 'redux-saga'
 import MainLayout from './containers/mainLayout/index'
 import PersonalPage from './containers/personalPage/index'
 import Login from './containers/login/index'
+import RegisterUser from './containers/register/index'
 import rootReducer from './rootReducer'
 import rootSaga from './saga/index'
 
@@ -18,6 +19,7 @@ class App extends React.Component {
     render() {
         return (<Switch>
             <Route exact path="/" component={Login} />
+            <Route path="/register" component={RegisterUser} />
             <Route path="/mainPage" component={MainLayout} />
             <Route path="/personalPage" component={PersonalPage}/>
         </Switch>)

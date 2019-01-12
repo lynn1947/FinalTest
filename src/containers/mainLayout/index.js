@@ -18,7 +18,7 @@ class MainLayout extends React.Component {
         this.state = {
             showMore: false, // 展示channel信息
             showPlus: false, // 添加channel
-            channelStatus: false,
+            channelStatus: true,
             channelStatusText: '', // 提示channel为空或者获取channel失败
         }
         this.username = JSON.parse(localStorage.getItem('username')).pop()
@@ -85,15 +85,15 @@ class MainLayout extends React.Component {
 
     render() {
         const { showMore,showPlus, channelStatusText, channelStatus} = this.state
-        const {channelNameList} = this.props
-        // const channelNameList = [{
-        //     channelName: 'channel1',
-        //     channelId: 'id is also a long string',
-        //     channelCreater: {nickName:'creater_name',nodeId:'creater_nodeid'},
-        //     channelJoiner:[{nickName:'joiner1_name',nodeId:'joiner1_nodeid'},{nickName:'joiner2_name',nodeId:'joiner2_nodeid'}],
-        //     article: {filename: 'filename',filehash:"filehash is a very long string"},
-        //     createDate:'2018-07-15 19:00',
-        // }]
+        // const {channelNameList} = this.props
+        const channelNameList = [{
+            channelName: 'channel1',
+            channelId: 'id is also a long string',
+            channelCreater: {nickName:'creater_name',nodeId:'creater_nodeid'},
+            channelJoiner:[{nickName:'joiner1_name',nodeId:'joiner1_nodeid'},{nickName:'joiner2_name',nodeId:'joiner2_nodeid'}],
+            article: {filename: 'filename',filehash:"filehash is a very long string"},
+            createDate:'2018-07-15 19:00',
+        }]
         return <div style={{height:"100%",width:"100%"}}>
             <Layout className="layout">
                 <Sider 

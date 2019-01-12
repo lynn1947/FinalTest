@@ -25,6 +25,7 @@ class NewChannel extends React.Component {
     }
 
     async componentWillUnMount() {
+        consolee.log(' channeldb was closed')
         await this.channeldb.close()
     }
 
@@ -118,7 +119,9 @@ class NewChannel extends React.Component {
                                 this.parternList.map(item=><Option key={item.nodeId}>{`${item.nickname}:${item.nodeId}`}</Option>)
                             }</Select>
                         </div>
-                        <p className="joiners-tip">no wanted friends? go homePage, add your friends...</p>
+                        <p className="joiners-tip">
+                            no wanted friends? go homePage, <a href="./#/personalPage">add</a> your friends...
+                        </p>
                     </div>
                     <Button type="primary" className="newChannel-newInfo-button" onClick={this.handleCraete}>create</Button>
                 </div> : <div className="newChannel-newInfo">

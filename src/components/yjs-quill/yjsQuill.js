@@ -17,6 +17,8 @@ class YjsQuill extends React.Component {
 
     componentDidMount() {
         const ipfs = this.ipfs
+        const roomName = this.props.roomName
+        const channelName = this.props.channelName
         ipfs.on('ready',()=>{
             console.log('ready')
         })
@@ -26,8 +28,8 @@ class YjsQuill extends React.Component {
                 name: 'memory'
             },
             connector: {
-                name: 'ipfs',
-                room: 'yjs-ipfs-demo',
+                name: channelName,
+                room: roomName,
                 ipfs: ipfs,
             },
             share: {

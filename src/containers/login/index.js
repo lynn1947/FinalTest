@@ -1,5 +1,6 @@
 import React from 'react'
-import {Input, Icon} from 'antd'
+import {Link} from 'react-router-dom'
+import {Input, Icon, Button, Modal} from 'antd'
 import path from 'path'
 import IPFS from 'ipfs'
 import OrbitDB from 'orbit-db'
@@ -16,8 +17,11 @@ class Login extends React.Component {
         super(props)
         this.state = {
             username: '',
+            ethAccount: '',
+            ethPassword: '',
             isFirst: true,
-            userArray:[]
+            userArray:[],
+            showModal: false
         }
     }
 
@@ -29,19 +33,25 @@ class Login extends React.Component {
         })
     }
 
-    // here可以加个debunce---未解决的问题
-    handleInputChange =(e)=> {
-        const name = e.target.value
-        const {userArray} = this.state
+    handleInputChange =(e, property)=> {
         this.setState({
-            username: name
-        }) // 同时将根据设定的username判定是否是第一次访问,同时要更新localStorage中的username
-        if(userArray !== null&& userArray.indexOf(name)>-1){
-            this.setState({
-                isFirst: false
+            [property]: e.target.value
             })
         }
-    }
+
+    // // here可以加个debunce---未解决的问题
+    // handleInputChange =(e)=> {
+    //     const name = e.target.value
+    //     const {userArray} = this.state
+    //     this.setState({
+    //         username: name
+    //     }) // 同时将根据设定的username判定是否是第一次访问,同时要更新localStorage中的username
+    //     if(userArray !== null&& userArray.indexOf(name)>-1){
+    //         this.setState({
+    //             isFirst: false
+    //         })
+    //     }
+    // }
 
     resetUserArray =(username)=>{
         // 根据username的值重新排布localstorgae中的username
@@ -100,31 +110,50 @@ class Login extends React.Component {
     }
  
     render() {
-        const { username } = this.state
+        const { username, showModal, ethAccount, ethPassword } = this.state
         return (
             <div className="login">
                 <div className="loginPage">
                     <div className="loginPage-slogan">
-                        <div className="loginPage-slogan-logo" />
+                        <div className="loginPage-slogan-logo" >
+                        </div>
                         <p className="loginPage-slogan-title">IPFS上的协同编辑</p>
                     </div>
                     <div className="loginPage-form">
                         <Input 
-                            className="loginPage-form-username" 
-                            placeholder="input your username"
-                            value={username}
-                            onChange={e=>this.handleInputChange(e)}
+                            className="loginPage-form-account"
+                            placeholder="输入以太坊用户地址"
+                            prefix={<Icon type="user" />}
+                            value={ethAccount}
+                            onChange={(e)=>{this.handleInputChange(e, 'ethAccount')}}
                         />
-                        <div className="loginPage-form-tip">
-                            <Icon type="exclamation-circle-o" />
-                            <span>需要使用Geth与以太坊进行交互，请准备好Geth客户端</span>
-                        </div>
+                        <Input.Password
+                            className="loginPage-form-password" 
+                            placeholder="输入账号密码"
+                            prefix={<Icon type="lock" />}
+                            value={ethPassword}
+                            onChange={(e)=>{this.handleInputChange(e, 'ethPassword')}}
+                        />
                         <div 
                             className="loginPage-form-login"
                             onClick ={this.handleLogin}
-                        ><a>Sign In</a></div>
+                        ><a>登录</a></div>
+                        <div className="loginPage-form-tip">
+                            没有以太坊账号？不懂合约部署？点击<a onClick={()=>{
+                                this.setState({showModal: true})
+                            }}>此处</a>查看教程
+                        </div>
+                        <div className="loginPage-form-tip">
+                            没有账号？去<Link to="/register">注册</Link>
+                        </div>
                     </div>
                 </div>
+                <Modal 
+                    visible={showModal}
+                    onCancel={()=>{this.setState({showModal: false})}}
+                >
+                    一大段教程
+                </Modal>      
             </div>
         )
     }
