@@ -34,8 +34,12 @@ class ChatPane extends React.Component {
                     <h3 className="upper-head-title">讨论</h3>
                     <div className="upper-head-tip"><p>---良好的沟通是协同的基础</p></div>
                 </div>
+                <div>
+                    <span>成员列表</span>
+                    <div></div>
+                </div>
                 <div className="upper-messages">
-                    消息列表
+                    <span>消息列表</span>
                 </div>
             </div>
             <div className="bottom"> 

@@ -9,20 +9,20 @@ export default class ChannelDetail extends React.Component {
         const {info} = this.props 
         return <div className="channelDetail">
             <div className="info id">
-                <span className="label">ID:</span>
-                <span>{info.channelId}</span>
+                <span className="label">名称:</span>
+                <span>{info.channellName}</span>
             </div>
             <div className="info creator">
-                <span className="label">Creator:</span>
-                <span>{`${info.channelCreater.nickName}  ${info.channelCreater.nodeId}`}</span>
+                <span className="label">创建者:</span>
+                <span>{`${info.creator.nickName}  ${info.creator.nodeId} ${info.creator.hex}`}</span>
             </div>
             <div className="info joiners">
                 <span className="label">Joiners:</span>
                 <div>
                 {
-                    info.channelJoiner.map((item, index)=>{
+                    info.joiners ? info.joiners.map((item, index)=>{
                         return <div key={index}>{`${item.nickName} ${item.nodeId}`}</div>
-                    })
+                    }) : ''
                 }
                 </div>
             </div>

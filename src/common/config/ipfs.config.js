@@ -1,8 +1,8 @@
 // defaultIpfsDaemonSettings
-const genIpfsDaemonSettings= function(ipfsDataDir, isFirst=true) {
+const genIpfsDaemonSettings= function(ipfsDataDir, isFirst) {
     return {
       repo: ipfsDataDir,
-      init: isFirst, // 根据所输入的名称来决定是否初始化一个ipfs节点
+      init: isFirst, // 根据所输入的名称来决定是否初始化一个ipfs节点, 为必传参数，根据注册还是登录决定
       EXPERIMENTAL: {
         pubsub: true
       },

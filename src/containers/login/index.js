@@ -1,6 +1,6 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
-import {Input, Icon, Button, Modal} from 'antd'
+import {Input, Icon, Modal} from 'antd'
 import path from 'path'
 import IPFS from 'ipfs'
 import OrbitDB from 'orbit-db'
@@ -98,14 +98,23 @@ class Login extends React.Component {
             maxHistory: 2,
         } 
         const ipfsNode = new IPFS(ipfsSetting)
-        ipfsNode.on('ready',()=>{
+        ipfsNode.on('ready', async()=>{
             const orbitNode = new OrbitDB(ipfsNode, orbitSetting.OrbitDataDir)
             const orbitCore = new OrbitCore(ipfsNode,orbitCoreOption)
             console.log(orbitNode)
             console.log(orbitCore)
-            startLogin({ipfsNode,orbitNode,orbitCore})
-            updateFirst(isFirst)
-            window.location.href = './#/mainPage'
+            try{
+                const userOrbitStore = "" // 从合约中拿到的参数
+                const userStore = await orbitNode.open(userOrbitStore,{
+                    localOnly: true
+                })
+
+                // 存储实例函数，在之后的页面中也有调用
+                startLogin({ipfsNode,orbitNode,orbitCore, userStore})
+                window.location.href = './#/mainPage'
+            }catch(error){
+                console.log(error)
+            }
         })
     }
  
@@ -121,14 +130,14 @@ class Login extends React.Component {
                     </div>
                     <div className="loginPage-form">
                         <Input 
-                            className="loginPage-form-account"
+                            className="loginPage-form-input"
                             placeholder="输入以太坊用户地址"
                             prefix={<Icon type="user" />}
                             value={ethAccount}
                             onChange={(e)=>{this.handleInputChange(e, 'ethAccount')}}
                         />
                         <Input.Password
-                            className="loginPage-form-password" 
+                            className="loginPage-form-input" 
                             placeholder="输入账号密码"
                             prefix={<Icon type="lock" />}
                             value={ethPassword}
@@ -153,7 +162,10 @@ class Login extends React.Component {
                     onCancel={()=>{this.setState({showModal: false})}}
                 >
                     一大段教程
-                </Modal>      
+                </Modal>
+                <div className="login-footer">
+                        <span>copyright@2018 By北京邮电大学1017</span>
+                </div>     
             </div>
         )
     }

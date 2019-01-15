@@ -7,7 +7,6 @@ import NewChannel from './../newChannel/index'
 import {connect} from './../../common/util/index'
 import * as actions from './state/action'
 import './index.less'
-import 'babel-polyfill'
 
 const {ChannelDetail, Welcome} = components
 const { Content, Footer, Sider } = Layout
@@ -18,82 +17,84 @@ class MainLayout extends React.Component {
         this.state = {
             showMore: false, // 展示channel信息
             showPlus: false, // 添加channel
-            channelStatus: true,
-            channelStatusText: '', // 提示channel为空或者获取channel失败
+            emptyChannel: false,
+            channelList: [],
         }
         this.username = JSON.parse(localStorage.getItem('username')).pop()
-        this.kvStore = null
+        this.userStore = this.props.pubInstance.userStore || null
+        this.testChannelList =  [{
+            channelName: 'channel1',
+            channelAddr: '',
+            creator: {},
+            createDate: '2018-07-15 19:00',
+            joiners: [],
+            article: {filename: 'filename',filehash:"filehash is a very long string"},
+        }]
     }
 
-    // async DidMount is safe
-    async componentDidMount() {
-        const {isFirst, pubInstance} = this.props;
-        const orbit = pubInstance.orbitNode;
-        const username = this.username
-        if(isFirst){
-            console.log('create')
-            this.kvStore= await orbit.create(username,'keyvalue',{
-                overwrite: false, // 不允许覆盖已经存在的database
+    componentDidMount() {
+        const userStore = this.userStore
+        console.log(userStore)
+        try{
+            const channelList = userStore.get('channelList')
+            // if(channelList && channelList.length!==0){
+            //     this.setState({
+            //         channelList,
+            //         emptyChannel: false
+            //     })
+            // }
+
+            this.setState({
+                channelList: this.testChannelList,
+                emptyChannel: false
+            },()=>{
+                console.log(this.state.channelList)
             })
-            localStorage.setItem(username,JSON.stringify(this.kvStore.address))
-        }else{
-            console.log('open')
-            const address = JSON.parse(localStorage.getItem(username))
-            this.kvStore = await orbit.open(`/orbitdb/${address.root}/${address.path}`,{
-                localOnly: true
-            })
-            this.kvStore.events.on('ready',()=>{
-                console.log('entered ready')
-                this.getChannelList()
-            })
-            this.kvStore.load()
+        }catch(error) {
+            // 以弹窗形式提示获取channel失败
+            console.error(error)
         }
     }
 
-    async componentWillUnmount() {
-        await this.kvStore.close()
-    }
-
-    getChannelList = async(username)=>{
-        // 获取username名下的所有channelList,同时将channelList保存在redux当中
-        // channelList仅仅包含channel
-        const {updateChannelList} = this.props
-        const channelList = this.kvStore.get(username)
-        if(channelList){
-            updateChannelList(channelList) // 获取到的channel列表不为空，更新列表
-            this.setState({
-                channelStatus: true
-            })
+    handleDeleteConfirm =(index)=> {
+        // 删除数据库，更新页面中显示的列表
+        // 更新user数据库中的内容
+        const { updateChannelList } = this.props
+        const { channelList } = this.state
+        if(index !== channelList.length-1){
+            const newChannelList = Object.assign({}, channelList.slice(0,index), channelList,slice(index+1))
         }else{
-            this.setState({
-                channelStatusText: 'no channnels found'
-            })
+            const newChannelList = Object.assign({}, channelList.slice(0,index))
         }
-    } 
-
-    handleDeleteConfirm =()=> {
-        // 删除数据库，仅更新各相关username的数据库
-        console.log("this channel will be deleted")
+        this.setState({
+            channelList: newChannelList
+        })
     }
 
-    changeVisible= async (stateName, value)=>{
-        const close =  await this.kvStore.close()
+    changeVisible= (stateName, value)=>{
         this.setState({
             [stateName]: value
         })
     }
 
+    enterChannel = (index)=>{
+        // 拿到channel数据库，同时写入到redux中
+        const { channelOnShow, enterChannel } = this.props
+        const { channelList } = this.state
+        const targetRoute = channelList[index].channelName
+        if(!(channelOnShow && channelOnShow.channelId===channelList[index].channelId)){
+            // 当channelOnShow中没有内容或者是channelOnShow发生变化时才会触发redux中的list更新
+            enterChannel(channelList[index]) 
+        }
+        // window.location.href = `/mainPage/${targetRoute}`
+    }
+
+    handleExit =()=> {
+
+    }
+
     render() {
-        const { showMore,showPlus, channelStatusText, channelStatus} = this.state
-        // const {channelNameList} = this.props
-        const channelNameList = [{
-            channelName: 'channel1',
-            channelId: 'id is also a long string',
-            channelCreater: {nickName:'creater_name',nodeId:'creater_nodeid'},
-            channelJoiner:[{nickName:'joiner1_name',nodeId:'joiner1_nodeid'},{nickName:'joiner2_name',nodeId:'joiner2_nodeid'}],
-            article: {filename: 'filename',filehash:"filehash is a very long string"},
-            createDate:'2018-07-15 19:00',
-        }]
+        const { showMore,showPlus, emptyChannel, channelList} = this.state
         return <div style={{height:"100%",width:"100%"}}>
             <Layout className="layout">
                 <Sider 
@@ -105,15 +106,15 @@ class MainLayout extends React.Component {
                     </div>  
                     <div className="sider-body">
                     {   
-                        channelStatus ? channelNameList.map(((item, index)=>{
+                        !emptyChannel ? channelList.map(((item, index)=>{
                             return <div className="sider-body-channelList" key={index}>
-                                <Link className="name" to={`/mainPage/${item.channelName}`}>{item.channelName}</Link> {/*路由，在此处进入到对应channelName所对应的页面*/}
+                                <Link to={`/mainPage/${item.channelName}`} className="name" onClick={()=>this.enterChannel(index)}>{item.channelName}</Link>  
                                 <div className="operation">
                                     <a className="more" onCancel={()=>{this.changeVisible('showMore', true)}}>more</a>{/*点击展示channel的详细信息*/}
                                     <Popconfirm 
                                         title="删除该channel将同时删除该channel下的文档，聊天信息，仍旧要删除吗？"
                                         okText="删除" cancelText="取消"
-                                        onConfirm={this.handleDeleteConfirm}
+                                        onConfirm={()=>this.handleDeleteConfirm(index)}
                                         placement="bottomRight"
                                         overlayStyle={{width:'200px'}}
                                     >
@@ -128,13 +129,13 @@ class MainLayout extends React.Component {
                                     <ChannelDetail info={item}/>
                                 </Modal>
                             </div>
-                        }))  : <div className="sider-body-tip">{channelStatusText}</div>    
+                        }))  : <div className="sider-body-tip">no channels found</div>    
                     }
                     </div>
                     <div className="sider-footer">
                         <Icon type="plus" onClick={()=>{this.changeVisible('showPlus', true)}} style={{cursor:'pointer'}}/> {/*添加新channel*/}
                         <Link to="/personalPage"><Icon type="home" style={{color:'#FFF'}}/></Link> {/*个人信息展示*/}
-                        <Link to="/"><Icon type="logout" style={{color:'#FFF'}} /></Link> {/*退出*/}
+                        <a onClick={this.handleExit}><Icon type="logout" style={{color:'#FFF'}} /></a> {/*退出*/}
                         <Modal 
                             visible={showPlus} 
                             footer={null} 
@@ -148,7 +149,7 @@ class MainLayout extends React.Component {
                         <Switch>
                             <Route exact path="/mainPage/" component={Welcome} />
                             {
-                                channelNameList.map((item,index)=>{
+                                channelList.map((item,index)=>{
                                     return <Route path={`/mainPage/${item.channelName}`} key={index} component={LeftBody}/>
                                 })
                             }

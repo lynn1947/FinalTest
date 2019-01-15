@@ -55,3 +55,15 @@ var getSpacifiedRecordOutput ={
     filehash: '',
 }
 
+
+var deleteSpacifiesRecordInput = {
+    timestamp: '',
+    channelId: ''
+}
+
+var deleteSpacifiesRecordOutput = {
+    code: '',
+    message: ''
+}
+
+

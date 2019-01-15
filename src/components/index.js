@@ -5,6 +5,9 @@ import SaveInfo from './saveInfo/index'
 import ChatPane from './chatPan/index'
 import Welcome from './welcome/index'
 import QuillEditor from './yjs-quill/index'
+import PartnerTab from './ListPartners'
+import FilesTab from './ListFiles/index'
+import MessageModal from './messageModal/index'
 
 const components ={
     ChannelDetail,
@@ -14,6 +17,9 @@ const components ={
     ChatPane,
     Welcome,
     QuillEditor,
+    MessageModal,
+    PartnerTab,
+    FilesTab,
 }
 
 export default components

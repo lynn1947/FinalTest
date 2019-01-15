@@ -19,8 +19,9 @@ export const detailChannel =(sucfunc)=>(dispatch,getState)=> {
     })
 } // 展示选择channel的具体内容，更改channelInDetail中内容
 
-export const enterChannel =(sucfunc)=>(dispatch, getState)=> {
+export const enterChannel =(data, sucfunc)=>(dispatch, getState)=> {
     dispatch({
-        type: ''
+        type: 'ENTER_CHANNEL',
+        data
     })
-}// 选择channel动作，选择了这个channel，那么需要处理和这个channel相关的内容
+}// 选择channel动作，存储当前channnel的内容，同时展示相应的编辑页面

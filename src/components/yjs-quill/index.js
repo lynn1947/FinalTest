@@ -11,7 +11,7 @@ class QuillEditor extends React.Component {
         return (
             <div className="editor">
                 <div className="quillEditor-wrapper">
-                    <YjsQuill ipfs={this.props.ipfs}/>
+                    <YjsQuill ipfs={this.props.ipfs} roomName={''} />
                     <div id="quillEditor" className="quillEditor">
                         <p>Hello World!</p>
                         <p>Some initial <strong>bold</strong> text</p>

@@ -1,18 +1,77 @@
 import React from 'react'
-import { Layout, Tabs, } from 'antd'
+import { Layout, Tabs, Table, Button, Modal } from 'antd'
+import components from './../../components/index'
+import {connect} from './../../common/util/index'
+import * as actions from './state/action'
 import './index.less'
 
 const TabPane = Tabs.TabPane
 const {Header, Content, Footer} = Layout
+const { PartnerTab, FilesTab} = components
 
-export default class PersonalPage extends React.Component {
+class PersonalPage extends React.Component {
     constructor(props) {
         super(props)
-        this.state = {}
+        this.state = {
+            nickname: '',
+            personalInfo: {},
+            fileList: [],
+            partnerList: [],
+            showHistory: false,
+            fileOnshow: 'testfile01'
+        }
+        this.nickname = ''
+        this.orbitHex = ''
     }
+
+    componentDidMount(){
+        const { orbitNode } = this.props.pubInstance
+    
+        this.orbitHex = orbitNode.key.getPublic('hex')
+
+        const partnerList = this.getOrbitInfo().partnerList
+        const fileList = this.getOrbitInfo().fileList
+        this.setState({
+            partnerList: JSON.parse(JSON.stringify(partnerList)),
+            fileList: JSON.parse(JSON.stringify(fileList))
+        })
+        
+    }
+
+    getPersonInfo =()=>{
+        return {
+            ipfsNode: '',
+            orbitHex: '',
+        }
+    } // 事实是，这段的信息在页面初始化时即应该存储于redux中，所以不设这个函数
+
+    getOrbitInfo=()=>{
+        return {
+            nickname: 'Lynn Xu',
+            partnerList: [{
+                index: 1,
+                nickname:'',
+                nodeid:'',
+                hex: '',
+            }],
+            fileList: [{
+                index: 1,
+                fileName: 'testfile01',
+                hash: 'QmfYsCfy5SjaWjpQGnpjRfk5g1rFeVhdsWEHQGEJuryGxt',
+                creator: 'test01',
+                timestamp: new Date().valueOf(),
+                commit: '这是一段测试内容',
+            }],
+        }
+    }
+
+    getHistory =()=>{}
 
     render() {
         const nickname= "Lynn Xu"
+        const { fileList, partnerList, showHistory, fileOnshow } = this.state
+
+
         return (
             <Layout className="personalPage">
                 <Header className="header">
@@ -26,16 +85,21 @@ export default class PersonalPage extends React.Component {
                     </div>
                 </Header>
                 <Content className="content">
-                    <Tabs className="content-tab">
-                        <TabPane tab="your files" key="filesTab">
-                            <div>your files</div>
-                        </TabPane>
-                        <TabPane tab="your parterns" key="pertnerTab">
-                            <div>your partners</div>
-                        </TabPane>
-                    </Tabs>
                     <div className="content-infocard">
-
+                        <div className="content-infocard-orbit"> 
+                            <span>您的orbit hex是：</span>
+                            { this.orbitHex}
+                        </div>
+                    </div>
+                    <div className="content-tab">
+                        <Tabs >
+                            <TabPane tab="历史文件项" key="filesTab">
+                                <FilesTab fileList={fileList} getHistory={this.getHistory}/>
+                            </TabPane>
+                            <TabPane tab="协同好友项" key="pertnerTab">
+                                <PartnerTab partnerList={partnerList} />
+                            </TabPane>
+                        </Tabs>
                     </div>
                 </Content>
                 <Footer className="footer">
@@ -45,3 +109,9 @@ export default class PersonalPage extends React.Component {
         )
     }
 }
+
+export default connect((state)=>{
+    return {
+        ...state.login,
+    }
+},actions)(PersonalPage)

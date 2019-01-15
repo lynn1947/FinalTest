@@ -7,7 +7,8 @@ const initialState = {
         joiners: [],
         databaseAddr: '', // channelHash
     }],
-    parternList: []
+    parternList: [],
+    channelOnShow: {}
 }
 
 export default function reducer(state=initialState, action) {
@@ -20,6 +21,8 @@ export default function reducer(state=initialState, action) {
             return  deletechannel(state, action)
         case 'DETAIL_CHANNEL':
             return detailchannel(state,action)
+        case 'ENTER_CHANNEL': 
+            return enterChannel(state,action)
         default:
             return state
     }
@@ -32,6 +35,14 @@ function updateChannelList(state,action) {
     state = IMU.Map(state)
     let newChannelList = JSON.parse(JSON.stringify(action.data))
     let newState = state.set('channelNameList', newChannelList)
+
+    return newState.toJS()
+}
+
+function enterChannel(state,action){
+    state = IMU.Map(state)
+    let newChannelOnShow = JSON.parse(JSON.stringify(action.data))
+    let newState = state.set('channelOnShow', newChannelOnShow)
 
     return newState.toJS()
 }

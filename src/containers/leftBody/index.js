@@ -17,12 +17,18 @@ class LeftBody extends React.Component {
     }
 
     componentDidMount() {
+        // open filedb
         // joinChannel
-        // 
+        // 实现的思路是，当当前有channnel on show的话，那么应该是要先关闭的，问题是如何完成？
+        // 替换之前检查是否和当前的channelOnshow一致？不一致肯定是要检查的，但是并没有解决当前页面需要先关闭之前的文件数据表问题
+         const { channelOnShow, pubInstance,  } = this.props
+         const {ipfsNode, orbitCore, orbitNode } = pubInstance
+
     }
 
     render() {
         const {showHistory,showSaveInfo} = this.state
+        console.log(this.props.pubInstance.ipfsNode)
         return (
             <div className="main">
                 <div className="main-header">{/*顶部操作栏，新建文件和保存文件以及提供文件的历史记录列表*/}
@@ -38,7 +44,7 @@ class LeftBody extends React.Component {
                 </div>
                 <div className="main-body">
                     <div className="main-body-left">
-                        <QuillEditor ipfs={this.props.pubInstance.ipfsNode}/>
+                        <QuillEditor ipfs={this.props.pubInstance.ipfsNode} roomName={this.props}/>
                     </div>
                     <div className="main-body-right">
                         <ChatPane />
@@ -51,7 +57,8 @@ class LeftBody extends React.Component {
 export default connect((state)=>{
     return {
         ...state.LeftBody,
-        ...state.login
+        ...state.login,
+        ...state.mainLayout
 
     }
 },actions)(LeftBody)

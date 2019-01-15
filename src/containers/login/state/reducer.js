@@ -4,7 +4,8 @@ const initialState = {
     pubInstance: {
         ipfsNode: null,
         orbitNode: null,
-        orbitCore: null
+        orbitCore: null,
+        userStore: null,
     },
     isFirst: true
 }
@@ -22,11 +23,12 @@ export default function reducer(state=initialState, action) {
 
 function initInstance(state,action) {
     state = IMU.Map(state)
-    let ipfsNode = action.data.ipfsNode
-    let orbitNode = action.data.orbitNode
-    let orbitCore = action.data.orbitCore
+    let ipfsNode = action.data.ipfsNode || null
+    let orbitNode = action.data.orbitNode || null 
+    let orbitCore = action.data.orbitCore || null
+    let userStore = action.data.userStore || null
     
-    let newState = state.set('pubInstance', {ipfsNode, orbitNode, orbitCore})
+    let newState = state.set('pubInstance', {ipfsNode, orbitNode, orbitCore, userStore})
     return newState.toJS()
 }
 
