@@ -6,7 +6,7 @@ let AddAssetHtmlPlugin = require('add-asset-html-webpack-plugin')
 const config ={
     mode: 'development',
     entry: {
-        bundle: ['babel-polyfill','./src/index.js'],
+        bundle: ['babel-polyfill','./APP/index.js'],
     },
     output: {
         path: path.join(__dirname,"dist"),

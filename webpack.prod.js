@@ -8,7 +8,7 @@ let configDll = require('./webpack.dev.dll')
 const config = merge(configDll,{
     mode: 'development',
     entry: {
-        bundle: ['babel-polyfill','./src/index.js'],
+        bundle: ['babel-polyfill','./APP/index.js'],
     },
     output: {
         path: path.join(__dirname,"dist"),

@@ -64,7 +64,7 @@
 /******/
 /******/ 	var hotApplyOnUpdate = true;
 /******/ 	// eslint-disable-next-line no-unused-vars
-/******/ 	var hotCurrentHash = "8932de8e3b500a9e86e2";
+/******/ 	var hotCurrentHash = "0ba20c925bedebae1bc5";
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule;
@@ -5658,151 +5658,6 @@ var locale = {
 
 var _default = locale;
 exports["default"] = _default;
-
-/***/ }),
-
-/***/ "./node_modules/antd/lib/divider/index.js":
-/*!************************************************!*\
-  !*** ./node_modules/antd/lib/divider/index.js ***!
-  \************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports["default"] = void 0;
-
-var React = _interopRequireWildcard(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
-
-var _classnames = _interopRequireDefault(__webpack_require__(/*! classnames */ "./node_modules/classnames/index.js"));
-
-var _configProvider = __webpack_require__(/*! ../config-provider */ "./node_modules/antd/lib/config-provider/index.js");
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
-function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj["default"] = obj; return newObj; } }
-
-function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
-
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
-var __rest = void 0 && (void 0).__rest || function (s, e) {
-  var t = {};
-
-  for (var p in s) {
-    if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0) t[p] = s[p];
-  }
-
-  if (s != null && typeof Object.getOwnPropertySymbols === "function") for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
-    if (e.indexOf(p[i]) < 0) t[p[i]] = s[p[i]];
-  }
-  return t;
-};
-
-var Divider = function Divider(props) {
-  return React.createElement(_configProvider.ConfigConsumer, null, function (_ref) {
-    var _classNames;
-
-    var getPrefixCls = _ref.getPrefixCls;
-
-    var customizePrefixCls = props.prefixCls,
-        _props$type = props.type,
-        type = _props$type === void 0 ? 'horizontal' : _props$type,
-        _props$orientation = props.orientation,
-        orientation = _props$orientation === void 0 ? '' : _props$orientation,
-        className = props.className,
-        children = props.children,
-        dashed = props.dashed,
-        restProps = __rest(props, ["prefixCls", "type", "orientation", "className", "children", "dashed"]);
-
-    var prefixCls = getPrefixCls('divider', customizePrefixCls);
-    var orientationPrefix = orientation.length > 0 ? '-' + orientation : orientation;
-    var classString = (0, _classnames["default"])(className, prefixCls, "".concat(prefixCls, "-").concat(type), (_classNames = {}, _defineProperty(_classNames, "".concat(prefixCls, "-with-text").concat(orientationPrefix), children), _defineProperty(_classNames, "".concat(prefixCls, "-dashed"), !!dashed), _classNames));
-    return React.createElement("div", _extends({
-      className: classString
-    }, restProps), children && React.createElement("span", {
-      className: "".concat(prefixCls, "-inner-text")
-    }, children));
-  });
-};
-
-var _default = Divider;
-exports["default"] = _default;
-
-/***/ }),
-
-/***/ "./node_modules/antd/lib/divider/style/index.js":
-/*!******************************************************!*\
-  !*** ./node_modules/antd/lib/divider/style/index.js ***!
-  \******************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-__webpack_require__(/*! ../../style/index.less */ "./node_modules/antd/lib/style/index.less");
-
-__webpack_require__(/*! ./index.less */ "./node_modules/antd/lib/divider/style/index.less");
-
-/***/ }),
-
-/***/ "./node_modules/antd/lib/divider/style/index.less":
-/*!********************************************************!*\
-  !*** ./node_modules/antd/lib/divider/style/index.less ***!
-  \********************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-
-var content = __webpack_require__(/*! !../../../../css-loader!../../../../less-loader/dist/cjs.js!./index.less */ "./node_modules/css-loader/index.js!./node_modules/less-loader/dist/cjs.js!./node_modules/antd/lib/divider/style/index.less");
-
-if(typeof content === 'string') content = [[module.i, content, '']];
-
-var transform;
-var insertInto;
-
-
-
-var options = {"hmr":true}
-
-options.transform = transform
-options.insertInto = undefined;
-
-var update = __webpack_require__(/*! ../../../../style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
-
-if(content.locals) module.exports = content.locals;
-
-if(true) {
-	module.hot.accept(/*! !../../../../css-loader!../../../../less-loader/dist/cjs.js!./index.less */ "./node_modules/css-loader/index.js!./node_modules/less-loader/dist/cjs.js!./node_modules/antd/lib/divider/style/index.less", function() {
-		var newContent = __webpack_require__(/*! !../../../../css-loader!../../../../less-loader/dist/cjs.js!./index.less */ "./node_modules/css-loader/index.js!./node_modules/less-loader/dist/cjs.js!./node_modules/antd/lib/divider/style/index.less");
-
-		if(typeof newContent === 'string') newContent = [[module.i, newContent, '']];
-
-		var locals = (function(a, b) {
-			var key, idx = 0;
-
-			for(key in a) {
-				if(!b || a[key] !== b[key]) return false;
-				idx++;
-			}
-
-			for(key in b) idx--;
-
-			return idx === 0;
-		}(content.locals, newContent.locals));
-
-		if(!locals) throw new Error('Aborting CSS HMR due to changed css-modules locals.');
-
-		update(newContent);
-	});
-
-	module.hot.dispose(function() { update(); });
-}
 
 /***/ }),
 
@@ -33439,25 +33294,6 @@ exports.push([module.i, "/* stylelint-disable at-rule-empty-line-before,at-rule-
 
 /***/ }),
 
-/***/ "./node_modules/css-loader/index.js!./node_modules/less-loader/dist/cjs.js!./node_modules/antd/lib/divider/style/index.less":
-/*!*************************************************************************************************************************!*\
-  !*** ./node_modules/css-loader!./node_modules/less-loader/dist/cjs.js!./node_modules/antd/lib/divider/style/index.less ***!
-  \*************************************************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(/*! ../../../../css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
-// imports
-
-
-// module
-exports.push([module.i, "/* stylelint-disable at-rule-empty-line-before,at-rule-name-space-after,at-rule-no-unknown */\n/* stylelint-disable no-duplicate-selectors */\n/* stylelint-disable */\n/* stylelint-disable declaration-bang-space-before,no-duplicate-selectors,string-no-newline */\n.ant-divider {\n  font-size: 14px;\n  font-variant: tabular-nums;\n  line-height: 1.5;\n  color: rgba(0, 0, 0, 0.65);\n  box-sizing: border-box;\n  margin: 0;\n  padding: 0;\n  list-style: none;\n  background: #e8e8e8;\n}\n.ant-divider,\n.ant-divider-vertical {\n  margin: 0 8px;\n  display: inline-block;\n  height: 0.9em;\n  width: 1px;\n  vertical-align: middle;\n  position: relative;\n  top: -0.06em;\n}\n.ant-divider-horizontal {\n  display: block;\n  height: 1px;\n  width: 100%;\n  min-width: 100%;\n  margin: 24px 0;\n  clear: both;\n}\n.ant-divider-horizontal.ant-divider-with-text,\n.ant-divider-horizontal.ant-divider-with-text-left,\n.ant-divider-horizontal.ant-divider-with-text-right {\n  display: table;\n  white-space: nowrap;\n  text-align: center;\n  background: transparent;\n  font-weight: 500;\n  color: rgba(0, 0, 0, 0.85);\n  font-size: 16px;\n  margin: 16px 0;\n}\n.ant-divider-horizontal.ant-divider-with-text:before,\n.ant-divider-horizontal.ant-divider-with-text-left:before,\n.ant-divider-horizontal.ant-divider-with-text-right:before,\n.ant-divider-horizontal.ant-divider-with-text:after,\n.ant-divider-horizontal.ant-divider-with-text-left:after,\n.ant-divider-horizontal.ant-divider-with-text-right:after {\n  content: '';\n  display: table-cell;\n  position: relative;\n  top: 50%;\n  width: 50%;\n  border-top: 1px solid #e8e8e8;\n  transform: translateY(50%);\n}\n.ant-divider-horizontal.ant-divider-with-text-left .ant-divider-inner-text,\n.ant-divider-horizontal.ant-divider-with-text-right .ant-divider-inner-text {\n  display: inline-block;\n  padding: 0 10px;\n}\n.ant-divider-horizontal.ant-divider-with-text-left:before {\n  top: 50%;\n  width: 5%;\n}\n.ant-divider-horizontal.ant-divider-with-text-left:after {\n  top: 50%;\n  width: 95%;\n}\n.ant-divider-horizontal.ant-divider-with-text-right:before {\n  top: 50%;\n  width: 95%;\n}\n.ant-divider-horizontal.ant-divider-with-text-right:after {\n  top: 50%;\n  width: 5%;\n}\n.ant-divider-inner-text {\n  display: inline-block;\n  padding: 0 24px;\n}\n.ant-divider-dashed {\n  background: none;\n  border-top: 1px dashed #e8e8e8;\n}\n.ant-divider-horizontal.ant-divider-with-text.ant-divider-dashed,\n.ant-divider-horizontal.ant-divider-with-text-left.ant-divider-dashed,\n.ant-divider-horizontal.ant-divider-with-text-right.ant-divider-dashed {\n  border-top: 0;\n}\n.ant-divider-horizontal.ant-divider-with-text.ant-divider-dashed:before,\n.ant-divider-horizontal.ant-divider-with-text-left.ant-divider-dashed:before,\n.ant-divider-horizontal.ant-divider-with-text-right.ant-divider-dashed:before,\n.ant-divider-horizontal.ant-divider-with-text.ant-divider-dashed:after,\n.ant-divider-horizontal.ant-divider-with-text-left.ant-divider-dashed:after,\n.ant-divider-horizontal.ant-divider-with-text-right.ant-divider-dashed:after {\n  border-style: dashed none none;\n}\n", ""]);
-
-// exports
-
-
-/***/ }),
-
 /***/ "./node_modules/css-loader/index.js!./node_modules/less-loader/dist/cjs.js!./node_modules/antd/lib/dropdown/style/index.less":
 /*!**************************************************************************************************************************!*\
   !*** ./node_modules/css-loader!./node_modules/less-loader/dist/cjs.js!./node_modules/antd/lib/dropdown/style/index.less ***!
@@ -33743,6 +33579,44 @@ exports.push([module.i, "/* stylelint-disable at-rule-empty-line-before,at-rule-
 
 /***/ }),
 
+/***/ "./node_modules/css-loader/index.js!./node_modules/less-loader/dist/cjs.js!./src/components/ListFiles/index.less":
+/*!**************************************************************************************************************!*\
+  !*** ./node_modules/css-loader!./node_modules/less-loader/dist/cjs.js!./src/components/ListFiles/index.less ***!
+  \**************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, ".historyModal--table-operation {\n  display: flex;\n  justify-content: space-around;\n}\n.historyModal--table-operation-button {\n  margin-right: 10px;\n}\n", ""]);
+
+// exports
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/index.js!./node_modules/less-loader/dist/cjs.js!./src/components/ListPartners/index.less":
+/*!*****************************************************************************************************************!*\
+  !*** ./node_modules/css-loader!./node_modules/less-loader/dist/cjs.js!./src/components/ListPartners/index.less ***!
+  \*****************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, ".partnerList {\n  overflow: scroll;\n}\n.partnerList-button {\n  width: 100%;\n  margin-bottom: 10px;\n  display: flex;\n  justify-content: flex-end;\n}\n", ""]);
+
+// exports
+
+
+/***/ }),
+
 /***/ "./node_modules/css-loader/index.js!./node_modules/less-loader/dist/cjs.js!./src/components/channelDetail/index.less":
 /*!******************************************************************************************************************!*\
   !*** ./node_modules/css-loader!./node_modules/less-loader/dist/cjs.js!./src/components/channelDetail/index.less ***!
@@ -33793,7 +33667,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".history-title {\n  font-size: 16px;\n  color: rgba(0, 0, 0, 0.65);\n  margin-bottom: 10px;\n}\n", ""]);
+exports.push([module.i, ".history-title {\n  font-size: 16px;\n  color: rgba(0, 0, 0, 0.65);\n  margin-bottom: 10px;\n}\n.history-tablle-operation {\n  display: flex;\n  justify-content: space-around;\n}\n", ""]);
 
 // exports
 
@@ -33888,7 +33762,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".login {\n  width: 100%;\n  height: 100%;\n}\n.login .loginPage {\n  width: 100%;\n  height: 100%;\n  text-align: center;\n  box-shadow: 0 4px 30px #ccc;\n}\n.login .loginPage-slogan {\n  height: 64px;\n  width: 100%;\n  background: #001529;\n  display: flex;\n  justify-content: flex-start;\n  align-items: center;\n}\n.login .loginPage-slogan-logo {\n  height: 20px;\n  width: 30px;\n  background-color: rgba(0, 0, 0, 0.65);\n  margin-left: 50px;\n  display: inline-block;\n}\n.login .loginPage-slogan-title {\n  margin: 0;\n  padding: 0;\n  display: inline-block;\n  color: #FFFFFF;\n  font-size: 14px;\n  margin-left: 30px;\n  line-height: 20px;\n}\n.login .loginPage-form {\n  height: calc(100% - 124px);\n  margin: 30px auto;\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  align-items: center;\n}\n.login .loginPage-form-account {\n  width: 350px;\n  margin-bottom: 20px;\n}\n.login .loginPage-form-password {\n  width: 350px;\n}\n.login .loginPage-form-tip {\n  display: flex;\n  margin: 10px;\n}\n.login .loginPage-form-tip span {\n  display: inline-block;\n  margin-left: 10px;\n}\n.login .loginPage-form-login {\n  width: 150px;\n  height: 30px;\n  background-color: #001529;\n  cursor: pointer;\n  text-align: center;\n  margin: 0 auto;\n}\n.login .loginPage-form-login a {\n  color: #FFF;\n  line-height: 30px;\n}\n", ""]);
+exports.push([module.i, ".login {\n  width: 100%;\n  height: 100%;\n}\n.login .loginPage {\n  width: 100%;\n  height: calc(100% - 48px);\n  text-align: center;\n  box-shadow: 0 4px 30px #ccc;\n}\n.login .loginPage-slogan {\n  height: 64px;\n  width: 100%;\n  background: #001529;\n  display: flex;\n  justify-content: flex-start;\n  align-items: center;\n}\n.login .loginPage-slogan-logo {\n  height: 20px;\n  width: 30px;\n  background-color: rgba(0, 0, 0, 0.65);\n  margin-left: 50px;\n  display: inline-block;\n}\n.login .loginPage-slogan-title {\n  margin: 0;\n  padding: 0;\n  display: inline-block;\n  color: #FFFFFF;\n  font-size: 14px;\n  margin-left: 30px;\n  line-height: 20px;\n}\n.login .loginPage-form {\n  width: 100%;\n  height: calc(100% - 124px);\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  align-items: center;\n}\n.login .loginPage-form-input {\n  width: 350px;\n  margin-bottom: 20px;\n}\n.login .loginPage-form-tip {\n  display: flex;\n  margin: 10px;\n}\n.login .loginPage-form-tip span {\n  display: inline-block;\n  margin-left: 10px;\n}\n.login .loginPage-form-login {\n  width: 150px;\n  height: 30px;\n  background-color: #001529;\n  cursor: pointer;\n  text-align: center;\n  margin: 0 auto;\n}\n.login .loginPage-form-login a {\n  color: #FFF;\n  line-height: 30px;\n}\n.login-footer {\n  height: 48px;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n", ""]);
 
 // exports
 
@@ -33945,7 +33819,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".personalPage {\n  height: 100%;\n}\n.personalPage .header {\n  display: flex;\n  justify-content: space-between;\n}\n.personalPage .header-slogan {\n  margin-left: 20px;\n  display: flex;\n  align-items: center;\n}\n.personalPage .header-slogan-logo {\n  height: 20px;\n  width: 30px;\n  background-color: rgba(255, 255, 255, 0.5);\n  display: inline-block;\n}\n.personalPage .header-slogan-title {\n  margin: 0;\n  padding: 0;\n  display: inline-block;\n  color: #FFFFFF;\n  font-size: 14px;\n  margin-left: 10px;\n  line-height: 20px;\n}\n.personalPage .header-welcome {\n  color: #FFFFFF;\n  font-size: 14px;\n}\n.personalPage .header-welcome a {\n  margin-left: 20px;\n  font-size: 14px;\n  cursor: pointer;\n}\n.personalPage .content {\n  margin: 10px;\n  height: 100%;\n  padding: 20px 50px;\n}\n.personalPage .content-tab {\n  width: 70%;\n  height: 100%;\n  padding: 20px;\n  background: #FFF;\n}\n.personalPage .footer {\n  text-align: center;\n  height: 48px;\n}\n", ""]);
+exports.push([module.i, ".personalPage {\n  height: 100%;\n}\n.personalPage .header {\n  display: flex;\n  justify-content: space-between;\n}\n.personalPage .header-slogan {\n  margin-left: 20px;\n  display: flex;\n  align-items: center;\n}\n.personalPage .header-slogan-logo {\n  height: 20px;\n  width: 30px;\n  background-color: rgba(255, 255, 255, 0.5);\n  display: inline-block;\n}\n.personalPage .header-slogan-title {\n  margin: 0;\n  padding: 0;\n  display: inline-block;\n  color: #FFFFFF;\n  font-size: 14px;\n  margin-left: 10px;\n  line-height: 20px;\n}\n.personalPage .header-welcome {\n  color: #FFFFFF;\n  font-size: 14px;\n}\n.personalPage .header-welcome a {\n  margin-left: 20px;\n  font-size: 14px;\n  cursor: pointer;\n}\n.personalPage .content {\n  margin: 10px;\n  height: 100%;\n  padding: 20px 30px;\n}\n.personalPage .content-tab {\n  width: 100%;\n  height: calc(100% - 120px);\n  padding: 20px;\n  background: #FFF;\n  border-radius: 4px;\n}\n.personalPage .content-infocard {\n  width: 100%;\n  height: 100px;\n  background-color: #FFF;\n  border-radius: 4px;\n  margin: 10px 0px;\n  padding: 10px 20px;\n  display: flex;\n  flex-direction: column;\n  justify-content: space-around;\n}\n.personalPage .footer {\n  text-align: center;\n  height: 48px;\n}\n.personal-table-operation {\n  display: flex;\n  justify-content: space-around;\n}\n.personal-table-operation-button {\n  margin-right: 10px;\n}\n", ""]);
 
 // exports
 
@@ -33964,7 +33838,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".login {\n  width: 100%;\n  height: 100%;\n}\n.login .loginPage {\n  width: 100%;\n  height: 100%;\n  text-align: center;\n  box-shadow: 0 4px 30px #ccc;\n}\n.login .loginPage-slogan {\n  height: 64px;\n  width: 100%;\n  background: #001529;\n  display: flex;\n  justify-content: flex-start;\n  align-items: center;\n}\n.login .loginPage-slogan-logo {\n  height: 20px;\n  width: 30px;\n  background-color: rgba(0, 0, 0, 0.65);\n  margin-left: 50px;\n  display: inline-block;\n}\n.login .loginPage-slogan-title {\n  margin: 0;\n  padding: 0;\n  display: inline-block;\n  color: #FFFFFF;\n  font-size: 14px;\n  margin-left: 30px;\n  line-height: 20px;\n}\n.login .loginPage-form {\n  width: 50%;\n  height: calc(100% - 124px);\n  margin: 30px auto;\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  align-items: center;\n}\n.login .loginPage-form-input {\n  width: 350px;\n  margin-bottom: 20px;\n}\n.login .loginPage-form-tip {\n  display: flex;\n  margin: 10px;\n}\n.login .loginPage-form-tip span {\n  display: inline-block;\n  margin-left: 10px;\n}\n.login .loginPage-form-login {\n  width: 150px;\n  height: 30px;\n  background-color: #001529;\n  cursor: pointer;\n  text-align: center;\n  margin: 30px auto;\n}\n.login .loginPage-form-login a {\n  color: #FFF;\n  line-height: 30px;\n}\n", ""]);
+exports.push([module.i, ".signin {\n  width: 100%;\n  height: 100%;\n}\n.signin .signinPage {\n  width: 100%;\n  height: calc(100% - 48px);\n  text-align: center;\n  box-shadow: 0 4px 30px #ccc;\n}\n.signin .signinPage-slogan {\n  height: 64px;\n  width: 100%;\n  background: #001529;\n  display: flex;\n  justify-content: flex-start;\n  align-items: center;\n}\n.signin .signinPage-slogan-logo {\n  height: 20px;\n  width: 30px;\n  background-color: rgba(0, 0, 0, 0.65);\n  margin-left: 50px;\n  display: inline-block;\n}\n.signin .signinPage-slogan-title {\n  margin: 0;\n  padding: 0;\n  display: inline-block;\n  color: #FFFFFF;\n  font-size: 14px;\n  margin-left: 30px;\n  line-height: 20px;\n}\n.signin .signinPage-form {\n  width: 100%;\n  height: calc(100% - 124px);\n  margin: 30px auto;\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  align-items: center;\n}\n.signin .signinPage-form-input {\n  width: 350px;\n  margin-bottom: 20px;\n}\n.signin .signinPage-form-tip {\n  display: flex;\n  margin: 10px;\n}\n.signin .signinPage-form-tip span {\n  display: inline-block;\n  margin-left: 10px;\n}\n.signin .signinPage-form-signin {\n  width: 150px;\n  height: 30px;\n  background-color: #001529;\n  cursor: pointer;\n  text-align: center;\n  margin: 30px auto;\n}\n.signin .signinPage-form-signin a {\n  color: #FFF;\n  line-height: 30px;\n}\n.signin-footer {\n  height: 48px;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n", ""]);
 
 // exports
 
@@ -34054,6 +33928,18 @@ function toComment(sourceMap) {
 
 	return '/*# ' + data + ' */';
 }
+
+
+/***/ }),
+
+/***/ "./node_modules/dayjs/dayjs.min.js":
+/*!*****************************************!*\
+  !*** ./node_modules/dayjs/dayjs.min.js ***!
+  \*****************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+!function(t,n){ true?module.exports=n():undefined}(this,function(){"use strict";var t="millisecond",n="second",e="minute",r="hour",i="day",s="week",u="month",a="year",o=/^(\d{4})-?(\d{1,2})-?(\d{0,2})(.*?(\d{1,2}):(\d{1,2}):(\d{1,2}))?.?(\d{1,3})?$/,h=/\[.*?\]|Y{2,4}|M{1,4}|D{1,2}|d{1,4}|H{1,2}|h{1,2}|a|A|m{1,2}|s{1,2}|Z{1,2}|SSS/g,c={name:"en",weekdays:"Sunday_Monday_Tuesday_Wednesday_Thursday_Friday_Saturday".split("_"),months:"January_February_March_April_May_June_July_August_September_October_November_December".split("_")},d=function(t,n,e){var r=String(t);return!r||r.length>=n?t:""+Array(n+1-r.length).join(e)+t},f={padStart:d,padZoneStr:function(t){var n=Math.abs(t),e=Math.floor(n/60),r=n%60;return(t<=0?"+":"-")+d(e,2,"0")+":"+d(r,2,"0")},monthDiff:function(t,n){var e=12*(n.year()-t.year())+(n.month()-t.month()),r=t.clone().add(e,"months"),i=n-r<0,s=t.clone().add(e+(i?-1:1),"months");return Number(-(e+(n-r)/(i?r-s:s-r)))},absFloor:function(t){return t<0?Math.ceil(t)||0:Math.floor(t)},prettyUnit:function(o){return{M:u,y:a,w:s,d:i,h:r,m:e,s:n,ms:t}[o]||String(o||"").toLowerCase().replace(/s$/,"")},isUndefined:function(t){return void 0===t}},$="en",l={};l[$]=c;var m=function(t){return t instanceof p},y=function(t,n,e){var r;if(!t)return null;if("string"==typeof t)l[t]&&(r=t),n&&(l[t]=n,r=t);else{var i=t.name;l[i]=t,r=i}return e||($=r),r},M=function(t,n){if(m(t))return t.clone();var e=n||{};return e.date=t,new p(e)},S=function(t,n){return M(t,{locale:n.$L})},D=f;D.parseLocale=y,D.isDayjs=m,D.wrapper=S;var p=function(){function c(t){this.parse(t)}var d=c.prototype;return d.parse=function(t){var n,e;this.$d=null===(n=t.date)?new Date(NaN):D.isUndefined(n)?new Date:n instanceof Date?n:"string"==typeof n&&/.*[^Z]$/i.test(n)&&(e=n.match(o))?new Date(e[1],e[2]-1,e[3]||1,e[5]||0,e[6]||0,e[7]||0,e[8]||0):new Date(n),this.init(t)},d.init=function(t){var n=this.$d;this.$y=n.getFullYear(),this.$M=n.getMonth(),this.$D=n.getDate(),this.$W=n.getDay(),this.$H=n.getHours(),this.$m=n.getMinutes(),this.$s=n.getSeconds(),this.$ms=n.getMilliseconds(),this.$L=this.$L||y(t.locale,null,!0)||$},d.$utils=function(){return D},d.isValid=function(){return!("Invalid Date"===this.$d.toString())},d.isSame=function(t,n){var e=M(t);return this.startOf(n)<=e&&e<=this.endOf(n)},d.isAfter=function(t,n){return M(t)<this.startOf(n)},d.isBefore=function(t,n){return this.endOf(n)<M(t)},d.year=function(){return this.$y},d.month=function(){return this.$M},d.day=function(){return this.$W},d.date=function(){return this.$D},d.hour=function(){return this.$H},d.minute=function(){return this.$m},d.second=function(){return this.$s},d.millisecond=function(){return this.$ms},d.unix=function(){return Math.floor(this.valueOf()/1e3)},d.valueOf=function(){return this.$d.getTime()},d.startOf=function(t,o){var h=this,c=!!D.isUndefined(o)||o,d=function(t,n){var e=S(new Date(h.$y,n,t),h);return c?e:e.endOf(i)},f=function(t,n){return S(h.toDate()[t].apply(h.toDate(),(c?[0,0,0,0]:[23,59,59,999]).slice(n)),h)};switch(D.prettyUnit(t)){case a:return c?d(1,0):d(31,11);case u:return c?d(1,this.$M):d(0,this.$M+1);case s:return d(c?this.$D-this.$W:this.$D+(6-this.$W),this.$M);case i:case"date":return f("setHours",0);case r:return f("setMinutes",1);case e:return f("setSeconds",2);case n:return f("setMilliseconds",3);default:return this.clone()}},d.endOf=function(t){return this.startOf(t,!1)},d.$set=function(s,o){var h,c=D.prettyUnit(s),d=(h={},h[i]="setDate",h.date="setDate",h[u]="setMonth",h[a]="setFullYear",h[r]="setHours",h[e]="setMinutes",h[n]="setSeconds",h[t]="setMilliseconds",h)[c],f=c===i?this.$D+(o-this.$W):o;return this.$d[d]&&this.$d[d](f),this.init(),this},d.set=function(t,n){return this.clone().$set(t,n)},d.add=function(t,o){var h,c=this;t=Number(t);var d=D.prettyUnit(o),f=function(n,e){var r=c.set("date",1).set(n,e+t);return r.set("date",Math.min(c.$D,r.daysInMonth()))},$=function(n){var e=new Date(c.$d);return e.setDate(e.getDate()+n*t),S(e,c)};if(d===u)return f(u,this.$M);if(d===a)return f(a,this.$y);if(d===i)return $(1);if(d===s)return $(7);var l=(h={},h[e]=6e4,h[r]=36e5,h[n]=1e3,h)[d]||1,m=this.valueOf()+t*l;return S(m,this)},d.subtract=function(t,n){return this.add(-1*t,n)},d.format=function(t){var n=this,e=t||"YYYY-MM-DDTHH:mm:ssZ",r=D.padZoneStr(this.$d.getTimezoneOffset()),i=this.$locale(),s=i.weekdays,u=i.months,a=function(t,n,e,r){return t&&t[n]||e[n].substr(0,r)},o=function(t){return 0===n.$H?12:D.padStart(n.$H<13?n.$H:n.$H-12,"hh"===t?2:1,"0")};return e.replace(h,function(t){return t.indexOf("[")>-1?t.replace(/\[|\]/g,""):{YY:String(n.$y).slice(-2),YYYY:String(n.$y),M:String(n.$M+1),MM:D.padStart(n.$M+1,2,"0"),MMM:a(i.monthsShort,n.$M,u,3),MMMM:u[n.$M],D:String(n.$D),DD:D.padStart(n.$D,2,"0"),d:String(n.$W),dd:a(i.weekdaysMin,n.$W,s,2),ddd:a(i.weekdaysShort,n.$W,s,3),dddd:s[n.$W],H:String(n.$H),HH:D.padStart(n.$H,2,"0"),h:o(t),hh:o(t),a:n.$H<12?"am":"pm",A:n.$H<12?"AM":"PM",m:String(n.$m),mm:D.padStart(n.$m,2,"0"),s:String(n.$s),ss:D.padStart(n.$s,2,"0"),SSS:D.padStart(n.$ms,3,"0"),Z:r}[t]||r.replace(":","")})},d.diff=function(t,o,h){var c,d=D.prettyUnit(o),f=M(t),$=this-f,l=D.monthDiff(this,f);return l=(c={},c[a]=l/12,c[u]=l,c.quarter=l/3,c[s]=$/6048e5,c[i]=$/864e5,c[r]=$/36e5,c[e]=$/6e4,c[n]=$/1e3,c)[d]||$,h?l:D.absFloor(l)},d.daysInMonth=function(){return this.endOf(u).$D},d.$locale=function(){return l[this.$L]},d.locale=function(t,n){var e=this.clone();return e.$L=y(t,n,!0),e},d.clone=function(){return S(this.toDate(),this)},d.toDate=function(){return new Date(this.$d)},d.toArray=function(){return[this.$y,this.$M,this.$D,this.$H,this.$m,this.$s,this.$ms]},d.toJSON=function(){return this.toISOString()},d.toISOString=function(){return this.$d.toISOString()},d.toObject=function(){return{years:this.$y,months:this.$M,date:this.$D,hours:this.$H,minutes:this.$m,seconds:this.$s,milliseconds:this.$ms}},d.toString=function(){return this.$d.toUTCString()},c}();return M.extend=function(t,n){return t(n,p,M),M},M.locale=y,M.isDayjs=m,M.unix=function(t){return M(1e3*t)},M.en=l[$],M});
 
 
 /***/ }),
@@ -63320,12 +63206,10 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 // defaultIpfsDaemonSettings
-var genIpfsDaemonSettings = function genIpfsDaemonSettings(ipfsDataDir) {
-  var isFirst = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : true;
-
+var genIpfsDaemonSettings = function genIpfsDaemonSettings(ipfsDataDir, isFirst) {
   return {
     repo: ipfsDataDir,
-    init: isFirst, // 根据所输入的名称来决定是否初始化一个ipfs节点
+    init: isFirst, // 根据所输入的名称来决定是否初始化一个ipfs节点, 为必传参数，根据注册还是登录决定
     EXPERIMENTAL: {
       pubsub: true
     },
@@ -63453,6 +63337,471 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 /***/ }),
 
+/***/ "./src/components/ListFiles/index.js":
+/*!*******************************************!*\
+  !*** ./src/components/ListFiles/index.js ***!
+  \*******************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _modal = __webpack_require__(/*! antd/lib/modal */ "./node_modules/antd/lib/modal/index.js");
+
+var _modal2 = _interopRequireDefault(_modal);
+
+var _table = __webpack_require__(/*! antd/lib/table */ "./node_modules/antd/lib/table/index.js");
+
+var _table2 = _interopRequireDefault(_table);
+
+var _button = __webpack_require__(/*! antd/lib/button */ "./node_modules/antd/lib/button/index.js");
+
+var _button2 = _interopRequireDefault(_button);
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+__webpack_require__(/*! antd/lib/modal/style */ "./node_modules/antd/lib/modal/style/index.js");
+
+__webpack_require__(/*! antd/lib/table/style */ "./node_modules/antd/lib/table/style/index.js");
+
+__webpack_require__(/*! antd/lib/button/style */ "./node_modules/antd/lib/button/style/index.js");
+
+var _react = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+
+var _react2 = _interopRequireDefault(_react);
+
+var _dayjs = __webpack_require__(/*! dayjs */ "./node_modules/dayjs/dayjs.min.js");
+
+var _dayjs2 = _interopRequireDefault(_dayjs);
+
+var _index = __webpack_require__(/*! ./../history/index */ "./src/components/history/index.js");
+
+var _index2 = _interopRequireDefault(_index);
+
+__webpack_require__(/*! ./index.less */ "./src/components/ListFiles/index.less");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var PartnerTab = function (_React$Component) {
+    _inherits(PartnerTab, _React$Component);
+
+    function PartnerTab() {
+        var _ref;
+
+        var _temp, _this, _ret;
+
+        _classCallCheck(this, PartnerTab);
+
+        for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+            args[_key] = arguments[_key];
+        }
+
+        return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = PartnerTab.__proto__ || Object.getPrototypeOf(PartnerTab)).call.apply(_ref, [this].concat(args))), _this), _this.state = {
+            showModal: false
+        }, _this.handleAdd = function () {
+            _this.setState({
+                showModal: true
+            });
+        }, _this.handleAddConfirm = function () {
+            var handleAddPartner = _this.props.handleAddPartner;
+
+            _this.setState({
+                showModal: false
+            });
+        }, _this.handleGetHistory = function () {
+            var getHistory = _this.props.getHistory;
+
+            _this.setState({
+                showModal: true
+            }, function () {});
+        }, _temp), _possibleConstructorReturn(_this, _ret);
+    }
+
+    _createClass(PartnerTab, [{
+        key: 'render',
+        value: function render() {
+            var _this2 = this;
+
+            var fileColumns = [{
+                title: '序号',
+                dataIndex: 'index',
+                key: 'index',
+                width: '5%'
+            }, {
+                title: '文件名',
+                dataIndex: 'fileName',
+                key: 'fileName',
+                width: '15%'
+            }, {
+                title: '文件哈希',
+                dataIndex: 'hash',
+                key: 'hash',
+                width: '25%'
+            }, {
+                title: 'creator',
+                dataIndex: 'creator',
+                key: 'creator',
+                width: '15'
+            }, {
+                title: 'create time',
+                dataIndex: 'timestamp',
+                key: 'timestamp',
+                width: '20%',
+                render: function render(text) {
+                    return (0, _dayjs2.default)(text).format('YYYY-MM-DD HH:mm:ss');
+                }
+            }, {
+                title: '操作',
+                dataIndex: 'operation',
+                key: 'operation',
+                width: '20%',
+                render: function render(text, record) {
+                    return _react2.default.createElement(
+                        'div',
+                        { className: 'historyModal-table-operation' },
+                        _react2.default.createElement(
+                            _button2.default,
+                            { className: 'personal-table-operation-button' },
+                            '\u67E5\u770B\u6587\u6863'
+                        ),
+                        _react2.default.createElement(
+                            _button2.default,
+                            {
+                                className: 'personal-table-operation-button',
+                                type: 'primary',
+                                onClick: _this2.handleGetHistory },
+                            '\u67E5\u770B\u5386\u53F2\u8BB0\u5F55'
+                        )
+                    );
+                }
+            }];
+
+            var _props = this.props,
+                fileList = _props.fileList,
+                fileOnshow = _props.fileOnshow;
+            var showModal = this.state.showModal;
+
+
+            return _react2.default.createElement(
+                'div',
+                { className: 'partnerList' },
+                _react2.default.createElement(_table2.default, {
+                    className: 'partnerList-table',
+                    columns: fileColumns,
+                    dataSource: fileList
+                }),
+                _react2.default.createElement(
+                    _modal2.default,
+                    {
+                        visible: showModal,
+                        width: '90%',
+                        title: fileOnshow + ' \u5386\u53F2\u8BB0\u5F55',
+                        footer: null,
+                        onCancel: function onCancel() {
+                            _this2.setState({ showModal: false });
+                        }
+                    },
+                    _react2.default.createElement(_index2.default, null)
+                )
+            );
+        }
+    }]);
+
+    return PartnerTab;
+}(_react2.default.Component);
+
+exports.default = PartnerTab;
+
+/***/ }),
+
+/***/ "./src/components/ListFiles/index.less":
+/*!*********************************************!*\
+  !*** ./src/components/ListFiles/index.less ***!
+  \*********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../../../node_modules/css-loader!../../../node_modules/less-loader/dist/cjs.js!./index.less */ "./node_modules/css-loader/index.js!./node_modules/less-loader/dist/cjs.js!./src/components/ListFiles/index.less");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(true) {
+	module.hot.accept(/*! !../../../node_modules/css-loader!../../../node_modules/less-loader/dist/cjs.js!./index.less */ "./node_modules/css-loader/index.js!./node_modules/less-loader/dist/cjs.js!./src/components/ListFiles/index.less", function() {
+		var newContent = __webpack_require__(/*! !../../../node_modules/css-loader!../../../node_modules/less-loader/dist/cjs.js!./index.less */ "./node_modules/css-loader/index.js!./node_modules/less-loader/dist/cjs.js!./src/components/ListFiles/index.less");
+
+		if(typeof newContent === 'string') newContent = [[module.i, newContent, '']];
+
+		var locals = (function(a, b) {
+			var key, idx = 0;
+
+			for(key in a) {
+				if(!b || a[key] !== b[key]) return false;
+				idx++;
+			}
+
+			for(key in b) idx--;
+
+			return idx === 0;
+		}(content.locals, newContent.locals));
+
+		if(!locals) throw new Error('Aborting CSS HMR due to changed css-modules locals.');
+
+		update(newContent);
+	});
+
+	module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+
+/***/ "./src/components/ListPartners/index.js":
+/*!**********************************************!*\
+  !*** ./src/components/ListPartners/index.js ***!
+  \**********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _modal = __webpack_require__(/*! antd/lib/modal */ "./node_modules/antd/lib/modal/index.js");
+
+var _modal2 = _interopRequireDefault(_modal);
+
+var _table = __webpack_require__(/*! antd/lib/table */ "./node_modules/antd/lib/table/index.js");
+
+var _table2 = _interopRequireDefault(_table);
+
+var _button = __webpack_require__(/*! antd/lib/button */ "./node_modules/antd/lib/button/index.js");
+
+var _button2 = _interopRequireDefault(_button);
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+__webpack_require__(/*! antd/lib/modal/style */ "./node_modules/antd/lib/modal/style/index.js");
+
+__webpack_require__(/*! antd/lib/table/style */ "./node_modules/antd/lib/table/style/index.js");
+
+__webpack_require__(/*! antd/lib/button/style */ "./node_modules/antd/lib/button/style/index.js");
+
+var _react = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+
+var _react2 = _interopRequireDefault(_react);
+
+__webpack_require__(/*! ./index.less */ "./src/components/ListPartners/index.less");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var PartnerTab = function (_React$Component) {
+    _inherits(PartnerTab, _React$Component);
+
+    function PartnerTab() {
+        var _ref;
+
+        var _temp, _this, _ret;
+
+        _classCallCheck(this, PartnerTab);
+
+        for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+            args[_key] = arguments[_key];
+        }
+
+        return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = PartnerTab.__proto__ || Object.getPrototypeOf(PartnerTab)).call.apply(_ref, [this].concat(args))), _this), _this.state = {
+            showModal: false
+        }, _this.handleAdd = function () {
+            _this.setState({
+                showModal: true
+            });
+        }, _this.handleAddConfirm = function () {
+            var handleAddPartner = _this.props.handleAddPartner;
+
+            _this.setState({
+                showModal: false
+            });
+        }, _this.handleDeletePartner = function () {}, _temp), _possibleConstructorReturn(_this, _ret);
+    }
+
+    _createClass(PartnerTab, [{
+        key: 'render',
+        value: function render() {
+            var _this2 = this;
+
+            var _props = this.props,
+                partnerList = _props.partnerList,
+                handleAddPartner = _props.handleAddPartner;
+            var showModal = this.state.showModal;
+
+            var partnerColumn = [{
+                title: '序号',
+                dataIndex: 'index',
+                key: 'index',
+                width: '10%'
+            }, {
+                title: '昵称',
+                dataIndex: 'nickname',
+                key: 'nickname',
+                width: '15%'
+            }, {
+                title: 'ipfs nodeid',
+                dataIndex: 'nodeid',
+                key: 'nodeid',
+                width: '30%'
+            }, {
+                title: 'orbitdb hex',
+                dataIndex: 'hex',
+                key: 'hex',
+                width: '30%'
+            }, {
+                title: '操作',
+                dataIndex: 'operation',
+                key: 'operation',
+                width: '15%',
+                render: function render() {
+                    return _react2.default.createElement(
+                        _button2.default,
+                        { onClick: _this2.handleDeletePartner },
+                        '\u5220\u9664'
+                    );
+                }
+            }];
+
+            return _react2.default.createElement(
+                'div',
+                { className: 'partnerList' },
+                _react2.default.createElement(
+                    'div',
+                    { className: 'partnerList-button' },
+                    _react2.default.createElement(
+                        _button2.default,
+                        {
+                            type: 'primary',
+                            onClick: function onClick() {
+                                _this2.setState({ showModal: true });
+                            }
+                        },
+                        '\u6DFB\u52A0\u597D\u53CB'
+                    )
+                ),
+                _react2.default.createElement(_table2.default, {
+                    className: 'partnerList-table',
+                    columns: partnerColumn,
+                    dataSource: partnerList
+                }),
+                _react2.default.createElement(
+                    _modal2.default,
+                    {
+                        visible: showModal,
+                        cancelText: '\u53D6\u6D88',
+                        okText: '\u786E\u5B9A',
+                        onCancel: function onCancel() {
+                            _this2.setState({ showModal: false });
+                        },
+                        onOk: this.handleAddConfirm
+                    },
+                    '\u8FD9\u91CC\u6DFB\u52A0\u597D\u53CB\u5217\u8868'
+                )
+            );
+        }
+    }]);
+
+    return PartnerTab;
+}(_react2.default.Component);
+
+exports.default = PartnerTab;
+
+/***/ }),
+
+/***/ "./src/components/ListPartners/index.less":
+/*!************************************************!*\
+  !*** ./src/components/ListPartners/index.less ***!
+  \************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../../../node_modules/css-loader!../../../node_modules/less-loader/dist/cjs.js!./index.less */ "./node_modules/css-loader/index.js!./node_modules/less-loader/dist/cjs.js!./src/components/ListPartners/index.less");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(true) {
+	module.hot.accept(/*! !../../../node_modules/css-loader!../../../node_modules/less-loader/dist/cjs.js!./index.less */ "./node_modules/css-loader/index.js!./node_modules/less-loader/dist/cjs.js!./src/components/ListPartners/index.less", function() {
+		var newContent = __webpack_require__(/*! !../../../node_modules/css-loader!../../../node_modules/less-loader/dist/cjs.js!./index.less */ "./node_modules/css-loader/index.js!./node_modules/less-loader/dist/cjs.js!./src/components/ListPartners/index.less");
+
+		if(typeof newContent === 'string') newContent = [[module.i, newContent, '']];
+
+		var locals = (function(a, b) {
+			var key, idx = 0;
+
+			for(key in a) {
+				if(!b || a[key] !== b[key]) return false;
+				idx++;
+			}
+
+			for(key in b) idx--;
+
+			return idx === 0;
+		}(content.locals, newContent.locals));
+
+		if(!locals) throw new Error('Aborting CSS HMR due to changed css-modules locals.');
+
+		update(newContent);
+	});
+
+	module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+
 /***/ "./src/components/channelDetail/index.js":
 /*!***********************************************!*\
   !*** ./src/components/channelDetail/index.js ***!
@@ -63506,12 +63855,12 @@ var ChannelDetail = function (_React$Component) {
                     _react2.default.createElement(
                         'span',
                         { className: 'label' },
-                        'ID:'
+                        '\u540D\u79F0:'
                     ),
                     _react2.default.createElement(
                         'span',
                         null,
-                        info.channelId
+                        info.channellName
                     )
                 ),
                 _react2.default.createElement(
@@ -63520,12 +63869,12 @@ var ChannelDetail = function (_React$Component) {
                     _react2.default.createElement(
                         'span',
                         { className: 'label' },
-                        'Creator:'
+                        '\u521B\u5EFA\u8005:'
                     ),
                     _react2.default.createElement(
                         'span',
                         null,
-                        info.channelCreater.nickName + '  ' + info.channelCreater.nodeId
+                        info.creator.nickName + '  ' + info.creator.nodeId + ' ' + info.creator.hex
                     )
                 ),
                 _react2.default.createElement(
@@ -63539,13 +63888,13 @@ var ChannelDetail = function (_React$Component) {
                     _react2.default.createElement(
                         'div',
                         null,
-                        info.channelJoiner.map(function (item, index) {
+                        info.joiners ? info.joiners.map(function (item, index) {
                             return _react2.default.createElement(
                                 'div',
                                 { key: index },
                                 item.nickName + ' ' + item.nodeId
                             );
-                        })
+                        }) : ''
                     )
                 ),
                 _react2.default.createElement(
@@ -63740,8 +64089,22 @@ var ChatPane = function (_React$Component) {
                     ),
                     _react2.default.createElement(
                         'div',
+                        null,
+                        _react2.default.createElement(
+                            'span',
+                            null,
+                            '\u6210\u5458\u5217\u8868'
+                        ),
+                        _react2.default.createElement('div', null)
+                    ),
+                    _react2.default.createElement(
+                        'div',
                         { className: 'upper-messages' },
-                        '\u6D88\u606F\u5217\u8868'
+                        _react2.default.createElement(
+                            'span',
+                            null,
+                            '\u6D88\u606F\u5217\u8868'
+                        )
                     )
                 ),
                 _react2.default.createElement(
@@ -63841,19 +64204,23 @@ var _table = __webpack_require__(/*! antd/lib/table */ "./node_modules/antd/lib/
 
 var _table2 = _interopRequireDefault(_table);
 
-var _divider = __webpack_require__(/*! antd/lib/divider */ "./node_modules/antd/lib/divider/index.js");
+var _button = __webpack_require__(/*! antd/lib/button */ "./node_modules/antd/lib/button/index.js");
 
-var _divider2 = _interopRequireDefault(_divider);
+var _button2 = _interopRequireDefault(_button);
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 __webpack_require__(/*! antd/lib/table/style */ "./node_modules/antd/lib/table/style/index.js");
 
-__webpack_require__(/*! antd/lib/divider/style */ "./node_modules/antd/lib/divider/style/index.js");
+__webpack_require__(/*! antd/lib/button/style */ "./node_modules/antd/lib/button/style/index.js");
 
 var _react = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 
 var _react2 = _interopRequireDefault(_react);
+
+var _dayjs = __webpack_require__(/*! dayjs */ "./node_modules/dayjs/dayjs.min.js");
+
+var _dayjs2 = _interopRequireDefault(_dayjs);
 
 __webpack_require__(/*! ./index.less */ "./src/components/history/index.less");
 
@@ -63878,59 +64245,67 @@ var History = function (_React$Component) {
         key: 'render',
         value: function render() {
             var historyInfo = [{
-                commitInfo: 'longString,预计会留出两行的空间',
-                modifyDate: '2018-07-15 22:30:15',
-                modifyer: {
-                    nickname: 'nickname',
-                    nodeid: 'nodeid'
-                },
-                version: '',
-                fileHash: ''
+                index: 1,
+                hash: 'QmfYsCfy5SjaWjpQGnpjRfk5g1rFeVhdsWEHQGEJuryGxt',
+                creator: 'test01',
+                timestamp: new Date().valueOf(),
+                commit: '这是一段测试内容'
             }];
             var columns = [{
-                title: "摘要信息",
-                dataIndex: "commitInfo",
-                key: "commitInfo", // 太长了的话就用。。。代替，hover展示完整内容
-                width: '25%'
+                title: '序号',
+                dataIndex: 'index',
+                key: 'index',
+                width: '10%'
             }, {
                 title: "文件哈希",
-                dataIndex: 'fileHash',
+                dataIndex: 'hash',
                 key: 'fileHash',
-                width: '20%'
+                width: '25%'
                 // 不提供点击文件进行下载，历史信息做在了modal框中，加预览或者下载交互更复杂
             }, {
-                title: "保存者",
-                dataIndex: 'modifyer',
-                key: 'modifyer',
-                width: '30%',
-                render: function render(text) {
-                    // 要展示的是两个内容，用竖线隔开
-                    return _react2.default.createElement(
-                        'div',
-                        { className: 'modifyerInfo' },
-                        _react2.default.createElement(
-                            'span',
-                            null,
-                            text['nickname']
-                        ),
-                        _react2.default.createElement(_divider2.default, { type: 'vertival' }),
-                        _react2.default.createElement(
-                            'span',
-                            null,
-                            text['nodeid']
-                        )
-                    );
-                }
-            }, {
-                title: "版本号",
-                dataIndex: 'version',
-                key: 'version',
+                title: "版本描述",
+                dataIndex: "commit",
+                key: "commitInfo", // 太长了的话就用。。。代替，hover展示完整内容
+                width: '25%'
+            },, {
+                title: "版本创建者",
+                dataIndex: 'creator',
+                key: 'creator',
                 width: '10%'
             }, {
                 title: "修改日期",
-                dataIndex: 'modifyDate',
-                key: 'modifyDate',
-                width: '20%'
+                dataIndex: 'timestamp',
+                key: 'timestamp',
+                width: '15%',
+                render: function render(text) {
+                    return (0, _dayjs2.default)(text).format('YYYY-MM-DD HH:mm:ss');
+                }
+            }, {
+                title: '操作',
+                dataIndex: 'operation',
+                key: 'operation',
+                width: '15%',
+                render: function render() {
+                    return _react2.default.createElement(
+                        'div',
+                        { className: 'history-tablle-operation' },
+                        _react2.default.createElement(
+                            _button2.default,
+                            null,
+                            '\u67E5\u770B'
+                        ),
+                        _react2.default.createElement(
+                            _button2.default,
+                            null,
+                            '\u5220\u9664'
+                        ),
+                        _react2.default.createElement(
+                            _button2.default,
+                            null,
+                            '\u4FEE\u6539'
+                        )
+                    );
+                }
             }];
             return _react2.default.createElement(
                 'div',
@@ -64115,6 +64490,18 @@ var _index13 = __webpack_require__(/*! ./yjs-quill/index */ "./src/components/yj
 
 var _index14 = _interopRequireDefault(_index13);
 
+var _ListPartners = __webpack_require__(/*! ./ListPartners */ "./src/components/ListPartners/index.js");
+
+var _ListPartners2 = _interopRequireDefault(_ListPartners);
+
+var _index15 = __webpack_require__(/*! ./ListFiles/index */ "./src/components/ListFiles/index.js");
+
+var _index16 = _interopRequireDefault(_index15);
+
+var _index17 = __webpack_require__(/*! ./messageModal/index */ "./src/components/messageModal/index.js");
+
+var _index18 = _interopRequireDefault(_index17);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var components = {
@@ -64124,10 +64511,63 @@ var components = {
     SaveInfo: _index8.default,
     ChatPane: _index10.default,
     Welcome: _index12.default,
-    QuillEditor: _index14.default
+    QuillEditor: _index14.default,
+    MessageModal: _index18.default,
+    PartnerTab: _ListPartners2.default,
+    FilesTab: _index16.default
 };
 
 exports.default = components;
+
+/***/ }),
+
+/***/ "./src/components/messageModal/index.js":
+/*!**********************************************!*\
+  !*** ./src/components/messageModal/index.js ***!
+  \**********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _modal = __webpack_require__(/*! antd/lib/modal */ "./node_modules/antd/lib/modal/index.js");
+
+var _modal2 = _interopRequireDefault(_modal);
+
+__webpack_require__(/*! antd/lib/modal/style */ "./node_modules/antd/lib/modal/style/index.js");
+
+var _react = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var MessageModal = function MessageModal(props) {
+    var modalVisible = props.modalVisible,
+        onCancel = props.onCancel,
+        messages = props.messages;
+
+
+    return _react2.default.createElement(
+        _modal2.default,
+        {
+            visible: modalVisible,
+            onCancel: onCancel
+        },
+        _react2.default.createElement(
+            'div',
+            null,
+            messages
+        )
+    );
+};
+
+exports.default = MessageModal;
 
 /***/ }),
 
@@ -64467,13 +64907,17 @@ var QuillEditor = function (_React$Component) {
     _createClass(QuillEditor, [{
         key: 'render',
         value: function render() {
+            var _props = this.props,
+                channelName = _props.channelName,
+                roomName = _props.roomName;
+
             return _react2.default.createElement(
                 'div',
                 { className: 'editor' },
                 _react2.default.createElement(
                     'div',
                     { className: 'quillEditor-wrapper' },
-                    _react2.default.createElement(_yjsQuill2.default, { ipfs: this.props.ipfs }),
+                    _react2.default.createElement(_yjsQuill2.default, { ipfs: this.props.ipfs, roomName: roomName, channelName: channelName }),
                     _react2.default.createElement(
                         'div',
                         { id: 'quillEditor', className: 'quillEditor' },
@@ -64714,6 +65158,8 @@ function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj;
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, arguments); return new Promise(function (resolve, reject) { function step(key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { return Promise.resolve(value).then(function (value) { step("next", value); }, function (err) { step("throw", err); }); } } return step("next"); }); }; }
+
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
@@ -64735,7 +65181,9 @@ var LeftBody = function (_React$Component) {
 
         _this.state = {
             showSaveInfo: false,
-            showHistory: false
+            showHistory: false,
+            roomName: '',
+            channelName: ''
         };
         return _this;
     }
@@ -64743,17 +65191,66 @@ var LeftBody = function (_React$Component) {
     _createClass(LeftBody, [{
         key: 'componentDidMount',
         value: function componentDidMount() {
+            var _this2 = this;
+
+            // open filedb
             // joinChannel
-            // 
+            // 实现的思路是，当当前有channnel on show的话，那么应该是要先关闭的，问题是如何完成？
+            // 替换之前检查是否和当前的channelOnshow一致？不一致肯定是要检查的，但是并没有解决当前页面需要先关闭之前的文件数据表问题
+            var _props = this.props,
+                channelOnShow = _props.channelOnShow,
+                pubInstance = _props.pubInstance;
+            var ipfsNode = pubInstance.ipfsNode,
+                orbitCore = pubInstance.orbitCore,
+                orbitNode = pubInstance.orbitNode;
+
+            var channelName = channelOnShow.channelName;
+            var channelAddr = channelOnShow.channelAddr;
+
+            ipfsNode.on('ready', _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee() {
+                var fileStore, roomName;
+                return regeneratorRuntime.wrap(function _callee$(_context) {
+                    while (1) {
+                        switch (_context.prev = _context.next) {
+                            case 0:
+                                _context.prev = 0;
+                                _context.next = 3;
+                                return orbitNode.open(channelAddr);
+
+                            case 3:
+                                fileStore = _context.sent;
+                                roomName = fileStore.get('roomName');
+
+                                if (roomName) {
+                                    _this2.setState({ roomName: roomName, channelName: channelName });
+                                }
+                                _context.next = 11;
+                                break;
+
+                            case 8:
+                                _context.prev = 8;
+                                _context.t0 = _context['catch'](0);
+
+                                console.log(_context.t0);
+
+                            case 11:
+                            case 'end':
+                                return _context.stop();
+                        }
+                    }
+                }, _callee, _this2, [[0, 8]]);
+            })));
         }
     }, {
         key: 'render',
         value: function render() {
-            var _this2 = this;
+            var _this3 = this;
 
             var _state = this.state,
                 showHistory = _state.showHistory,
-                showSaveInfo = _state.showSaveInfo;
+                showSaveInfo = _state.showSaveInfo,
+                roomName = _state.roomName,
+                channelName = _state.channelName;
 
             return _react2.default.createElement(
                 'div',
@@ -64767,14 +65264,14 @@ var LeftBody = function (_React$Component) {
                         _react2.default.createElement(
                             'a',
                             { onClick: function onClick() {
-                                    _this2.setState({ showSaveInfo: true });
+                                    _this3.setState({ showSaveInfo: true });
                                 } },
                             '\u4FDD\u5B58'
                         ),
                         _react2.default.createElement(
                             'a',
                             { onClick: function onClick() {
-                                    _this2.setState({ showHistory: true });
+                                    _this3.setState({ showHistory: true });
                                 } },
                             '\u5386\u53F2\u8BB0\u5F55'
                         )
@@ -64782,7 +65279,7 @@ var LeftBody = function (_React$Component) {
                     _react2.default.createElement(
                         _modal2.default,
                         { visible: showSaveInfo, footer: null, title: '\u4FDD\u5B58 channel1', onCancel: function onCancel() {
-                                _this2.setState({ showSaveInfo: false });
+                                _this3.setState({ showSaveInfo: false });
                             } },
                         _react2.default.createElement(SaveInfo, null)
                     ),
@@ -64790,7 +65287,7 @@ var LeftBody = function (_React$Component) {
                         _modal2.default,
                         { visible: showHistory, footer: null, title: 'channel1 \u5386\u53F2\u8BB0\u5F55',
                             onCancel: function onCancel() {
-                                _this2.setState({ showHistory: false });
+                                _this3.setState({ showHistory: false });
                             },
                             width: 1200
                         },
@@ -64804,7 +65301,7 @@ var LeftBody = function (_React$Component) {
                     _react2.default.createElement(
                         'div',
                         { className: 'main-body-left' },
-                        _react2.default.createElement(QuillEditor, { ipfs: this.props.pubInstance.ipfsNode })
+                        _react2.default.createElement(QuillEditor, { ipfs: this.props.pubInstance.ipfsNode, roomName: roomName, channelName: channelName })
                     ),
                     _react2.default.createElement(
                         'div',
@@ -64820,7 +65317,7 @@ var LeftBody = function (_React$Component) {
 }(_react2.default.Component);
 
 exports.default = (0, _index3.connect)(function (state) {
-    return _extends({}, state.LeftBody, state.login);
+    return _extends({}, state.LeftBody, state.login, state.mainLayout);
 }, actions)(LeftBody);
 
 // 右侧页面主题，包含文本编辑面板和聊天面板
@@ -64958,6 +65455,10 @@ var _icon = __webpack_require__(/*! antd/lib/icon */ "./node_modules/antd/lib/ic
 
 var _icon2 = _interopRequireDefault(_icon);
 
+var _form = __webpack_require__(/*! antd/lib/form */ "./node_modules/antd/lib/form/index.js");
+
+var _form2 = _interopRequireDefault(_form);
+
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -64967,6 +65468,8 @@ __webpack_require__(/*! antd/lib/modal/style */ "./node_modules/antd/lib/modal/s
 __webpack_require__(/*! antd/lib/input/style */ "./node_modules/antd/lib/input/style/index.js");
 
 __webpack_require__(/*! antd/lib/icon/style */ "./node_modules/antd/lib/icon/style/index.js");
+
+__webpack_require__(/*! antd/lib/form/style */ "./node_modules/antd/lib/form/style/index.js");
 
 var _react = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 
@@ -65006,6 +65509,8 @@ function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj;
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, arguments); return new Promise(function (resolve, reject) { function step(key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { return Promise.resolve(value).then(function (value) { step("next", value); }, function (err) { step("throw", err); }); } } return step("next"); }); }; }
+
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -65017,10 +65522,14 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 var genIpfsDaemonSettings = _index3.default.genIpfsDaemonSettings,
     genOrbitSettings = _index3.default.genOrbitSettings;
 
+var FormItem = _form2.default.Item;
+
 var Login = function (_React$Component) {
     _inherits(Login, _React$Component);
 
     function Login(props) {
+        var _this2 = this;
+
         _classCallCheck(this, Login);
 
         var _this = _possibleConstructorReturn(this, (Login.__proto__ || Object.getPrototypeOf(Login)).call(this, props));
@@ -65059,36 +65568,72 @@ var Login = function (_React$Component) {
             return Object.assign({}, genOrbitSettings(orbitDatadir));
         };
 
-        _this.handleLogin = function () {
-            // 根据username去产生相应的setting
-            var _this$state = _this.state,
-                username = _this$state.username,
-                isFirst = _this$state.isFirst;
-            var _this$props = _this.props,
-                startLogin = _this$props.startLogin,
-                updateFirst = _this$props.updateFirst;
-
-            var ipfsSetting = _this.genIpfsSetting(username, isFirst);
-            var orbitSetting = _this.genOrbitSetting(username);
-            _this.resetUserArray(username); // 存储usename，或者重新排布userArray
-
-            var orbitCoreOption = {
-                // path where to keep generates keys
-                keystorePath: _path2.default.join(orbitSetting.OrbitDataDir, "/data/keys"),
-                // path to orbit-db cache file
-                cachePath: _path2.default.join(orbitSetting.OrbitDataDir, "/data/orbit-db"),
-                // how many messages to retrieve from history on joining a channel
-                maxHistory: 2
+        _this.getLoginParams = function (ethAccount, ethPassword) {
+            // 根据输入的以太坊地址和密码解锁相应的账号并且调用登录合约返回相应的地址。
+            return {
+                orbitAddr: '',
+                ipfsId: '',
+                repo: ''
             };
-            var ipfsNode = new _ipfs2.default(ipfsSetting);
-            ipfsNode.on('ready', function () {
-                var orbitNode = new _orbitDb2.default(ipfsNode, orbitSetting.OrbitDataDir);
-                var orbitCore = new _orbit_2.default(ipfsNode, orbitCoreOption);
-                console.log(orbitNode);
-                console.log(orbitCore);
-                startLogin({ ipfsNode: ipfsNode, orbitNode: orbitNode, orbitCore: orbitCore });
-                updateFirst(isFirst);
-                window.location.href = './#/mainPage';
+        };
+
+        _this.handleLogin = function () {
+            var validateFields = _this.props.form.validateFields;
+            var startLogin = _this.props.startLogin;
+
+            _this.props.form.validateFields(function (error, values) {
+                if (!error) {
+                    var ethAccount = values.ethAccount,
+                        ethPassword = values.ethPassword;
+
+                    var returnFromContract = _this.getLoginParams(ethAccount, ethPassword);
+                    var ipfsSetting = _this.genIpfsSetting(returnFromContract.repo, false);
+                    var orbitSetting = _this.genOrbitSetting(returnFromContract.repo);
+
+                    var orbitCoreOption = {
+                        // path where to keep generates keys
+                        keystorePath: _path2.default.join(orbitSetting.OrbitDataDir, "/data/keys"),
+                        // path to orbit-db cache file
+                        cachePath: _path2.default.join(orbitSetting.OrbitDataDir, "/data/orbit-db"),
+                        // how many messages to retrieve from history on joining a channel
+                        maxHistory: 2
+                    };
+
+                    var ipfsNode = new _ipfs2.default(ipfsSetting);
+                    ipfsNode.on('ready', _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee() {
+                        var orbitNode, orbitCore, userStore;
+                        return regeneratorRuntime.wrap(function _callee$(_context) {
+                            while (1) {
+                                switch (_context.prev = _context.next) {
+                                    case 0:
+                                        _context.prev = 0;
+                                        orbitNode = new _orbitDb2.default(ipfsNode, orbitSetting, orbitDatadir);
+                                        orbitCore = new _orbit_2.default(ipfsNode, orbitCoreOption);
+                                        _context.next = 5;
+                                        return orbitNode.open(returnFromContract.orbitAddr);
+
+                                    case 5:
+                                        userStore = _context.sent;
+
+                                        startLogin({ ipfsNode: ipfsNode, orbitNode: orbitNode, orbitCore: orbitCore, userStore: userStore });
+                                        window.location.href = './#/mainPage';
+                                        _context.next = 13;
+                                        break;
+
+                                    case 10:
+                                        _context.prev = 10;
+                                        _context.t0 = _context['catch'](0);
+
+                                        console.log(_context.t0);
+
+                                    case 13:
+                                    case 'end':
+                                        return _context.stop();
+                                }
+                            }
+                        }, _callee, _this2, [[0, 10]]);
+                    })));
+                }
             });
         };
 
@@ -65130,13 +65675,18 @@ var Login = function (_React$Component) {
     }, {
         key: 'render',
         value: function render() {
-            var _this2 = this;
+            var _this3 = this;
 
             var _state = this.state,
                 username = _state.username,
                 showModal = _state.showModal,
                 ethAccount = _state.ethAccount,
                 ethPassword = _state.ethPassword;
+            var _props$form = this.props.form,
+                getFieldDecorator = _props$form.getFieldDecorator,
+                getFieldsError = _props$form.getFieldsError,
+                getFieldError = _props$form.getFieldError,
+                isFieldTouched = _props$form.isFieldTouched;
 
             return _react2.default.createElement(
                 'div',
@@ -65155,26 +65705,42 @@ var Login = function (_React$Component) {
                         )
                     ),
                     _react2.default.createElement(
-                        'div',
+                        _form2.default,
                         { className: 'loginPage-form' },
-                        _react2.default.createElement(_input2.default, {
-                            className: 'loginPage-form-account',
-                            placeholder: '\u8F93\u5165\u4EE5\u592A\u574A\u7528\u6237\u5730\u5740',
-                            prefix: _react2.default.createElement(_icon2.default, { type: 'user' }),
-                            value: ethAccount,
-                            onChange: function onChange(e) {
-                                _this2.handleInputChange(e, 'ethAccount');
-                            }
-                        }),
-                        _react2.default.createElement(_input2.default.Password, {
-                            className: 'loginPage-form-password',
-                            placeholder: '\u8F93\u5165\u8D26\u53F7\u5BC6\u7801',
-                            prefix: _react2.default.createElement(_icon2.default, { type: 'lock' }),
-                            value: ethPassword,
-                            onChange: function onChange(e) {
-                                _this2.handleInputChange(e, 'ethPassword');
-                            }
-                        }),
+                        _react2.default.createElement(
+                            FormItem,
+                            null,
+                            getFieldDecorator('ethAccount', {
+                                rules: [{
+                                    required: true,
+                                    message: '请输入以太坊账号'
+                                }]
+                            })(_react2.default.createElement(_input2.default, {
+                                className: 'loginPage-form-input',
+                                placeholder: '\u8F93\u5165\u4EE5\u592A\u574A\u7528\u6237\u5730\u5740',
+                                prefix: _react2.default.createElement(_icon2.default, { type: 'user' }),
+                                onChange: function onChange(e) {
+                                    _this3.handleInputChange(e, 'ethAccount');
+                                }
+                            }))
+                        ),
+                        _react2.default.createElement(
+                            FormItem,
+                            null,
+                            getFieldDecorator('ethPassword', {
+                                rules: [{
+                                    required: true,
+                                    message: '请输入以太坊账号密码'
+                                }]
+                            })(_react2.default.createElement(_input2.default.Password, {
+                                className: 'loginPage-form-input',
+                                placeholder: '\u8F93\u5165\u8D26\u53F7\u5BC6\u7801',
+                                prefix: _react2.default.createElement(_icon2.default, { type: 'lock' }),
+                                onChange: function onChange(e) {
+                                    _this3.handleInputChange(e, 'ethPassword');
+                                }
+                            }))
+                        ),
                         _react2.default.createElement(
                             'div',
                             {
@@ -65194,7 +65760,7 @@ var Login = function (_React$Component) {
                             _react2.default.createElement(
                                 'a',
                                 { onClick: function onClick() {
-                                        _this2.setState({ showModal: true });
+                                        _this3.setState({ showModal: true });
                                     } },
                                 '\u6B64\u5904'
                             ),
@@ -65217,10 +65783,19 @@ var Login = function (_React$Component) {
                     {
                         visible: showModal,
                         onCancel: function onCancel() {
-                            _this2.setState({ showModal: false });
+                            _this3.setState({ showModal: false });
                         }
                     },
                     '\u4E00\u5927\u6BB5\u6559\u7A0B'
+                ),
+                _react2.default.createElement(
+                    'div',
+                    { className: 'login-footer' },
+                    _react2.default.createElement(
+                        'span',
+                        null,
+                        'copyright@2018 By\u5317\u4EAC\u90AE\u7535\u5927\u5B661017'
+                    )
                 )
             );
         }
@@ -65228,6 +65803,8 @@ var Login = function (_React$Component) {
 
     return Login;
 }(_react2.default.Component);
+
+Login = _form2.default.create({})(Login);
 
 exports.default = (0, _index.connect)(function (state) {
     return _extends({}, state.login);
@@ -65350,7 +65927,8 @@ var initialState = {
     pubInstance: {
         ipfsNode: null,
         orbitNode: null,
-        orbitCore: null
+        orbitCore: null,
+        userStore: null
     },
     isFirst: true
 };
@@ -65371,11 +65949,12 @@ function reducer() {
 
 function initInstance(state, action) {
     state = _immutable2.default.Map(state);
-    var ipfsNode = action.data.ipfsNode;
-    var orbitNode = action.data.orbitNode;
-    var orbitCore = action.data.orbitCore;
+    var ipfsNode = action.data.ipfsNode || null;
+    var orbitNode = action.data.orbitNode || null;
+    var orbitCore = action.data.orbitCore || null;
+    var userStore = action.data.userStore || null;
 
-    var newState = state.set('pubInstance', { ipfsNode: ipfsNode, orbitNode: orbitNode, orbitCore: orbitCore });
+    var newState = state.set('pubInstance', { ipfsNode: ipfsNode, orbitNode: orbitNode, orbitCore: orbitCore, userStore: userStore });
     return newState.toJS();
 }
 
@@ -65457,8 +66036,6 @@ var actions = _interopRequireWildcard(_action);
 
 __webpack_require__(/*! ./index.less */ "./src/containers/mainLayout/index.less");
 
-__webpack_require__(/*! babel-polyfill */ "./node_modules/babel-polyfill/lib/index.js");
-
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
@@ -65489,30 +66066,31 @@ var MainLayout = function (_React$Component) {
 
         var _this = _possibleConstructorReturn(this, (MainLayout.__proto__ || Object.getPrototypeOf(MainLayout)).call(this, props));
 
-        _this.getChannelList = function () {
-            var _ref = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee(username) {
-                var updateChannelList, channelList;
+        _this.handleDeleteConfirm = function () {
+            var _ref = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee(index) {
+                var updateChannelList, channelList, _newChannelList, _newChannelList2;
+
                 return regeneratorRuntime.wrap(function _callee$(_context) {
                     while (1) {
                         switch (_context.prev = _context.next) {
                             case 0:
-                                // 获取username名下的所有channelList,同时将channelList保存在redux当中
-                                // channelList仅仅包含channel
+                                // 删除数据库，更新页面中显示的列表
+                                // 更新user数据库中的内容
                                 updateChannelList = _this.props.updateChannelList;
-                                channelList = _this.kvStore.get(username);
+                                channelList = _this.state.channelList;
 
-                                if (channelList) {
-                                    updateChannelList(channelList); // 获取到的channel列表不为空，更新列表
-                                    _this.setState({
-                                        channelStatus: true
-                                    });
+                                if (index !== channelList.length - 1) {
+                                    _newChannelList = Object.assign({}, channelList.slice(0, index), channelList, slice(index + 1));
                                 } else {
-                                    _this.setState({
-                                        channelStatusText: 'no channnels found'
-                                    });
+                                    _newChannelList2 = Object.assign({}, channelList.slice(0, index));
                                 }
+                                _this.setState({
+                                    channelList: newChannelList
+                                });
+                                _context.next = 6;
+                                return _this.userStore.set('channelList', JSON.stringify(newChannelList));
 
-                            case 3:
+                            case 6:
                             case 'end':
                                 return _context.stop();
                         }
@@ -65525,163 +66103,80 @@ var MainLayout = function (_React$Component) {
             };
         }();
 
-        _this.handleDeleteConfirm = function () {
-            // 删除数据库，仅更新各相关username的数据库
-            console.log("this channel will be deleted");
+        _this.changeVisible = function (stateName, value) {
+            _this.setState(_defineProperty({}, stateName, value));
         };
 
-        _this.changeVisible = function () {
-            var _ref2 = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee2(stateName, value) {
-                var close;
-                return regeneratorRuntime.wrap(function _callee2$(_context2) {
-                    while (1) {
-                        switch (_context2.prev = _context2.next) {
-                            case 0:
-                                _context2.next = 2;
-                                return _this.kvStore.close();
+        _this.enterChannel = function (index) {
+            // 拿到channel数据库，同时写入到redux中
+            var _this$props = _this.props,
+                channelOnShow = _this$props.channelOnShow,
+                enterChannel = _this$props.enterChannel;
+            var channelList = _this.state.channelList;
 
-                            case 2:
-                                close = _context2.sent;
+            if (!(channelOnShow && channelOnShow.channelId === channelList[index].channelId)) {
+                // 当channelOnShow中没有内容或者是channelOnShow发生变化时才会触发redux中的list更新
+                enterChannel(channelList[index]);
+            }
+        };
 
-                                _this.setState(_defineProperty({}, stateName, value));
-
-                            case 4:
-                            case 'end':
-                                return _context2.stop();
-                        }
-                    }
-                }, _callee2, _this2);
-            }));
-
-            return function (_x2, _x3) {
-                return _ref2.apply(this, arguments);
-            };
-        }();
+        _this.handleExit = function () {};
 
         _this.state = {
             showMore: false, // 展示channel信息
             showPlus: false, // 添加channel
-            channelStatus: true,
-            channelStatusText: '' // 提示channel为空或者获取channel失败
+            emptyChannel: false,
+            channelList: []
         };
-        _this.username = JSON.parse(localStorage.getItem('username')).pop();
-        _this.kvStore = null;
+        _this.userStore = _this.props.pubInstance.userStore || null;
+        _this.testChannelList = [{
+            channelName: 'channel1',
+            channelAddr: '',
+            creator: { nickname: '', hex: '' },
+            createDate: '2018-07-15 19:00',
+            joiners: [],
+            article: { filename: 'testfile', filehash: "QmfYsCfy5SjaWjpQGnpjRfk5g1rFeVhdsWEHQGEJuryGxt" }
+        }];
         return _this;
     }
 
-    // async DidMount is safe
-
-
     _createClass(MainLayout, [{
         key: 'componentDidMount',
-        value: function () {
-            var _ref3 = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee3() {
-                var _this3 = this;
+        value: function componentDidMount() {
+            var updateChannelList = this.props.updateChannelList;
 
-                var _props, isFirst, pubInstance, orbit, username, address;
-
-                return regeneratorRuntime.wrap(function _callee3$(_context3) {
-                    while (1) {
-                        switch (_context3.prev = _context3.next) {
-                            case 0:
-                                _props = this.props, isFirst = _props.isFirst, pubInstance = _props.pubInstance;
-                                orbit = pubInstance.orbitNode;
-                                username = this.username;
-
-                                if (!isFirst) {
-                                    _context3.next = 11;
-                                    break;
-                                }
-
-                                console.log('create');
-                                _context3.next = 7;
-                                return orbit.create(username, 'keyvalue', {
-                                    overwrite: false // 不允许覆盖已经存在的database
-                                });
-
-                            case 7:
-                                this.kvStore = _context3.sent;
-
-                                localStorage.setItem(username, JSON.stringify(this.kvStore.address));
-                                _context3.next = 18;
-                                break;
-
-                            case 11:
-                                console.log('open');
-                                address = JSON.parse(localStorage.getItem(username));
-                                _context3.next = 15;
-                                return orbit.open('/orbitdb/' + address.root + '/' + address.path, {
-                                    localOnly: true
-                                });
-
-                            case 15:
-                                this.kvStore = _context3.sent;
-
-                                this.kvStore.events.on('ready', function () {
-                                    console.log('entered ready');
-                                    _this3.getChannelList();
-                                });
-                                this.kvStore.load();
-
-                            case 18:
-                            case 'end':
-                                return _context3.stop();
-                        }
+            try {
+                if (this.userStore.get('channelList')) {
+                    var channelList = JSON.parse(this.userStore.get('channelList'));
+                    if (channelList && channelList.length !== 0) {
+                        this.setState({
+                            channelList: channelList,
+                            emptyChannel: false
+                        });
                     }
-                }, _callee3, this);
-            }));
-
-            function componentDidMount() {
-                return _ref3.apply(this, arguments);
-            }
-
-            return componentDidMount;
-        }()
-    }, {
-        key: 'componentWillUnmount',
-        value: function () {
-            var _ref4 = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee4() {
-                return regeneratorRuntime.wrap(function _callee4$(_context4) {
-                    while (1) {
-                        switch (_context4.prev = _context4.next) {
-                            case 0:
-                                _context4.next = 2;
-                                return this.kvStore.close();
-
-                            case 2:
-                            case 'end':
-                                return _context4.stop();
-                        }
+                    // this.setState({
+                    //     channelList: this.testChannelList,
+                    //     emptyChannel: false
+                    // })
+                } else {
+                        // 应该有一个拿到数据为空的情况的处理
                     }
-                }, _callee4, this);
-            }));
-
-            function componentWillUnmount() {
-                return _ref4.apply(this, arguments);
+            } catch (error) {
+                // 以弹窗形式提示获取channel失败
+                console.error(error);
             }
-
-            return componentWillUnmount;
-        }()
+        }
     }, {
         key: 'render',
         value: function render() {
-            var _this4 = this;
+            var _this3 = this;
 
             var _state = this.state,
                 showMore = _state.showMore,
                 showPlus = _state.showPlus,
-                channelStatusText = _state.channelStatusText,
-                channelStatus = _state.channelStatus;
-            // const {channelNameList} = this.props
+                emptyChannel = _state.emptyChannel,
+                channelList = _state.channelList;
 
-            var channelNameList = [{
-                channelName: 'channel1',
-                channelId: 'id is also a long string',
-                channelCreater: { nickName: 'creater_name', nodeId: 'creater_nodeid' },
-                channelJoiner: [{ nickName: 'joiner1_name', nodeId: 'joiner1_nodeid' }, { nickName: 'joiner2_name', nodeId: 'joiner2_nodeid' }],
-                article: { filename: 'filename', filehash: "filehash is a very long string" },
-                createDate: '2018-07-15 19:00'
-            }];
             return _react2.default.createElement(
                 'div',
                 { style: { height: "100%", width: "100%" } },
@@ -65707,23 +66202,24 @@ var MainLayout = function (_React$Component) {
                         _react2.default.createElement(
                             'div',
                             { className: 'sider-body' },
-                            channelStatus ? channelNameList.map(function (item, index) {
+                            !emptyChannel ? channelList.map(function (item, index) {
                                 return _react2.default.createElement(
                                     'div',
                                     { className: 'sider-body-channelList', key: index },
                                     _react2.default.createElement(
                                         _reactRouterDom.Link,
-                                        { className: 'name', to: '/mainPage/' + item.channelName },
+                                        { to: '/mainPage/' + item.channelName, className: 'name', onClick: function onClick() {
+                                                return _this3.enterChannel(index);
+                                            } },
                                         item.channelName
                                     ),
-                                    ' ',
                                     _react2.default.createElement(
                                         'div',
                                         { className: 'operation' },
                                         _react2.default.createElement(
                                             'a',
                                             { className: 'more', onCancel: function onCancel() {
-                                                    _this4.changeVisible('showMore', true);
+                                                    _this3.changeVisible('showMore', true);
                                                 } },
                                             'more'
                                         ),
@@ -65732,7 +66228,9 @@ var MainLayout = function (_React$Component) {
                                             {
                                                 title: '\u5220\u9664\u8BE5channel\u5C06\u540C\u65F6\u5220\u9664\u8BE5channel\u4E0B\u7684\u6587\u6863\uFF0C\u804A\u5929\u4FE1\u606F\uFF0C\u4ECD\u65E7\u8981\u5220\u9664\u5417\uFF1F',
                                                 okText: '\u5220\u9664', cancelText: '\u53D6\u6D88',
-                                                onConfirm: _this4.handleDeleteConfirm,
+                                                onConfirm: function onConfirm() {
+                                                    return _this3.handleDeleteConfirm(index);
+                                                },
                                                 placement: 'bottomRight',
                                                 overlayStyle: { width: '200px' }
                                             },
@@ -65750,7 +66248,7 @@ var MainLayout = function (_React$Component) {
                                             footer: null,
                                             title: item.channelName + ' \u57FA\u672C\u4FE1\u606F',
                                             onCancel: function onCancel() {
-                                                _this4.changeVisible('showMore', false);
+                                                _this3.changeVisible('showMore', false);
                                             }
                                         },
                                         _react2.default.createElement(ChannelDetail, { info: item })
@@ -65759,14 +66257,14 @@ var MainLayout = function (_React$Component) {
                             }) : _react2.default.createElement(
                                 'div',
                                 { className: 'sider-body-tip' },
-                                channelStatusText
+                                'no channels found'
                             )
                         ),
                         _react2.default.createElement(
                             'div',
                             { className: 'sider-footer' },
                             _react2.default.createElement(_icon2.default, { type: 'plus', onClick: function onClick() {
-                                    _this4.changeVisible('showPlus', true);
+                                    _this3.changeVisible('showPlus', true);
                                 }, style: { cursor: 'pointer' } }),
                             ' ',
                             _react2.default.createElement(
@@ -65776,8 +66274,8 @@ var MainLayout = function (_React$Component) {
                             ),
                             ' ',
                             _react2.default.createElement(
-                                _reactRouterDom.Link,
-                                { to: '/' },
+                                'a',
+                                { onClick: this.handleExit },
                                 _react2.default.createElement(_icon2.default, { type: 'logout', style: { color: '#FFF' } })
                             ),
                             ' ',
@@ -65788,7 +66286,7 @@ var MainLayout = function (_React$Component) {
                                     footer: null,
                                     title: 'New Channel',
                                     onCancel: function onCancel() {
-                                        _this4.changeVisible('showPlus', false);
+                                        _this3.changeVisible('showPlus', false);
                                     }
                                 },
                                 _react2.default.createElement(_index6.default, { changeVisible: this.changeVisible })
@@ -65806,8 +66304,9 @@ var MainLayout = function (_React$Component) {
                                 _reactRouterDom.Switch,
                                 null,
                                 _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/mainPage/', component: Welcome }),
-                                channelNameList.map(function (item, index) {
-                                    return _react2.default.createElement(_reactRouterDom.Route, { path: '/mainPage/' + item.channelName, key: index, component: _index4.default });
+                                channelList.map(function (item, index) {
+                                    return _react2.default.createElement(_reactRouterDom.Route, { path: '/mainPage/:channelName', key: index, component: _index4.default });
+                                    // return <Route path={`/mainPage/${item.channelName}`} key={index} component={LeftBody}/>
                                 })
                             )
                         ),
@@ -65928,13 +66427,14 @@ var detailChannel = exports.detailChannel = function detailChannel(sucfunc) {
     };
 }; // 展示选择channel的具体内容，更改channelInDetail中内容
 
-var enterChannel = exports.enterChannel = function enterChannel(sucfunc) {
+var enterChannel = exports.enterChannel = function enterChannel(data, sucfunc) {
     return function (dispatch, getState) {
         dispatch({
-            type: ''
+            type: 'ENTER_CHANNEL',
+            data: data
         });
     };
-}; // 选择channel动作，选择了这个channel，那么需要处理和这个channel相关的内容
+}; // 选择channel动作，存储当前channnel的内容，同时展示相应的编辑页面
 
 /***/ }),
 
@@ -65966,7 +66466,8 @@ var initialState = {
         joiners: [],
         databaseAddr: '' // channelHash
     }],
-    parternList: []
+    parternList: [],
+    channelOnShow: {}
 };
 
 function reducer() {
@@ -65982,6 +66483,8 @@ function reducer() {
             return deletechannel(state, action);
         case 'DETAIL_CHANNEL':
             return detailchannel(state, action);
+        case 'ENTER_CHANNEL':
+            return enterChannel(state, action);
         default:
             return state;
     }
@@ -65994,6 +66497,14 @@ function updateChannelList(state, action) {
     state = _immutable2.default.Map(state);
     var newChannelList = JSON.parse(JSON.stringify(action.data));
     var newState = state.set('channelNameList', newChannelList);
+
+    return newState.toJS();
+}
+
+function enterChannel(state, action) {
+    state = _immutable2.default.Map(state);
+    var newChannelOnShow = JSON.parse(JSON.stringify(action.data));
+    var newState = state.set('channelOnShow', newChannelOnShow);
 
     return newState.toJS();
 }
@@ -66475,6 +66986,8 @@ var _tabs = __webpack_require__(/*! antd/lib/tabs */ "./node_modules/antd/lib/ta
 
 var _tabs2 = _interopRequireDefault(_tabs);
 
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 __webpack_require__(/*! antd/lib/layout/style */ "./node_modules/antd/lib/layout/style/index.js");
@@ -66485,7 +66998,19 @@ var _react = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 
 var _react2 = _interopRequireDefault(_react);
 
+var _index = __webpack_require__(/*! ./../../components/index */ "./src/components/index.js");
+
+var _index2 = _interopRequireDefault(_index);
+
+var _index3 = __webpack_require__(/*! ./../../common/util/index */ "./src/common/util/index.js");
+
+var _action = __webpack_require__(/*! ./state/action */ "./src/containers/personalPage/state/action.js");
+
+var actions = _interopRequireWildcard(_action);
+
 __webpack_require__(/*! ./index.less */ "./src/containers/personalPage/index.less");
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -66499,6 +67024,8 @@ var TabPane = _tabs2.default.TabPane;
 var Header = _layout2.default.Header,
     Content = _layout2.default.Content,
     Footer = _layout2.default.Footer;
+var PartnerTab = _index2.default.PartnerTab,
+    FilesTab = _index2.default.FilesTab;
 
 var PersonalPage = function (_React$Component) {
     _inherits(PersonalPage, _React$Component);
@@ -66508,14 +67035,75 @@ var PersonalPage = function (_React$Component) {
 
         var _this = _possibleConstructorReturn(this, (PersonalPage.__proto__ || Object.getPrototypeOf(PersonalPage)).call(this, props));
 
-        _this.state = {};
+        _this.getPersonInfo = function () {
+            return {
+                ipfsNode: '',
+                orbitHex: ''
+            };
+        };
+
+        _this.getOrbitInfo = function () {
+            return {
+                nickname: 'Lynn Xu',
+                partnerList: [{
+                    index: 1,
+                    nickname: '',
+                    nodeid: '',
+                    hex: ''
+                }],
+                fileList: [{
+                    index: 1,
+                    fileName: 'testfile01',
+                    hash: 'QmfYsCfy5SjaWjpQGnpjRfk5g1rFeVhdsWEHQGEJuryGxt',
+                    creator: 'test01',
+                    timestamp: new Date().valueOf(),
+                    commit: '这是一段测试内容'
+                }]
+            };
+        };
+
+        _this.getHistory = function () {};
+
+        _this.state = {
+            nickname: '',
+            personalInfo: {},
+            fileList: [],
+            partnerList: [],
+            showHistory: false,
+            fileOnshow: 'testfile01'
+        };
+        _this.nickname = '';
+        _this.orbitHex = '';
         return _this;
     }
 
     _createClass(PersonalPage, [{
+        key: 'componentDidMount',
+        value: function componentDidMount() {
+            var orbitNode = this.props.pubInstance.orbitNode;
+
+
+            this.orbitHex = orbitNode.key.getPublic('hex');
+
+            var partnerList = this.getOrbitInfo().partnerList;
+            var fileList = this.getOrbitInfo().fileList;
+            this.setState({
+                partnerList: JSON.parse(JSON.stringify(partnerList)),
+                fileList: JSON.parse(JSON.stringify(fileList))
+            });
+        } // 事实是，这段的信息在页面初始化时即应该存储于redux中，所以不设这个函数
+
+    }, {
         key: 'render',
         value: function render() {
             var nickname = "Lynn Xu";
+            var _state = this.state,
+                fileList = _state.fileList,
+                partnerList = _state.partnerList,
+                showHistory = _state.showHistory,
+                fileOnshow = _state.fileOnshow;
+
+
             return _react2.default.createElement(
                 _layout2.default,
                 { className: 'personalPage' },
@@ -66551,28 +67139,37 @@ var PersonalPage = function (_React$Component) {
                     Content,
                     { className: 'content' },
                     _react2.default.createElement(
-                        _tabs2.default,
-                        { className: 'content-tab' },
+                        'div',
+                        { className: 'content-infocard' },
                         _react2.default.createElement(
-                            TabPane,
-                            { tab: 'your files', key: 'filesTab' },
+                            'div',
+                            { className: 'content-infocard-orbit' },
                             _react2.default.createElement(
-                                'div',
+                                'span',
                                 null,
-                                'your files'
-                            )
-                        ),
-                        _react2.default.createElement(
-                            TabPane,
-                            { tab: 'your parterns', key: 'pertnerTab' },
-                            _react2.default.createElement(
-                                'div',
-                                null,
-                                'your partners'
-                            )
+                                '\u60A8\u7684orbit hex\u662F\uFF1A'
+                            ),
+                            this.orbitHex
                         )
                     ),
-                    _react2.default.createElement('div', { className: 'content-infocard' })
+                    _react2.default.createElement(
+                        'div',
+                        { className: 'content-tab' },
+                        _react2.default.createElement(
+                            _tabs2.default,
+                            null,
+                            _react2.default.createElement(
+                                TabPane,
+                                { tab: '\u5386\u53F2\u6587\u4EF6\u9879', key: 'filesTab' },
+                                _react2.default.createElement(FilesTab, { fileList: fileList, getHistory: this.getHistory })
+                            ),
+                            _react2.default.createElement(
+                                TabPane,
+                                { tab: '\u534F\u540C\u597D\u53CB\u9879', key: 'pertnerTab' },
+                                _react2.default.createElement(PartnerTab, { partnerList: partnerList })
+                            )
+                        )
+                    )
                 ),
                 _react2.default.createElement(
                     Footer,
@@ -66590,7 +67187,9 @@ var PersonalPage = function (_React$Component) {
     return PersonalPage;
 }(_react2.default.Component);
 
-exports.default = PersonalPage;
+exports.default = (0, _index3.connect)(function (state) {
+    return _extends({}, state.login);
+}, actions)(PersonalPage);
 
 /***/ }),
 
@@ -66646,6 +67245,40 @@ if(true) {
 
 	module.hot.dispose(function() { update(); });
 }
+
+/***/ }),
+
+/***/ "./src/containers/personalPage/state/action.js":
+/*!*****************************************************!*\
+  !*** ./src/containers/personalPage/state/action.js ***!
+  \*****************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+var getPatternList = exports.getPatternList = function getPatternList(sucFunc) {
+    return function (dispatch, getState) {
+        dispatch({
+            type: 'LOADING_PATTERNLIST'
+        });
+    };
+};
+
+var getArticalList = exports.getArticalList = function getArticalList(sucFunc) {
+    return function (dispatch, getState) {
+        dispatch({
+            type: 'LOADING_ARTICALLIST'
+        });
+    };
+};
+
+// 因为这两个action应当是同时触发，在完全获取到列表之后才会进行下一步动作，故可以通过redux-saga来完成事件的并发和异步处理
+// 触发saga的动作和触发reducer发生列表更改的action可能会产生不一致，这里暂时按照无saga来处理
 
 /***/ }),
 
@@ -66764,6 +67397,8 @@ var _icon = __webpack_require__(/*! antd/lib/icon */ "./node_modules/antd/lib/ic
 
 var _icon2 = _interopRequireDefault(_icon);
 
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 __webpack_require__(/*! antd/lib/modal/style */ "./node_modules/antd/lib/modal/style/index.js");
@@ -66776,11 +67411,39 @@ var _react = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactRouterDom = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/es/index.js");
+var _path = __webpack_require__(/*! path */ "./node_modules/path-browserify/index.js");
+
+var _path2 = _interopRequireDefault(_path);
+
+var _ipfs = __webpack_require__(/*! ipfs */ "./node_modules/ipfs/src/core/index.js");
+
+var _ipfs2 = _interopRequireDefault(_ipfs);
+
+var _orbitDb = __webpack_require__(/*! orbit-db */ "./node_modules/orbit-db/src/OrbitDB.js");
+
+var _orbitDb2 = _interopRequireDefault(_orbitDb);
+
+var _orbit_ = __webpack_require__(/*! orbit_ */ "./node_modules/orbit_/src/Orbit.js");
+
+var _orbit_2 = _interopRequireDefault(_orbit_);
+
+var _index = __webpack_require__(/*! ./../../common/util/index */ "./src/common/util/index.js");
+
+var _index2 = __webpack_require__(/*! ./../../common/config/index */ "./src/common/config/index.js");
+
+var _index3 = _interopRequireDefault(_index2);
+
+var _action = __webpack_require__(/*! ./state/action */ "./src/containers/register/state/action.js");
+
+var actions = _interopRequireWildcard(_action);
 
 __webpack_require__(/*! ./index.less */ "./src/containers/register/index.less");
 
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, arguments); return new Promise(function (resolve, reject) { function step(key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { return Promise.resolve(value).then(function (value) { step("next", value); }, function (err) { step("throw", err); }); } } return step("next"); }); }; }
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
@@ -66790,10 +67453,15 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
+var genIpfsDaemonSettings = _index3.default.genIpfsDaemonSettings,
+    genOrbitSettings = _index3.default.genOrbitSettings;
+
 var RegisterUser = function (_React$Component) {
     _inherits(RegisterUser, _React$Component);
 
     function RegisterUser(props) {
+        var _this2 = this;
+
         _classCallCheck(this, RegisterUser);
 
         var _this = _possibleConstructorReturn(this, (RegisterUser.__proto__ || Object.getPrototypeOf(RegisterUser)).call(this, props));
@@ -66802,8 +67470,81 @@ var RegisterUser = function (_React$Component) {
             _this.setState(_defineProperty({}, property, e.target.value));
         };
 
+        _this.genIpfsSetting = function (username, isFirst) {
+            var ipfsDatadir = _path2.default.join('orbit', '/' + username, '/ipfs'); // 生成形如/orbit/username/ipfs路径
+            return Object.assign({}, genIpfsDaemonSettings(ipfsDatadir, isFirst));
+        };
+
+        _this.genOrbitSetting = function (username) {
+            var orbitDatadir = _path2.default.join('/orbit/', '/' + username); // 生成形如/orbit/username路径
+            return Object.assign({}, genOrbitSettings(orbitDatadir));
+        };
+
         _this.handleSignIn = function () {
-            window.location.href = './#/mainPage';
+            // 根据username去产生相应的setting
+            var _this$state = _this.state,
+                ethAccount = _this$state.ethAccount,
+                ethPassword = _this$state.ethPassword,
+                nickName = _this$state.nickName,
+                fileAddr = _this$state.fileAddr;
+            var startLogin = _this.props.startLogin;
+
+            var ipfsSetting = _this.genIpfsSetting(fileAddr, true); // 注册状态下必须是init一个节点
+            var orbitSetting = _this.genOrbitSetting(fileAddr);
+
+            var orbitCoreOption = {
+                // path where to keep generates keys
+                keystorePath: _path2.default.join(orbitSetting.OrbitDataDir, "/data/keys"),
+                // path to orbit-db cache file
+                cachePath: _path2.default.join(orbitSetting.OrbitDataDir, "/data/orbit-db"),
+                // how many messages to retrieve from history on joining a channel
+                maxHistory: 2
+            };
+            var ipfsNode = new _ipfs2.default(ipfsSetting);
+            ipfsNode.on('ready', _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee() {
+                var orbitNode, orbitCore, userStore, userAdrrString;
+                return regeneratorRuntime.wrap(function _callee$(_context) {
+                    while (1) {
+                        switch (_context.prev = _context.next) {
+                            case 0:
+                                orbitNode = new _orbitDb2.default(ipfsNode, orbitSetting.OrbitDataDir);
+                                orbitCore = new _orbit_2.default(ipfsNode, orbitCoreOption);
+
+                                console.log(orbitNode);
+                                console.log(orbitCore);
+
+                                _context.prev = 4;
+                                _context.next = 7;
+                                return orbitNode.create(nickName, 'keyvalue', {
+                                    overwrite: false
+                                });
+
+                            case 7:
+                                userStore = _context.sent;
+
+                                //调用合约存储该参数
+                                userAdrrString = '/orbit/' + userStore.address.root + '/' + userStore.address.path;
+
+                                // 存储实例函数，在之后的页面中也有调用
+
+                                startLogin({ ipfsNode: ipfsNode, orbitNode: orbitNode, orbitCore: orbitCore, userStore: userStore });
+                                window.location.href = './#/mainPage';
+                                _context.next = 16;
+                                break;
+
+                            case 13:
+                                _context.prev = 13;
+                                _context.t0 = _context['catch'](4);
+
+                                console.log(_context.t0);
+
+                            case 16:
+                            case 'end':
+                                return _context.stop();
+                        }
+                    }
+                }, _callee, _this2, [[4, 13]]);
+            })));
         };
 
         _this.state = {
@@ -66820,7 +67561,7 @@ var RegisterUser = function (_React$Component) {
     _createClass(RegisterUser, [{
         key: 'render',
         value: function render() {
-            var _this2 = this;
+            var _this3 = this;
 
             var _state = this.state,
                 ethAccount = _state.ethAccount,
@@ -66832,76 +67573,77 @@ var RegisterUser = function (_React$Component) {
 
             return _react2.default.createElement(
                 'div',
-                { className: 'login' },
+                { className: 'signin' },
                 _react2.default.createElement(
                     'div',
-                    { className: 'loginPage' },
+                    { className: 'signinPage' },
                     _react2.default.createElement(
                         'div',
-                        { className: 'loginPage-slogan' },
+                        { className: 'signinPage-slogan' },
                         _react2.default.createElement(
                             'div',
-                            { className: 'loginPage-slogan-logo' },
+                            { className: 'signinPage-slogan-logo' },
                             ' '
                         ),
                         _react2.default.createElement(
                             'p',
-                            { className: 'loginPage-slogan-title' },
+                            { className: 'signinPage-slogan-title' },
                             'IPFS\u4E0A\u7684\u534F\u540C\u7F16\u8F91'
                         )
                     ),
                     _react2.default.createElement(
                         'div',
-                        { className: 'loginPage-form' },
+                        { className: 'signinPage-form' },
                         _react2.default.createElement(_input2.default, {
-                            className: 'loginPage-form-input',
+                            className: 'signinPage-form-input',
                             placeholder: '\u8F93\u5165\u4EE5\u592A\u574A\u7528\u6237\u5730\u5740',
                             prefix: _react2.default.createElement(_icon2.default, { type: 'user' }),
                             value: ethAccount,
                             onChange: function onChange(e) {
-                                _this2.handleInputChange(e, 'ethAccount');
+                                _this3.handleInputChange(e, 'ethAccount');
                             }
                         }),
                         _react2.default.createElement(_input2.default.Password, {
-                            className: 'loginPage-form-input',
+                            className: 'signinPage-form-input',
                             placeholder: '\u8F93\u5165\u8D26\u53F7\u5BC6\u7801',
                             prefix: _react2.default.createElement(_icon2.default, { type: 'lock' }),
                             value: ethPassword,
                             onChange: function onChange(e) {
-                                _this2.handleInputChange(e, 'ethPassword');
+                                _this3.handleInputChange(e, 'ethPassword');
                             }
                         }),
                         _react2.default.createElement(_input2.default.Password, {
-                            className: 'loginPage-form-input',
+                            className: 'signinPage-form-input',
                             placeholder: '\u91CD\u590D\u8F93\u5165\u5BC6\u7801\u4EE5\u786E\u8BA4',
                             prefix: _react2.default.createElement(_icon2.default, { type: 'lock' }),
                             value: repeatEthPassword,
                             onChange: function onChange(e) {
-                                _this2.handleInputChange(e, 'repeatEthPassword');
+                                _this3.handleInputChange(e, 'repeatEthPassword');
                             }
                         }),
                         _react2.default.createElement(_input2.default, {
-                            className: 'loginPage-form-input',
+                            className: 'signinPage-form-input',
                             placeholder: '\u8F93\u5165ipfs\u6570\u636E\u5B58\u50A8\u5730\u5740\u540D\u79F0',
                             prefix: _react2.default.createElement(_icon2.default, { type: 'folder-open' }),
                             value: fileAddr,
                             onChange: function onChange(e) {
-                                _this2.handleInputChange(e, 'fileAddr');
+                                _this3.handleInputChange(e, 'fileAddr');
                             }
                         }),
+                        ' ',
                         _react2.default.createElement(_input2.default, {
-                            className: 'loginPage-form-input',
+                            className: 'signinPage-form-input',
                             placeholder: '\u8F93\u5165\u6635\u79F0\uFF0C\u6C49\u5B57\u5B57\u6BCD\u5747\u53EF',
                             prefix: _react2.default.createElement(_icon2.default, { type: 'smile' }),
                             value: nickName,
                             onChange: function onChange(e) {
-                                _this2.handleInputChange(e, 'nickName');
+                                _this3.handleInputChange(e, 'nickName');
                             }
                         }),
                         _react2.default.createElement(
                             'div',
                             {
-                                className: 'loginPage-form-login',
+                                className: 'signinPage-form-signin',
                                 onClick: this.handleSignIn
                             },
                             _react2.default.createElement(
@@ -66912,12 +67654,12 @@ var RegisterUser = function (_React$Component) {
                         ),
                         _react2.default.createElement(
                             'div',
-                            { className: 'loginPage-form-tip' },
+                            { className: 'signinPage-form-tip' },
                             '\u6CA1\u6709\u4EE5\u592A\u574A\u8D26\u53F7\uFF1F\u4E0D\u61C2\u5408\u7EA6\u90E8\u7F72\uFF1F\u70B9\u51FB',
                             _react2.default.createElement(
                                 'a',
                                 { onClick: function onClick() {
-                                        _this2.setState({ showModal: true });
+                                        _this3.setState({ showModal: true });
                                     } },
                                 '\u6B64\u5904'
                             ),
@@ -66930,10 +67672,19 @@ var RegisterUser = function (_React$Component) {
                     {
                         visible: showModal,
                         onCancel: function onCancel() {
-                            _this2.setState({ showModal: false });
+                            _this3.setState({ showModal: false });
                         }
                     },
                     '\u4E00\u5927\u6BB5\u6559\u7A0B'
+                ),
+                _react2.default.createElement(
+                    'div',
+                    { className: 'signin-footer' },
+                    _react2.default.createElement(
+                        'span',
+                        null,
+                        'copyright@2018 By\u5317\u4EAC\u90AE\u7535\u5927\u5B661017'
+                    )
                 )
             );
         }
@@ -66942,7 +67693,9 @@ var RegisterUser = function (_React$Component) {
     return RegisterUser;
 }(_react2.default.Component);
 
-exports.default = RegisterUser;
+exports.default = (0, _index.connect)(function (state) {
+    return _extends({}, state.login);
+}, actions)(RegisterUser);
 
 /***/ }),
 
@@ -66998,6 +67751,30 @@ if(true) {
 
 	module.hot.dispose(function() { update(); });
 }
+
+/***/ }),
+
+/***/ "./src/containers/register/state/action.js":
+/*!*************************************************!*\
+  !*** ./src/containers/register/state/action.js ***!
+  \*************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+var startLogin = exports.startLogin = function startLogin(data) {
+    return function (dispatch, getState) {
+        dispatch({
+            type: 'INIT_APP',
+            data: data
+        });
+    };
+}; // dispatch这个action的时候传入参数username
 
 /***/ }),
 

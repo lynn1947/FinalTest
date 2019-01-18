@@ -1,0 +1,79 @@
+=============== Jan 13, 2019 (CST) ===============
+21:33:36.918345 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+21:33:36.919313 db@open opening
+21:33:36.921330 version@stat F·[] S·0B[] Sc·[]
+21:33:36.921817 db@janitor F·2 G·0
+21:33:36.921856 db@open done T·2.525245ms
+21:46:39.923861 db@close closing
+21:46:39.933882 db@close done T·10.006927ms
+=============== Jan 13, 2019 (CST) ===============
+23:40:48.930239 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+23:40:48.931990 version@stat F·[] S·0B[] Sc·[]
+23:40:48.932050 db@open opening
+23:40:48.932184 journal@recovery F·1
+23:40:48.934809 journal@recovery recovering @1
+23:40:48.951084 memdb@flush created L0@2 N·7113 S·120KiB "n:\x00..ver,v7095":"version,v1"
+23:40:48.953292 version@stat F·[1] S·120KiB[120KiB] Sc·[0.25]
+23:40:48.957342 db@janitor F·3 G·0
+23:40:48.957388 db@open done T·25.321276ms
+23:42:21.433275 db@close closing
+23:42:21.433544 db@close done T·265.721µs
+=============== Jan 13, 2019 (CST) ===============
+23:42:42.310535 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+23:42:42.311283 version@stat F·[1] S·120KiB[120KiB] Sc·[0.25]
+23:42:42.311308 db@open opening
+23:42:42.311376 journal@recovery F·1
+23:42:42.313431 journal@recovery recovering @3
+23:42:42.313997 memdb@flush created L0@5 N·1 S·161B "n:\xa0..seq,v7115":"n:\xa0..seq,v7115"
+23:42:42.315964 version@stat F·[2] S·121KiB[121KiB] Sc·[0.50]
+23:42:42.317200 db@janitor F·4 G·0
+23:42:42.317229 db@open done T·5.909397ms
+23:50:39.110124 db@close closing
+23:50:39.110476 db@close done T·349.406µs
+=============== Jan 13, 2019 (CST) ===============
+23:55:27.571723 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+23:55:27.572673 version@stat F·[2] S·121KiB[121KiB] Sc·[0.50]
+23:55:27.572693 db@open opening
+23:55:27.572760 journal@recovery F·1
+23:55:27.574935 journal@recovery recovering @6
+23:55:27.575903 memdb@flush created L0@8 N·1 S·161B "n:\xa0..seq,v7117":"n:\xa0..seq,v7117"
+23:55:27.578084 version@stat F·[3] S·121KiB[121KiB] Sc·[0.75]
+23:55:27.579700 db@janitor F·5 G·0
+23:55:27.579759 db@open done T·7.05443ms
+23:56:48.740130 db@close closing
+23:56:48.740419 db@close done T·288.306µs
+=============== Jan 18, 2019 (CST) ===============
+11:27:42.181448 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+11:27:42.182395 version@stat F·[3] S·121KiB[121KiB] Sc·[0.75]
+11:27:42.182419 db@open opening
+11:27:42.182503 journal@recovery F·1
+11:27:42.184740 journal@recovery recovering @9
+11:27:42.185911 memdb@flush created L0@11 N·1 S·161B "n:\xa0..seq,v7119":"n:\xa0..seq,v7119"
+11:27:42.188286 version@stat F·[4] S·121KiB[121KiB] Sc·[1.00]
+11:27:42.191062 db@janitor F·6 G·0
+11:27:42.191103 db@open done T·8.671262ms
+11:27:42.191218 table@compaction L0·4 -> L1·0 S·121KiB Q·7120
+11:27:42.197061 db@close closing
+11:27:42.198071 table@build created L1@14 N·1994 S·67KiB "n:\x00..ver,v7095":"version,v1"
+11:27:42.198104 table@build exiting
+11:27:42.198129 table@build revert @14
+11:27:42.198378 db@close done T·1.315483ms
+=============== Jan 18, 2019 (CST) ===============
+11:27:55.667959 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+11:27:55.668423 version@stat F·[4] S·121KiB[121KiB] Sc·[1.00]
+11:27:55.668670 db@open opening
+11:27:55.668814 journal@recovery F·1
+11:27:55.671007 journal@recovery recovering @12
+11:27:55.671620 memdb@flush created L0@14 N·1 S·161B "n:\xa0..seq,v7121":"n:\xa0..seq,v7121"
+11:27:55.673878 version@stat F·[5] S·121KiB[121KiB] Sc·[1.25]
+11:27:55.675485 db@janitor F·7 G·0
+11:27:55.675531 db@open done T·6.841321ms
+11:27:55.675700 table@compaction L0·5 -> L1·0 S·121KiB Q·7122
+11:27:55.681599 table@build created L1@17 N·1994 S·67KiB "n:\x00..ver,v7095":"version,v1"
+11:27:55.681660 version@stat F·[0 1] S·67KiB[0B 67KiB] Sc·[0.00 0.00]
+11:27:55.681940 table@compaction committed F-4 S-54KiB Ke·0 D·5123 T·6.136622ms
+11:27:55.682074 table@remove removed @14
+11:27:55.682157 table@remove removed @11
+11:27:55.682239 table@remove removed @8
+11:27:55.682331 table@remove removed @5
+11:27:55.682468 table@remove removed @2

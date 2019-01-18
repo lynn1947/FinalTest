@@ -1,0 +1,6 @@
+eth.accounts
+miner.start()
+miner.stop()
+miner.start()
+miner.stop()
+myContract=contract.at("0x24b64CD59094EaD9530d0198e7DA35b5c92b4e64")
