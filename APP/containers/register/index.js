@@ -7,8 +7,11 @@ import OrbitCore from 'orbit_'
 import {connect} from './../../common/util/index'
 import configFunc from './../../common/config/index'
 import * as actions from './state/action'
+import FileContract from './../../contract/index'
 import './index.less'
 
+
+console.log(FileContract)
 const { genIpfsDaemonSettings, genOrbitSettings} = configFunc
 
 class RegisterUser extends React.Component {
@@ -71,7 +74,12 @@ class RegisterUser extends React.Component {
                 })
                 //调用合约存储该参数
                 const userAdrrString = `/orbit/${userStore.address.root}/${userStore.address.path}` 
-
+                FileContract.methods.signIn(
+                    userAdrrString,ipfsNode._peerInfo.id._idB58String, fileAddr,
+                ).call().then(function(r){
+                    console.log(r)
+                })
+               
                 // 存储实例函数，在之后的页面中也有调用
                 startLogin({ipfsNode,orbitNode,orbitCore, userStore})
                 window.location.href = './#/mainPage'

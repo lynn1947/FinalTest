@@ -1,13 +1,14 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
 import {Input, Icon, Modal, Form} from 'antd'
-import path from 'path'
+import path, { resolve } from 'path'
 import IPFS from 'ipfs'
 import OrbitDB from 'orbit-db'
 import OrbitCore from 'orbit_'
 import {connect} from './../../common/util/index'
 import configFunc from './../../common/config/index'
 import * as actions from './state/action'
+import FileContract from './../../contract/index'
 import './index.less'
 
 const { genIpfsDaemonSettings, genOrbitSettings} = configFunc
@@ -34,43 +35,12 @@ class Login extends React.Component {
         })
     }
 
+    // 输入未做debunce处理
     handleInputChange =(e, property)=> {
         this.setState({
             [property]: e.target.value
             })
         }
-
-    // // here可以加个debunce---未解决的问题
-    // handleInputChange =(e)=> {
-    //     const name = e.target.value
-    //     const {userArray} = this.state
-    //     this.setState({
-    //         username: name
-    //     }) // 同时将根据设定的username判定是否是第一次访问,同时要更新localStorage中的username
-    //     if(userArray !== null&& userArray.indexOf(name)>-1){
-    //         this.setState({
-    //             isFirst: false
-    //         })
-    //     }
-    // }
-
-    resetUserArray =(username)=>{
-        // 根据username的值重新排布localstorgae中的username
-        const userArray = this.state.userArray ? this.state.userArray : []
-        let newUserArray = []
-        if(userArray !== null&& userArray.indexOf(username)>-1){ // 确保userArray存在并且username存在于userArrays
-            let userIndex = userArray.indexOf(username)
-            if(userIndex == userArray.length-1) {
-                newUserArray = newUserArray.concat(userArray) // username正好是userArray的最后一位，则直接复制userArray
-            }else{
-                newUserArray = newUserArray.concat(userArray.slice(0,userIndex),userArray.slice(userIndex+1),[username])
-            }
-            localStorage.setItem('username',JSON.stringify(newUserArray))
-        }else{ // userArray为空或者不包含username
-            userArray.push(username)
-            localStorage.setItem('username',JSON.stringify(userArray))
-        }
-    }
 
     genIpfsSetting =(username, isFirst)=> {
         let ipfsDatadir = path.join('orbit','/'+username,'/ipfs')// 生成形如/orbit/username/ipfs路径
@@ -84,11 +54,23 @@ class Login extends React.Component {
 
     getLoginParams =(ethAccount, ethPassword)=>{
         // 根据输入的以太坊地址和密码解锁相应的账号并且调用登录合约返回相应的地址。
-        return {
-            orbitAddr:'',
-            ipfsId: '',
-            repo: ''
-        }
+        FileContract.methods.login().call({from:ethAccount}).then(
+            function(r){
+                if(r){
+                    const orbitAddr = r.orbitdbAddr
+                    const ipfsId = r.ipfsId
+                    const repo = r.repo
+                    return { orbitAddr, ipfsId, repo}
+                }else{
+                    return {
+                        orbitAddr:'',
+                        ipfsId: '',
+                        repo: ''
+                    }
+                }
+
+            }
+        )
     }
 
     handleLogin =()=>{ 
@@ -123,8 +105,10 @@ class Login extends React.Component {
                     }  
                 })
 
-            }
-        })
+            }else{
+                        console.log(error)
+                    }  
+                })
     }
  
     render() {
