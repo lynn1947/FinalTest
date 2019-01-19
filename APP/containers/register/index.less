@@ -1,0 +1,70 @@
+.signin {
+    width: 100%; height: 100%;
+    .signinPage {
+        width: 100%; height: calc(~'100% - 48px');
+        text-align: center;
+        box-shadow: 0 4px 30px #ccc;
+        &-slogan {
+            height: 64px; width: 100%;
+            background: #001529;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            &-logo {
+                height: 20px; width: 30px;
+                background-color: rgba(0, 0, 0, 0.65);
+                margin-left: 50px;
+                display: inline-block;
+            }
+            &-title {
+                margin:0; padding: 0;
+                display: inline-block;
+                color: #FFFFFF;
+                font-size: 14px;
+                margin-left: 30px;
+                line-height: 20px;
+            }
+        }
+        &-form {
+            width: 100%;height: calc(~'100% - 124px');
+            margin: 30px auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            &-input {
+                width: 350px;
+                margin-bottom: 20px;
+            }
+            &-password {
+            }
+            &-tip {
+                display: flex;
+                margin: 10px;
+                span {
+                    display: inline-block;
+                    margin-left: 10px;
+                }
+            }
+            &-signin {
+                width: 150px;
+                height: 30px;
+                background-color: #001529;
+                cursor: pointer;
+                text-align: center;
+                margin: 30px auto;
+                a{
+                    color: #FFF;
+                    line-height: 30px;
+                }
+            }
+        }
+    }
+
+    &-footer {
+        height: 48px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}

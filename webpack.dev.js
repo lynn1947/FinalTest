@@ -1,12 +1,12 @@
 let webpack = require('webpack')
 let path = require('path')
 let htmlWebpackPlugin = require('html-webpack-plugin')
-let UglifyJsPlugin = require('uglifyjs-webpack-plugin')
+let AddAssetHtmlPlugin = require('add-asset-html-webpack-plugin')
 
 const config ={
     mode: 'development',
     entry: {
-        bundle: ['babel-polyfill','./src/index.js']
+        bundle: ['babel-polyfill','./APP/index.js'],
     },
     output: {
         path: path.join(__dirname,"dist"),
@@ -33,28 +33,28 @@ const config ={
         new webpack.HotModuleReplacementPlugin(),
         new htmlWebpackPlugin({
             template:'./dev/index.html',
-            filename: './index.html'
+            filename: './index.html',
         }),
-        new UglifyJsPlugin({
-            uglifyOptions:{
-                mangle: {
-                    reserved: ['$super', '$', 'exports', 'require', 'module', '_']
-                },
-                compress: {
-                    warnings: true
-                },
-                output: {
-                    comments: false,
-                }
-            },
+        new AddAssetHtmlPlugin({ 
+            filepath: path.resolve(__dirname,'./dist/vendor.js'), 
+            includeSourcemap: false 
+        }),
+        new webpack.DefinePlugin({
+            'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV || 'development')
+        }),
+        new webpack.DllReferencePlugin({
+            context: __dirname,
+            manifest: require('./dist/vendor-manifest.json')
         })
     ],
     devServer: {
-        contentBase: path.join(__dirname,'dist'),
         compress: true,
         hot: true,
     },
-    devtool: 'inline-source-map',
+    devtool: '#source-map',
+    node:{
+        fs: 'empty'
+    }
 }
-
+  
 module.exports = config

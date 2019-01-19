@@ -1,0 +1,40 @@
+=============== Jan 18, 2019 (CST) ===============
+21:12:38.286253 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+21:12:38.287070 db@open opening
+21:12:38.289324 version@stat F·[] S·0B[] Sc·[]
+21:12:38.289685 db@janitor F·2 G·0
+21:12:38.289716 db@open done T·2.627745ms
+=============== Jan 18, 2019 (CST) ===============
+21:12:49.302847 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+21:12:49.303065 version@stat F·[] S·0B[] Sc·[]
+21:12:49.303084 db@open opening
+21:12:49.303145 journal@recovery F·1
+21:12:49.305199 journal@recovery recovering @1
+21:12:49.305786 memdb@flush created L0@2 N·1 S·123B "version,v1":"version,v1"
+21:12:49.308005 version@stat F·[1] S·123B[123B] Sc·[0.25]
+21:12:49.309857 db@janitor F·3 G·0
+21:12:49.309919 db@open done T·6.821474ms
+21:15:04.558808 db@close closing
+21:15:04.559368 db@close done T·558.853µs
+=============== Jan 18, 2019 (CST) ===============
+21:15:10.909311 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+21:15:10.909539 version@stat F·[1] S·123B[123B] Sc·[0.25]
+21:15:10.909560 db@open opening
+21:15:10.909626 journal@recovery F·1
+21:15:10.911552 journal@recovery recovering @3
+21:15:10.913061 memdb@flush created L0@5 N·578 S·17KiB "n:\x00..ing,v13":"n:\xfb..ong,v409"
+21:15:10.915223 version@stat F·[2] S·17KiB[17KiB] Sc·[0.50]
+21:15:10.917564 db@janitor F·4 G·0
+21:15:10.917654 db@open done T·8.060981ms
+=============== Jan 19, 2019 (CST) ===============
+10:17:28.286962 memdb@flush N·50217 S·3MiB
+10:17:28.313112 memdb@flush created L0@9 N·50217 S·703KiB "n:\x00..ver,v31916":"n:\xff..ong,v34735"
+10:17:28.313175 version@stat F·[3] S·720KiB[720KiB] Sc·[0.75]
+10:17:28.313759 memdb@flush committed F·1 T·26.435934ms
+10:17:28.319532 journal@remove removed @6
+10:17:51.012177 table@compaction L0·2 -> L1·0 S·720KiB Q·50943
+10:17:51.035585 table@build created L1@10 N·8688 S·291KiB "n:\x00..ver,v31916":"n:\xff..ong,v34735"
+10:17:51.035644 version@stat F·[1 1] S·291KiB[123B 291KiB] Sc·[0.25 0.00]
+10:17:51.036277 table@compaction committed F-1 S-429KiB Ke·0 D·42107 T·23.771169ms
+10:17:51.036434 table@remove removed @9
+10:17:51.037267 table@remove removed @5

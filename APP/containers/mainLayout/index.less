@@ -1,0 +1,75 @@
+ .layout {
+    height: 100%;  
+    .layout-sider {
+        position: relative;
+        .sider-header {
+            margin: 0 16px;;
+            height: 64px;
+            display: flex;
+            align-items: center;
+            &-logo {
+                height: 20px;
+                width: 30px;
+                background: rgba(255, 255, 255,0.5)
+            }
+            &-title {
+                color: #FFFFFF;
+                font-size: 14px;
+                margin-left: 10px;
+            }
+        }
+        .sider-body {
+            margin: 10px;
+            &-channelList {
+                display: flex;
+                justify-content: space-between;
+                .name {
+                    color: #FFF;
+                }
+                .operation {
+                    .more {
+                        margin-right: 10px;
+                    }
+                    .close {
+                    }
+                }
+            }
+            &-tip {
+                text-align: center;
+                color: #FFF;
+                font-size: 14px;
+            }
+        }
+        .sider-footer {
+            position: absolute;
+            bottom: 20px;
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+            color: #FFF;
+        }
+    }
+    .layout-main {
+        &-header {
+            background: #FFF;
+            display: flex;
+            justify-content: flex-end;
+            .operation {
+                a{
+                    margin-left: 10px;
+                }
+            }
+        }
+        &-body {
+            margin: 10px;
+            background: #FFF;
+            height: 100%;
+        }
+        &-footer {
+            height: 48px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+}    
